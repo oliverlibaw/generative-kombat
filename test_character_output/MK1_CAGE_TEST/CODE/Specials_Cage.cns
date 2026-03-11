@@ -1,0 +1,687 @@
+;----------------------------------------------------------------
+;GREEN BOLT
+[Statedef 330]
+type    = S
+movetype= A
+physics = N
+ctrl = 0
+anim = 330
+sprpriority = 1
+
+[State 0, stop]
+type = posset
+triggerall = enemy,AuthorName != "OMEGAPSYCHO-BOSS"
+trigger1 = Time = 0
+y = 0
+[State 0, stop]
+type = posset
+trigger1 = 1
+trigger1 = Pos Y >0
+y = 0
+
+[State 0, 2]
+type = VelSet
+trigger1 = time = 0
+x = 0
+y = 0
+
+[State 4000, 1]
+type = Helper
+trigger1 = animelemtime(4) >= 0
+trigger1 = animelemtime(4) <= 2
+trigger1 = NumHelper(331)= 0
+ID = 331
+stateno = 331
+pos = 0, 0
+postype = p1
+helpertype = normal
+name = "GREEN"
+keyctrl = 0
+ownpal = 1
+size.xscale = (1)*const(size.xscale)
+size.yscale = (1)*const(size.yscale)
+
+[State 300, 7]
+type = changestate
+trigger1 = animtime = 0
+value = 0
+ctrl = 1
+
+;-----------------------------------------------------------------
+;GREEN
+[StateDef 331]
+type = S
+movetype = A
+physics = N
+anim = 331
+velset = 0,0
+
+[State 1000, Projectile Effect]
+type = PlaySnd
+trigger1 = Animelem = 4
+value = S2000,6
+channel = 0
+volumescale = 100
+
+[State 4000, 1]
+type = Helper
+triggerall = P2Name != "MOTARO"
+trigger1 = Animelem = 5
+trigger1 = NumHelper(332)= 0
+ID = 332
+stateno = 332
+pos = (140)*(root,const(size.xscale)),(-93)*(root,const(size.yscale))
+postype = p1
+helpertype = normal
+name = "PROJ-GREEN"
+keyctrl = 0
+ownpal = 1
+size.xscale = (1)*const(size.xscale)
+size.yscale = (1)*const(size.yscale)
+
+[State 1000, Proj]
+type = Projectile
+triggerall = P2Name = "MOTARO"
+trigger1 = Animelem = 5
+damage = 100,12
+ProjID = 332
+projanim = 332
+Projhitanim = -1
+offset = (140)*(root,const(size.xscale)),(-93)*(root,const(size.yscale))
+projpriority = 4
+projsprpriority = 4
+velocity = 8
+pausetime = 10,9
+attr = SCA, SP
+guardflag = M
+animtype = heavy
+air.animtype = back
+priority = 4, hit
+sparkno = -1
+guard.sparkno = -1
+sparkxy = 0, 0
+hitsound = -1
+guardsound = -1
+ground.type = high
+air.type = high
+ground.slidetime = 22
+ground.hittime  = 30
+air.hittime = 30
+ground.velocity = -8
+air.animtype = Back
+fall = 0
+air.fall = 1
+fall.recover = 0
+air.recover = 0
+fall.recovertime = 40
+air.velocity = -4,-6
+down.hittime = 12
+down.velocity = -7,0
+down.hittime = 30
+guard.ctrltime = 15
+yaccel = .4
+air.juggle = 1
+air.cornerpush.veloff = 0
+ground.cornerpush.veloff = 0
+envshake.time = 30
+envshake.freq = 120
+envshake.ampl = 3
+p2facing = 1
+kill = root,var(58) = 0 || 1*p2stateno = 49999
+guard.kill = root,var(58) = 0 || 1*p2stateno = 49999
+
+[State 1, 1]
+type = AssertSpecial
+trigger1 = 1
+flag = NoAutoTurn
+flag2 = NoShadow
+
+[State 3, 1]
+type = SprPriority
+trigger1 = 1
+value = 3
+
+[State 6, 0]
+type = BindToParent
+trigger1 = 1
+pos = 0,0
+
+[State 300, 5]
+type = DestroySelf
+trigger1 = animtime = 0
+trigger2 = parent,stateno != 330
+trigger2 = 1
+trigger3 = Parent,movetype = H
+trigger3 = 1
+
+;-----------------------------------------------------------------
+;PROJECTILE GREEN
+[StateDef 332]
+type = S
+movetype = A
+physics = N
+anim = 332
+velset = 0,0
+sprpriority = 4
+
+[State 332,0]
+type = VelSet
+trigger1 = 1
+x = 8
+
+[State 332, Proj]
+type = Hitdef
+triggerall = enemy,AuthorName != "OMEGAPSYCHO-BOSS"
+trigger1 = !time
+damage = 100,12
+pausetime = 1,7
+attr = SCA, SP
+guardflag = M
+animtype = heavy
+air.animtype = back
+priority = 4, hit
+sparkno = -1
+guard.sparkno = -1
+sparkxy = 0,0
+hitsound = S2000,1
+guardsound = S2000,7
+ground.type = high
+air.type = high
+ground.slidetime = 22
+ground.hittime  = 30
+air.hittime = 30
+ground.velocity = -8
+air.animtype = Back
+fall = 0
+air.fall = 1
+fall.recover = 0
+air.recover = 0
+fall.recovertime = 40
+air.velocity = -4,-6
+down.hittime = 12
+down.velocity = -7,0
+down.hittime = 30
+guard.ctrltime = 15
+yaccel = .4
+air.juggle = 1
+air.cornerpush.veloff = 0
+ground.cornerpush.veloff = 0
+envshake.time = 30
+envshake.freq = 100
+envshake.ampl = 2
+p2facing = 1
+p1stateno = 333
+kill = root,var(58) = 0 || 1*p2stateno = 49999
+guard.kill = root,var(58) = 0 || 1*p2stateno = 49999
+
+[State 332, Proj]
+type = Hitdef
+triggerall = enemy,AuthorName = "OMEGAPSYCHO-BOSS"
+trigger1 = !time
+damage = 100,12
+pausetime = 0,9
+attr = SCA, SP
+guardflag = M
+animtype = heavy
+air.animtype = back
+priority = 4, hit
+sparkno = -1
+guard.sparkno = -1
+sparkxy = 0,0
+hitsound = S2000,1
+guardsound = S2000,7
+ground.type = high
+air.type = high
+ground.slidetime = 22
+ground.hittime  = 30
+air.hittime = 30
+ground.velocity = -8
+air.animtype = Back
+fall = 0
+air.fall = 1
+fall.recover = 0
+air.recover = 0
+fall.recovertime = 40
+air.velocity = -4,-6
+down.hittime = 12
+down.velocity = -7,0
+down.hittime = 30
+guard.ctrltime = 15
+yaccel = .4
+air.juggle = 1
+air.cornerpush.veloff = 0
+ground.cornerpush.veloff = 0
+envshake.time = 30
+envshake.freq = 100
+envshake.ampl = 2
+p2facing = 1
+kill = 1
+guard.kill = 1
+
+[State 1, 1]
+type = AssertSpecial
+trigger1 = 1
+flag = NoAutoTurn
+flag2 = NoShadow
+Ignorehitpause = 1
+
+[State 3, 1]
+type = SprPriority
+trigger1 = 1
+value = 4
+
+[State 300, 5]
+type = Changestate
+triggerall = 1
+trigger1 = movecontact
+trigger2 = movehit
+trigger3 = MoveGuarded
+value = 333
+
+[State 300, 5]
+type = DestroySelf
+trigger1 = FrontEdgeDist <-90
+
+;-----------------------------------------------------------------
+;PROJECTILE GREEN Remain
+[StateDef 333]
+type = S
+movetype = I
+physics = N
+anim = ifelse(enemy,AuthorName != "OMEGAPSYCHO-BOSS",333,9999)
+velset = 0,0
+sprpriority = 4
+
+[State 333,0]
+type = VelSet
+trigger1 = 1
+x = 0
+y = 0
+
+[State 333,0]
+type = PosSet
+trigger1 = time<=0
+x = (enemynear,pos x)
+y = (-93)*(root,const(size.yscale))
+
+[State 1, 1]
+type = AssertSpecial
+trigger1 = 1
+flag = NoAutoTurn
+flag2 = NoShadow
+Ignorehitpause = 1
+
+[State 3, 1]
+type = SprPriority
+trigger1 = 1
+value = 4
+
+[State 300, 5]
+type = DestroySelf
+trigger1 = animtime = 0
+trigger2 = time >= 20
+;----------------------------------------------------------------
+;SHADOW KICK
+[Statedef 335]
+type    = S
+movetype= A
+physics = N
+poweradd= 0
+anim = 335
+ctrl = 0
+
+[State -2, CAGE'S SHADOWS]
+type = Afterimage
+trigger1 = time = 0
+trans = none
+palcolor = 255
+time = 30
+length  = 12
+TimeGap = 3
+FrameGap = 1
+persistent = 1
+palbright = -50,-80,-80
+PalContrast =  0,255,190
+
+[State 1000, Projectile Effect]
+type = PlaySnd
+triggerall = Animelem = 5
+trigger1 = var(25) = 1
+value = S2000,12
+channel = 0
+volumescale = 100
+
+[State 1000, Projectile Effect]
+type = PlaySnd
+triggerall = Animelem = 5
+trigger1 = var(25) = 0
+value = S2000,ifelse(random<=500,10,11)
+channel = 0
+volumescale = 100
+
+[State 105, 1]
+type = VelSet
+trigger1 = animelemtime(1)  = 0
+x = 0
+y = 0
+
+[State 105, 1]
+type = VelSet
+trigger1 = animelem  = 5
+x = 7
+y = 0
+
+[State 0, stop]
+type = posset
+triggerall = enemy,AuthorName != "OMEGAPSYCHO-BOSS"
+trigger1 = Time = 0
+y = 0
+[State 0, stop]
+type = posset
+trigger1 = 1
+trigger1 = Pos Y >0
+y = 0
+
+[State 300, 0]
+type = Hitdef
+trigger1 = Time = 0
+damage = 160,16
+pausetime = 16,2
+attr = S, NA
+guardflag = M
+animtype = heavy
+air.animtype = back
+priority = 4, hit
+sparkno = -1
+guard.sparkno = -1
+sparkxy = 0, 0
+hitsound = S3,Ifelse(random<500,4,5)
+guardsound = S2,Ifelse(random<500,1,Ifelse(random>=500,2,3))
+ground.type = high
+air.type = high
+ground.slidetime = 22
+ground.hittime  = 30
+air.hittime = 30
+ground.velocity = -5,-3
+air.animtype = Back
+fall = 1
+air.fall = 1
+fall.recover = 0
+air.recover = 0
+fall.recovertime = 40
+air.velocity = -5,-3
+down.hittime = 12
+down.velocity = -5,0
+down.hittime = 30
+guard.ctrltime = 15
+yaccel = .50
+air.juggle = 1
+air.cornerpush.veloff = 0
+ground.cornerpush.veloff = 0
+envshake.time = 30
+envshake.freq = 100
+envshake.ampl = 2
+p2facing = 1
+kill = !var(58) || 1*p2stateno = 49999
+guard.kill = !var(58) || 1*p2stateno = 49999
+
+[State 105, 1]
+type = VelSet
+triggerall = 1
+trigger1 = movecontact
+trigger2 = animelemtime(6) >= 0
+x = 0
+y = 0
+
+[State 300, 7]
+type = changestate
+trigger1 = animtime = 0
+value = 0
+ctrl = 1
+
+;----------------------------------------------------------------
+;BALL BREAKER
+[Statedef 340]
+type    = C
+movetype= A
+physics = N
+poweradd= 0
+anim = 340
+ctrl = 0
+
+[State 540,1]
+type = ChangeAnim
+triggerall = !Time
+trigger1 = P2Name = "GORO"
+trigger2 = P2Name = "KINTARO"
+trigger3 = P2Name = "MOTARO"
+trigger4 = P2Name = "SHAO KAHN"
+trigger5 = P2Name = "JOHNNY CAGE MK1"
+trigger6 = P2Name = "JOHNNY CAGE MK2"
+trigger7 = P2Name = "JOHNNY CAGE MK3"
+trigger8 = Var(4)= 1
+trigger9 = p2Stateno = 345
+trigger10 = enemynear,Stateno = 345
+trigger11 = P2Name  = "SHANG TSUNG MK1" && enemy,Var(34) = 1
+trigger12 = P2Name  = "SHANG TSUNG MK1" && enemy,Var(37) = 1   
+value = 341
+
+[State 7, move_sound]
+type = PlaySnd
+trigger1 = anim = 340
+trigger1 = Animelem = 5
+value = S1, ifelse(random<=500,1,2)
+
+[State 7, voice]
+type = PlaySnd
+trigger1 = anim = 340
+trigger1 = Animelem = 5
+value = S200, ifelse(random<=500,1,2)
+
+[State 352,6]
+type = VelSet
+trigger1 = 1
+y = 0
+x = 0
+
+[State grabby]
+type = HitDef
+trigger1 = p2Statetype != A
+Trigger1 = !Time
+damage = 130,15
+pausetime = 6,1
+guard.pausetime = 3,8
+attr = SC, NA
+Hitflag = M
+guardflag = M
+priority = 6, Miss
+sparkno = -1
+guard.sparkno = -1
+sprpriority = 2
+hitsound = S2000, 13
+guardsound = S2,Ifelse(random<500,1,Ifelse(random>=500,2,3))
+ground.type = Low
+ground.slidetime = 22
+ground.hittime  = 30
+air.hittime = 30
+ground.velocity = -5,-1
+air.animtype = Back
+fall = 1
+air.fall = 1
+fall.recover = 0
+air.recover = 0
+fall.recovertime = 40
+air.velocity = -2,-4
+down.hittime = 12
+down.velocity = -2,0
+down.hittime = 30
+guard.ctrltime = 15
+yaccel = .3
+p1facing = 1
+p2facing = 1 
+p2stateno = ifelse(p2Statetype!=A,345,123459)
+numhits = 1 
+kill = !var(58) || 1*p2stateno = 49999
+guard.kill = !var(58) || 1*p2stateno = 49999
+
+[State 300, 7]
+type = changestate
+trigger1 = animtime = 0
+value = 0
+ctrl = 1
+
+;---------------------------------------------------------------
+;BALL BREAKER P2 STATE
+[Statedef 345]
+type    = S
+movetype= H
+physics = S
+velset = 0,0
+[State 120, 2]
+type = StateTypeSet
+trigger1 = time>2
+Statetype = S
+movetype= I
+physics = N
+
+
+[State 0, 2]
+type = VelSet
+trigger1 = 1
+x = 0
+y = 0
+
+[State 0, 2]
+type = PosSet
+trigger1 = !time
+y = 0
+
+;SOUL NINJA
+[State 317, 4]
+type = ChangeAnim
+trigger1 = Name = "Juano`s Sub guy"
+trigger1 = !time
+value = 70851
+
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 = Name = "Juano`s Sub guy"
+trigger1 = time = 0
+value = S2,10+var(0)
+
+[State 220, Effect]
+type = PlaySnd
+triggerall = AuthorName != "GM"
+triggerall = AuthorName != "warusaki3"
+triggerall = Name != "Juano`s Sub guy"
+triggerall = AuthorName != "Phantom.of.the.Server"
+triggerall = time = 1
+trigger1 = time = 1
+value = 11, 1
+
+[State 220, Effect]
+type = PlaySnd
+triggerall = time = 1
+trigger1 = AuthorName = "Phantom.of.the.Server"
+value = 11, 1
+
+[State 220, Effect]
+type = PlaySnd
+triggerall = time = 1
+trigger1 = AuthorName = "GM"
+value = 11, 2
+
+[State 220, Effect]
+type = PlaySnd
+triggerall = time = 1
+trigger1 = AuthorName = "warusaki3"
+value = 5950, 0
+
+[State 220, Effect]
+type = PlaySnd
+triggerall = time = 1
+trigger1 = Name = "cvsrugal"
+value = 5950, 10
+
+[State 0, cae]
+type = selfstate
+triggerall = !animtime
+triggerall = Name = "Juano`s Sub guy"
+trigger1 = pos Y <= -10
+trigger2 = alive = 0
+value = 5050
+ctrl = 0
+
+[State 0, ChangeState]
+type = selfstate
+trigger1 = !animtime
+triggerall = Name = "Juano`s Sub guy"
+triggerall = alive = 1
+triggerall = pos Y > -10
+value = 0
+ctrl = 1
+
+;GENERIC
+[State 317, 4]
+type = ChangeAnim2
+trigger1 = !time
+trigger1 = AuthorName != "OMEGAPSYCHO-MK" || AuthorName != "OMEGAPSYCHO-MKSecret"
+value = 345
+
+[State 317, 4]
+type = ChangeAnim2
+triggerall = !time
+triggerall = Var(4) = 0
+trigger1 = AuthorName = "OMEGAPSYCHO-MK"
+trigger2 = AuthorName = "OMEGAPSYCHO-MKSecret"
+value = 347
+
+;WOMEN ANTI GLITCH
+[State 317, 4]
+type = ChangeAnim
+triggerall = !time
+triggerall = Var(4) >= 1
+trigger1 = AuthorName = "OMEGAPSYCHO-MK"
+trigger2 = AuthorName = "OMEGAPSYCHO-MKSecret"
+value = 345
+
+[State 0, PlaySnd]
+type = PlaySnd
+triggerall = time = 0
+trigger1 = AuthorName = "OMEGAPSYCHO-MK"
+trigger2 = AuthorName = "OMEGAPSYCHO-MKSecret"
+value = S201, 1
+Volumescale = 100
+
+[State 0, cae]
+type = selfstate
+triggerall = !animtime
+triggerall = Name = "Juano`s Sub guy"
+trigger1 = pos Y <= -10
+trigger2 = alive = 0
+value = 5050
+ctrl = 0
+
+[State 0, ChangeState]
+type = selfstate
+trigger1 = !animtime
+triggerall = Name = "Juano`s Sub guy"
+triggerall = alive = 1
+triggerall = pos Y > -10
+value = 0
+ctrl = 1
+
+[State 0, ChangeState]
+type = selfstate
+triggerall = alive = 1
+triggerall = pos Y > -10
+trigger1 = !animtime
+value = 0
+ctrl = 1
+
+[State 0, ChangeState]
+type = selfstate
+triggerall = alive = 0
+triggerall = pos Y > -10
+trigger1 = !animtime
+value = 5050

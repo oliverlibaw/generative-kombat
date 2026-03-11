@@ -1,0 +1,824 @@
+
+;¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬
+;¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬
+;-----------------------------------------------------------------
+;FINISH HIM HELPER
+[StateDef 7000]
+type = S
+movetype = A
+physics = S
+anim = 7000
+velset = 0,0
+ctrl = 1
+
+[State -2, FATALITY TIME ONE TIME]
+type = ParentVarset
+triggerall = 1
+trigger1 = movecontact = 1
+trigger2 = movehit = 1
+trigger3 = p2stateno = 49999
+v = 55
+value = 1
+
+[State 7000, 1]
+type = HitDef
+triggerall = 1
+trigger1 = P2StateType != A
+trigger1 = P2MoveType != H
+trigger1 = P2Stateno != 49999
+trigger2 = P2Stateno != 29001
+attr = SCA, NA
+damage = 0,0
+animtype = Heavy
+hitflag = MA
+guardflag =  
+priority = 7,hit
+pausetime = 0,1
+sparkxy = 0,0
+sparkno = -1
+gurad.sparkno = -1
+hitsound = -1
+guardsound = -1
+ground.type = High
+ground.slidetime = 0
+ground.hittime = 0
+ground.velocity = 0
+air.velocity = 0
+air.fall = 1
+fall = 0
+p2stateno = 49999
+
+[state 7010, FINISH HIM/HER!]
+type = Helper
+triggerall = 1
+triggerall = Numhelper(7010) = 0
+trigger1 = p2stateno = 49999
+trigger2 = enemy,stateno = 49999
+trigger3 = enemynear,stateno = 49999
+id = 7010 
+stateno = 7010
+pos = 0, 0
+postype = left
+helpertype = normal
+name = "FINISH HIM!"
+keyctrl = 0
+size.xscale = 1
+size.yscale = 1
+
+[State 300, 5]
+type = DestroySelf
+triggerall = Numhelper(7010) >= 1
+trigger1 = Time >350
+trigger2 = 1
+trigger2 = enemynear,stateno = 49999
+trigger3 = 1
+trigger3 = enemynear,stateno = 29001
+
+;-----------------------------------------------------------------
+;FINISH HIM HELPER BACKUP
+[StateDef 7001]
+type = S
+movetype = A
+physics = S
+anim = 7000
+velset = 0,0
+ctrl = 1
+
+[State -2, FATALITY TIME ONE TIME]
+type = ParentVarset
+triggerall = 1
+trigger1 = movecontact = 1
+trigger2 = movehit = 1
+trigger3 = p2stateno = 49999
+v = 55
+value = 1
+
+[State 7000, 1]
+type = HitDef
+triggerall = 1
+trigger1 = P2StateType != A
+trigger1 = P2MoveType != H
+trigger1 = P2Stateno != 49999
+trigger2 = P2Stateno != 29001
+attr = SCA, NT
+damage = 0,0
+animtype = Heavy
+hitflag = MA
+guardflag =  
+priority = 7,hit
+pausetime = 0,1
+sparkxy = 0,0
+sparkno = -1
+gurad.sparkno = -1
+hitsound = -1
+guardsound = -1
+ground.type = High
+ground.slidetime = 0
+ground.hittime = 0
+ground.velocity = 0
+air.velocity = 0
+air.fall = 1
+fall = 0
+p2stateno = 49999
+
+[state 7010, FINISH HIM/HER!]
+type = Helper
+triggerall = 1
+triggerall = Numhelper(7010) = 0
+trigger1 = p2stateno = 49999
+trigger2 = enemy,stateno = 49999
+trigger3 = enemynear,stateno = 49999
+id = 7010 
+stateno = 7010
+pos = 0, 0
+postype = left
+helpertype = normal
+name = "FINISH HIM!"
+keyctrl = 0
+size.xscale = 1
+size.yscale = 1
+
+[State 300, 5]
+type = DestroySelf
+triggerall = Numhelper(7010) >= 1
+trigger1 = Time >350
+trigger2 = 1
+trigger2 = enemynear,stateno = 49999
+trigger3 = 1
+trigger3 = enemynear,stateno = 29001
+
+;-----------------------------------------------------------------------------
+;FINISH HIM!/HER!
+[Statedef 7010]
+type = S
+movetype= I
+physics = S
+juggle = 1
+velset = 0,0
+anim = Ifelse(Root,Var(4)=0,7010,7011)
+ctrl = 0
+
+[State 7010, 1]
+type = Posset
+trigger1 = 1
+x = -5
+y = -150
+
+[State 183, 1]
+type = AssertSpecial
+trigger1 = 1
+flag = Nomusic
+
+[State 7010, VOICE_OLD]
+type = PlaySnd
+trigger1 = root,var(25) = 1
+trigger1 = Time = 50
+value = S37, ifelse(root,Var(4)=0,1,2)
+Volumescale = 100
+
+[State 7010, VOICE NEW]
+type = PlaySnd
+trigger1 = root,var(25) = 0
+trigger1 = Time = 50
+value = S38, ifelse(root,Var(4)=0,1,2)
+Volumescale = 100
+
+[State 300, MUSIC_OLD] 
+type = playsnd
+trigger1 = root,var(25) = 1
+trigger1 = Time = 0
+value = S140,1
+channel = 7
+abspan = 0
+Loop = 1
+
+[State 300, MUSIC_NEW] 
+type = playsnd
+trigger1 = root,var(25) = 0
+trigger1 = Time = 0
+value = S141,1
+channel = 7
+abspan = 0
+Loop = 1
+
+[state -2]
+type = stopsnd
+triggerall = 1
+trigger1 = win
+trigger2 = lose
+trigger3 = roundstate != 2
+channel = 7
+ignorehitpause = 1
+
+[state 7010, 2]
+type = AssertSpecial
+trigger1 = 1
+flag = noshadow
+ignorehitpause = 1
+
+[State 7010, 3]
+type = SprPriority
+trigger1 = 1
+value = 20 
+
+[State 6, 1]
+type = NotHitBy
+trigger1 = 1
+value = SCA
+time = 1
+
+[State 1007, Finish big]
+type = AngleDraw
+trigger1 = time =0
+value = 0
+scale = 0,0
+
+[State 1007, Finish big]
+type = AngleDraw
+trigger1 = time >0
+trigger1 = time <50
+value = 0
+scale = IfElse(Time >0,0+(Time*0.02),0.5), IfElse(Time >0,0+(Time*0.02),0.5)
+
+[State 1007, Finish big]
+type = AngleDraw
+trigger1 = time >=50
+trigger1 = time <=150
+value = 0
+scale = 1,1
+
+[State 5, 0]
+type = AngleDraw
+trigger1 = time >150
+value = 0
+scale = FVar(14) * Const(size.xscale), FVar(14) * Const(size.yscale)
+
+[State -2, VarAdd]
+type = Varset
+trigger1 = Time = 150
+ignorehitpause = 1
+fv = 14
+value = 1
+
+[State -2, VarAdd]
+type = Varadd
+trigger1 = Time > 150
+ignorehitpause = 1
+fv = 14
+value = -0.02
+
+[State -2, VarAdd]
+type = Varadd
+trigger1 = Time >= 200
+ignorehitpause = 1
+fv = 14
+value = 0
+
+[State 1007, Finish big]
+type = AngleDraw
+trigger1 = time >200
+value = 0
+scale = 0,0
+
+[State 300, 5]
+type = DestroySelf
+trigger1 = animtime = 0
+
+;-------------------------------------------------------------------
+;FATALITY MSG
+[Statedef 7700]
+type = S
+movetype = I
+physics = N
+anim = 1010
+sprpriority = 9999
+
+[State 1000, 3]
+type = SprPriority
+trigger1 = 1
+value = 9999
+
+[State 1, 1]
+type = AssertSpecial
+trigger1 = 1
+flag = NoShadow
+
+[State ]
+type = velset
+trigger1 = 1
+y = 0
+x = 0
+
+[State ]
+type = posset
+trigger1 = 1
+x = -85
+y = -150
+
+[State 7, deadsound]
+type = PlaySnd
+triggerall = root,var(25)= 0
+trigger1 = time = 0
+value = S161, root,Var(8)
+Volumescale = 100
+
+[State 7, FATALITY_Voice_NEW]
+type = PlaySnd
+triggerall = root,var(25)= 0
+trigger1 = time = 25
+value = S42,ifelse(random<=420,1,2)
+Volumescale = 100
+
+[State 7, FATALITY_Voice_OLD]
+type = PlaySnd
+triggerall = root,var(25)= 1
+trigger1 = time = 25
+value = S41,1
+Volumescale = 100
+
+[State 4, Push]
+type = Helper
+trigger1 = time = 25
+trigger2 = time = 105
+trigger3 = time = 185
+trigger4 = time = 265
+trigger5 = time = 345
+trigger6 = time = 425
+trigger7 = time = 505
+trigger8 = time = 585
+trigger9 = time = 665
+trigger10 = time = 745
+trigger11 = time = 825
+trigger12 = time = 905
+helpertype = normal
+name = "BLOODDROPS"
+id = 7695
+pos = 5,23
+postype = p1
+stateno = 7695
+sprpriority = 95
+keyctrl = 0
+ownpal = 1
+
+[State 4, Push]
+type = Helper
+trigger1 = time = 95
+trigger2 = time = 165
+trigger3 = time = 235
+trigger4 = time = 305
+trigger5 = time = 375
+trigger6 = time = 445
+trigger7 = time = 515
+trigger8 = time = 655
+trigger9 = time = 725
+trigger10 = time = 795
+trigger11 = time = 865
+trigger12 = time = 935
+helpertype = normal
+name = "BLOODDROPS"
+id = 7695
+pos = 20,23
+postype = p1
+stateno = 7695
+sprpriority = 95
+keyctrl = 0
+ownpal = 1
+
+[State 4, Push]
+type = Helper
+trigger1 = time = 71
+trigger2 = time = 117
+trigger3 = time = 163
+trigger4 = time = 209
+trigger5 = time = 255
+trigger6 = time = 301
+trigger7 = time = 347
+trigger8 = time = 393
+trigger9 = time = 439
+trigger10 = time = 485
+trigger11 = time = 531
+trigger12 = time = 577
+helpertype = normal
+name = "BLOODDROPS"
+id = 7695
+pos = 35,23
+postype = p1
+stateno = 7695
+sprpriority = 95
+keyctrl = 0
+ownpal = 1
+
+[State 4, Push]
+type = Helper
+trigger1 = time = 63
+trigger2 = time = 100
+trigger3 = time = 137
+trigger4 = time = 174
+trigger5 = time = 213
+trigger6 = time = 248
+trigger7 = time = 284
+trigger8 = time = 326
+trigger9 = time = 355
+trigger10 = time = 400
+trigger11 = time = 437
+trigger12 = time = 461
+helpertype = normal
+name = "BLOODDROPS"
+id = 7695
+pos = 50,23
+postype = p1
+stateno = 7695
+sprpriority = 95
+keyctrl = 0
+ownpal = 1
+
+[State 4, Push]
+type = Helper
+trigger1 = time = 115
+trigger2 = time = 208
+trigger3 = time = 301
+trigger4 = time = 394
+trigger5 = time = 487
+trigger6 = time = 580
+trigger7 = time = 673
+trigger8 = time = 766
+trigger9 = time = 859
+trigger10 = time = 952
+helpertype = normal
+name = "BLOODDROPS"
+id = 7695
+pos = 65,23
+postype = p1
+stateno = 7695
+sprpriority = 95
+keyctrl = 0
+ownpal = 1
+
+[State 4, Push]
+type = Helper
+trigger1 = time = 37
+trigger2 = time = 74
+trigger3 = time = 111
+trigger4 = time = 148
+trigger5 = time = 185
+trigger6 = time = 222
+trigger7 = time = 259
+trigger8 = time = 296
+trigger9 = time = 333
+trigger10 = time = 370
+trigger11 = time = 407
+trigger12 = time = 444
+helpertype = normal
+name = "BLOODDROPS"
+id = 7695
+pos = 80,23
+postype = p1
+stateno = 7695
+sprpriority = 95
+keyctrl = 0
+ownpal = 1
+
+[State 4, Push]
+type = Helper
+trigger1 = time = 46
+trigger2 = time = 92
+trigger3 = time = 138
+trigger4 = time = 184
+trigger5 = time = 230
+trigger6 = time = 276
+trigger7 = time = 322
+trigger8 = time = 368
+trigger9 = time = 414
+trigger10 = time = 460
+trigger11 = time = 506
+trigger12 = time = 552
+helpertype = normal
+name = "BLOODDROPS"
+id = 7695
+pos = 95,23
+postype = p1
+stateno = 7695
+sprpriority = 95
+keyctrl = 0
+ownpal = 1
+
+[State 4, Push]
+type = Helper
+trigger1 = time = 33
+trigger2 = time = 93
+trigger3 = time = 153
+trigger4 = time = 213
+trigger5 = time = 273
+trigger6 = time = 345
+trigger7 = time = 393
+trigger8 = time = 453
+trigger9 = time = 513
+trigger10 = time = 573
+trigger11 = time = 633
+trigger12 = time = 693
+helpertype = normal
+name = "BLOODDROPS"
+id = 7695
+pos = 110,23
+postype = p1
+stateno = 7695
+sprpriority = 95
+keyctrl = 0
+ownpal = 1
+
+[State 4, Push]
+type = Helper
+trigger1 = time = 29
+trigger2 = time = 119
+trigger3 = time = 199
+trigger4 = time = 279
+trigger5 = time = 359
+trigger6 = time = 439
+trigger7 = time = 519
+trigger8 = time = 599
+trigger9 = time = 679
+trigger10 = time = 759
+trigger11 = time = 823
+trigger12 = time = 919
+helpertype = normal
+name = "BLOODDROPS"
+id = 7695
+pos = 125,23
+postype = p1
+stateno = 7695
+sprpriority = 95
+keyctrl = 0
+ownpal = 1
+
+[State 4, Push]
+type = Helper
+trigger1 = time = 32
+trigger2 = time = 125
+trigger3 = time = 215
+trigger4 = time = 285
+trigger5 = time = 365
+trigger6 = time = 445
+trigger7 = time = 525
+trigger8 = time = 605
+trigger9 = time = 685
+trigger10 = time = 765
+trigger11 = time = 845
+trigger12 = time = 1000
+helpertype = normal
+name = "BLOODDROPS"
+id = 7695
+pos = 140,23
+postype = p1
+stateno = 7695
+sprpriority = 95
+keyctrl = 0
+ownpal = 1
+
+[State 4, Push]
+type = Helper
+trigger1 = time = 43
+trigger2 = time = 116
+trigger3 = time = 196
+trigger4 = time = 276
+trigger5 = time = 356
+trigger6 = time = 436
+trigger7 = time = 516
+trigger8 = time = 596
+trigger9 = time = 676
+trigger10 = time = 756
+trigger11 = time = 836
+trigger12 = time = 916
+helpertype = normal
+name = "BLOODDROPS"
+id = 7695
+pos = 155,23
+postype = p1
+stateno = 7695
+sprpriority = 95
+keyctrl = 0
+ownpal = 1
+
+;---------------------------------------------------------------------
+;BLOOD DROPS 1
+[Statedef 7695]
+type = S
+movetype = I
+physics = N
+anim = 1011
+sprpriority = 95
+
+[State 1, 1]
+type = AssertSpecial
+trigger1 = 1
+flag = NoShadow
+
+[State ]
+type = velset
+trigger1 = 1
+y = 0
+x = 0
+
+[State ]
+type = assertspecial
+trigger1 = 1
+flag = noshadow
+
+[State end]
+type = changestate
+trigger1 = Animtime = 0
+value = 7596
+
+;-------------------------------------------------------------------
+;BLOOD DROPS 2
+[Statedef 7596]
+type = S
+movetype = I
+physics = N
+anim = 1012
+sprpriority = 95
+
+[State 1, 1]
+type = AssertSpecial
+trigger1 = 1
+flag = NoShadow
+
+[State ]
+type = VelSet
+trigger1 = time = 0
+y = 0
+x = 0
+
+[State ]
+type = VelAdd
+trigger1 = time >0
+y = .3
+
+[State end]
+type = changestate
+trigger1 = (Vel Y > 0)&&(Pos Y >= 0)
+value = 7597
+
+;-------------------------------------------------------------------
+;BLOOD DROPS 3
+[Statedef 7597]
+type = S
+movetype = I
+physics = N
+anim = 1013
+
+[State 1, 1]
+type = AssertSpecial
+trigger1 = 1
+flag = NoShadow
+
+[State 7, 1]
+type = PlaySnd
+trigger1 = random<=400
+trigger1 = root,var(25) = 1
+trigger1 = animelem = 1
+value = S10,ifelse(random<=400,2,ifelse(random>400,3,4))
+
+[State 7, 0]
+type = PlaySnd
+trigger1 = random<=400
+trigger1 = root,var(25) = 0
+trigger1 = animelem = 1
+value = S10,ifelse(random<=400,7,8)
+
+[State 7, deadsound]
+type = velset
+trigger1 = time = 0
+y = 0
+x = 0
+
+[State ]
+type = posset
+trigger1 = 1
+y = 0
+
+[State end]
+type = destroyself
+trigger1 = animtime = 0
+
+;----------------------------------------------------------------
+;DANGER OFF
+[Statedef 22200]
+type    = S
+movetype= I
+physics = N
+poweradd= 0
+anim = 9999
+ctrl = 0
+velset = 0,0
+sprpriority = 2
+
+[State ]
+type = Posset
+trigger1 = time = 0
+x = 0
+y = 0
+
+[State ]
+type = velset
+trigger1 = 1
+x = 0
+y = 0
+
+[State 5120, 3]
+type = NotHitBy
+trigger1 = 1
+value = SCA
+time = 1
+
+[State 981]
+type = RemoveExplod
+trigger1 = 1
+ID = 22200
+
+[State end]
+type = Changestate
+triggerall = Root,life <= Root,Lifemax/8
+trigger1 = 1
+value = 22201
+
+[State end]
+type = Destroyself
+trigger1 = Animtime = 0
+
+;----------------------------------------------------------------
+;DANGER ON
+[Statedef 22201]
+type    = S
+movetype= I
+physics = N
+poweradd= 0
+anim = 9999
+ctrl = 0
+velset = 0,0
+sprpriority = 2
+
+[State ]
+type = Posset
+trigger1 = time = 0
+x = 0
+y = 0
+
+[State ]
+type = velset
+trigger1 = 1
+x = 0
+y = 0
+
+[State 5120, 3]
+type = NotHitBy
+trigger1 = 1
+value = SCA
+time = 1
+
+[State 5152, 1]
+type = PlaySnd
+trigger1 = time = 1
+value = S222, 0
+abspan = 0
+pan = 0
+volumescale = 100
+
+[State -2, 1]
+type = Explod
+trigger1 = TeamSide = 1
+trigger1 = NumExplod(22200) = 0
+trigger1 = 1
+anim = 22200
+ID = 22200
+pos = 135,35
+sprpriority = 50
+postype = Left
+bindtime = -1
+ignorehitpause = 1
+scale = 0.5,0.5
+ownpal = 1
+
+[State -2, 1]
+type = Explod
+trigger1 = TeamSide = 2
+trigger1 = NumExplod(22200) = 0
+trigger1 = 1
+anim = 22200
+ID = 22200
+pos = -135,35
+sprpriority = 50
+postype = right
+bindtime = -1
+ignorehitpause = 1
+scale = 0.5,0.5
+ownpal = 1
+
+[State end]
+type = Changestate
+triggerall = Root,life > Root,Lifemax/8
+trigger1 = 1
+value = 22200
+
+[State end]
+type = Destroyself
+trigger1 = Animtime = 0

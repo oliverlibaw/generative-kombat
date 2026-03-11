@@ -1,0 +1,2461 @@
+;----------------------------------------------------------------
+;STAND LOW PUNCH 1-1
+[Statedef 200]
+type    = S
+movetype= A
+physics = S
+poweradd= 0
+ctrl = 0
+anim = 200
+velset = 0,0
+sprpriority = 2
+
+[State 0, stop]
+type = posset
+triggerall = enemy,AuthorName != "OMEGAPSYCHO-BOSS"
+trigger1 = Time = 0
+y = 0
+[State 0, stop]
+type = posset
+trigger1 = 1
+trigger1 = Pos Y >0
+y = 0
+
+[State 0, 2]
+type = VelSet
+trigger1 = time = 0
+x = 0
+y = 0
+
+[State 7, move_sound]
+type = PlaySnd
+trigger1 = Animelem = 2
+value = S1, ifelse(random<=500,1,2)
+
+[State 7, voice]
+type = PlaySnd
+trigger1 = Animelem = 2
+value = S200, ifelse(random<=500,1,2)
+
+[State ]
+type = Hitdef
+triggerall = enemy,AuthorName = "OMEGAPSYCHO-BOSS"
+trigger1 = !time
+damage = 30,3
+getpower = 0,0
+givepower = 0,0
+PauseTime = 1, 1
+attr = SCA,NA
+Hitflag = MAF
+guardflag = 
+animtype = light
+air.animtype = Light
+priority = 4, hit
+sparkno = -1
+guard.sparkno = -1
+sparkxy = 0, 0
+hitsound = S3,ifelse(random<=500,1,ifelse(random>500,2,3))
+guardsound = S2,ifelse(random<=500,1,ifelse(random>500,2,3))
+ground.type = low
+air.type = low
+ground.slidetime = 10
+ground.hittime = 14
+ground.velocity = -3
+guard.velocity = -3
+air.velocity = -1,-4
+air.cornerpush.veloff = -4
+ground.cornerpush.veloff = -3
+YAccel = .31
+air.fall = 1
+fall.recover = 0
+fall.xvelocity = 0
+fall.yvelocity = 0
+kill = 1
+guard.kill = 1
+
+[State ]
+type = Hitdef
+triggerall = enemy,AuthorName != "OMEGAPSYCHO-BOSS"
+trigger1 = Var(1) <600
+trigger1 = !time
+damage = 30,3
+getpower = 0,0
+givepower = 0,0
+PauseTime = 1, 1
+attr = SCA,NA
+Hitflag = MAF
+guardflag = M
+animtype = light
+air.animtype = Light
+priority = 4, hit
+sparkno = -1
+guard.sparkno = -1
+sparkxy = 0, 0
+hitsound = S3,ifelse(random<=500,1,ifelse(random>500,2,3))
+guardsound = S2,ifelse(random<=500,1,ifelse(random>500,2,3))
+ground.type = low
+air.type = low
+ground.slidetime = 10
+ground.hittime = 14
+ground.velocity = 0
+guard.velocity = 0
+air.velocity = -1,-4
+air.cornerpush.veloff = -4
+ground.cornerpush.veloff = 0
+YAccel = .31
+air.fall = 1
+fall.recover = 0
+fall.xvelocity = 0
+fall.yvelocity = 0
+p2facing = 1
+kill = !var(58) || 1*p2stateno = 49999
+guard.kill = !var(58) || 1*p2stateno = 49999
+p1stateno = ifelse(p2statetype=A&&Var(0)>1,123456,(ifelse(FrontEdgeBodyDist <64&&Var(1)>599,123456,-1)))
+[State ]
+type = Hitdef
+triggerall = enemy,AuthorName != "OMEGAPSYCHO-BOSS"
+trigger1 = Var(1)>=600
+trigger1 = !time
+damage = 0,0
+getpower = 0,0
+givepower = 0,0
+PauseTime = 1, 1
+attr = SCA,NA
+Hitflag = MAF
+guardflag = 
+animtype = light
+air.animtype = Light
+priority = 4, hit
+sparkno = -1
+guard.sparkno = -1
+sparkxy = 0, 0
+hitsound = S3,ifelse(random<=500,1,ifelse(random>500,2,3))
+guardsound = S2,ifelse(random<=500,1,ifelse(random>500,2,3))
+ground.type = low
+air.type = low
+ground.slidetime = 10
+ground.hittime = 14
+ground.velocity = -3
+guard.velocity = -3
+air.velocity = -1,-4
+air.cornerpush.veloff = -4
+ground.cornerpush.veloff = -3
+YAccel = .31
+air.fall = 1
+fall.recover = 0
+fall.xvelocity = 0
+fall.yvelocity = 0
+p2facing = 1
+kill = !var(58) || 1*p2stateno = 49999
+guard.kill = !var(58) || 1*p2stateno = 49999
+p1stateno = ifelse(p2statetype=A&&Var(0)>1,123456,(ifelse(FrontEdgeBodyDist <64&&Var(1)>599,123456,-1)))
+p2stateno = ifelse(p2statetype!=A,123456,123459)
+
+
+
+[State 300, 5]
+type = movehitreset
+Trigger1 = time = 0
+
+[State -2, Low_High_Punches]
+Type = VarRangeSet
+trigger1 = time <= 0
+Value = 0
+First = 2
+Last = 3
+
+[State 0, 1]
+type = Varadd
+trigger1 = p2Statetype = A
+trigger1 = movecontact
+trigger1 = animelemtime(3)=3
+v = 0
+value = 2
+
+[State 0, 1]
+type = Varadd
+trigger1 = p2Statetype != A
+trigger1 = movecontact
+trigger1 = animelemtime(3)=3
+v = 1
+value = 100
+
+[State 0, 1]
+type = Varset
+trigger1 = var(50) = 0
+trigger1 = time >1
+trigger1 = command = "x"
+v = 2
+value = 1
+[State 0, 1]
+type = Varset
+trigger1 = var(50) = 0
+trigger1 = var(2) = 0
+trigger1 = time >1
+trigger1 = command = "y"
+v = 3
+value = 1
+
+[State end]
+type = changestate
+triggerall = animtime = 0
+trigger1 = var(2) = 0
+trigger1 = var(3) = 0
+value = 204
+
+[State end]
+type = changestate
+triggerall = animtime = 0
+trigger1 = var(2) >= 1
+value = 201
+[State end]
+type = changestate
+triggerall = animtime = 0
+trigger1 = var(3) >= 1
+value = 203
+
+[State 0, 1]
+type = VarSet
+trigger1 = time<=1
+v = 7
+value = 0
+
+[State 0, 1]
+type = VarSet
+trigger1 = p2Statetype != A
+trigger1 = movecontact
+trigger1 = animelemtime(3)=3
+v = 7
+value = 1
+
+[State end]
+type = changestate
+trigger1 = var(7) = 1
+trigger1 = var(50) = 1
+value = 201
+
+;----------------------------------------------------------------
+;STAND LOW PUNCH 1-2
+[Statedef 201]
+type    = S
+movetype= A
+physics = S
+poweradd= 0
+ctrl = 0
+anim = 202
+velset = 0,0
+sprpriority = 2
+
+[State 0, stop]
+type = posset
+triggerall = enemy,AuthorName != "OMEGAPSYCHO-BOSS"
+trigger1 = Time = 0
+y = 0
+[State 0, stop]
+type = posset
+trigger1 = 1
+trigger1 = Pos Y >0
+y = 0
+
+[State 0, 2]
+type = VelSet
+trigger1 = time = 0
+x = 0
+y = 0
+
+[State 7, move_sound]
+type = PlaySnd
+trigger1 = Animelem = 2
+value = S1, ifelse(random<=500,1,2)
+
+[State ]
+type = Hitdef
+triggerall = enemy,AuthorName = "OMEGAPSYCHO-BOSS"
+trigger1 = !time
+damage = 30,3
+getpower = 0,0
+givepower = 0,0
+PauseTime = 1, 1
+attr = SCA,NA
+Hitflag = MAF
+guardflag = 
+animtype = light
+air.animtype = Light
+priority = 4, hit
+sparkno = -1
+guard.sparkno = -1
+sparkxy = 0, 0
+hitsound = S3,ifelse(random<=500,1,ifelse(random>500,2,3))
+guardsound = S2,ifelse(random<=500,1,ifelse(random>500,2,3))
+ground.type = low
+air.type = low
+ground.slidetime = 10
+ground.hittime = 14
+ground.velocity = -3
+guard.velocity = -3
+air.velocity = -1,-4
+air.cornerpush.veloff = -4
+ground.cornerpush.veloff = -3
+YAccel = .31
+air.fall = 1
+fall.recover = 0
+fall.xvelocity = 0
+fall.yvelocity = 0
+kill = 1
+guard.kill = 1
+
+[State ]
+type = Hitdef
+triggerall = enemy,AuthorName != "OMEGAPSYCHO-BOSS"
+trigger1 = Var(1) <600
+trigger1 = !time
+damage = 30,3
+getpower = 0,0
+givepower = 0,0
+PauseTime = 1, 1
+attr = SCA,NA
+Hitflag = MAF
+guardflag = M
+animtype = light
+air.animtype = Light
+priority = 4, hit
+sparkno = -1
+guard.sparkno = -1
+sparkxy = 0, 0
+hitsound = S3,ifelse(random<=500,1,ifelse(random>500,2,3))
+guardsound = S2,ifelse(random<=500,1,ifelse(random>500,2,3))
+ground.type = low
+air.type = low
+ground.slidetime = 10
+ground.hittime = 14
+ground.velocity = 0
+guard.velocity = 0
+air.velocity = -1,-4
+air.cornerpush.veloff = -4
+ground.cornerpush.veloff = 0
+YAccel = .31
+air.fall = 1
+fall.recover = 0
+fall.xvelocity = 0
+fall.yvelocity = 0
+p2facing = 1
+kill = !var(58) || 1*p2stateno = 49999
+guard.kill = !var(58) || 1*p2stateno = 49999
+p1stateno = ifelse(p2statetype=A&&Var(0)>1,123456,(ifelse(FrontEdgeBodyDist <64&&Var(1)>599,123456,-1)))
+[State ]
+type = Hitdef
+triggerall = enemy,AuthorName != "OMEGAPSYCHO-BOSS"
+trigger1 = Var(1)>=600
+trigger1 = !time
+damage = 0,0
+getpower = 0,0
+givepower = 0,0
+PauseTime = 1, 1
+attr = SCA,NA
+Hitflag = MAF
+guardflag = 
+animtype = light
+air.animtype = Light
+priority = 4, hit
+sparkno = -1
+guard.sparkno = -1
+sparkxy = 0, 0
+hitsound = S3,ifelse(random<=500,1,ifelse(random>500,2,3))
+guardsound = S2,ifelse(random<=500,1,ifelse(random>500,2,3))
+ground.type = low
+air.type = low
+ground.slidetime = 10
+ground.hittime = 14
+ground.velocity = -3
+guard.velocity = -3
+air.velocity = -1,-4
+air.cornerpush.veloff = -4
+ground.cornerpush.veloff = -3
+YAccel = .31
+air.fall = 1
+fall.recover = 0
+fall.xvelocity = 0
+fall.yvelocity = 0
+p2facing = 1
+kill = !var(58) || 1*p2stateno = 49999
+guard.kill = !var(58) || 1*p2stateno = 49999
+p1stateno = ifelse(p2statetype=A&&Var(0)>1,123456,(ifelse(FrontEdgeBodyDist <64&&Var(1)>599,123456,-1)))
+p2stateno = ifelse(p2statetype!=A,123456,123459)
+
+[State 300, 5]
+type = movehitreset
+Trigger1 = time = 0
+
+[State -2, Low_High_Punches]
+Type = VarRangeSet
+trigger1 = time <= 0
+Value = 0
+First = 2
+Last = 3
+
+[State 0, 1]
+type = Varadd
+trigger1 = p2Statetype = A
+trigger1 = movecontact
+trigger1 = animelemtime(3)=3
+v = 0
+value = 2
+
+[State 0, 1]
+type = Varadd
+trigger1 = p2Statetype != A
+trigger1 = movecontact
+trigger1 = animelemtime(3)=3
+v = 1
+value = 100
+
+[State 0, 1]
+type = Varset
+trigger1 = var(50) = 0
+trigger1 = time >1
+trigger1 = command = "x"
+v = 2
+value = 1
+[State 0, 1]
+type = Varset
+trigger1 = var(50) = 0
+trigger1 = var(2) = 0
+trigger1 = time >1
+trigger1 = command = "y"
+v = 3
+value = 1
+
+
+[State end]
+type = changestate
+triggerall = animtime = 0
+trigger1 = var(2) = 0
+trigger1 = var(3) = 0
+value = 204
+
+[State end]
+type = changestate
+triggerall = animtime = 0
+trigger1 = var(2) >= 1
+value = 200
+[State end]
+type = changestate
+triggerall = animtime = 0
+trigger1 = var(3) >= 1
+value = 202
+
+[State 0, 1]
+type = VarSet
+trigger1 = time<=1
+v = 7
+value = 0
+
+[State 0, 1]
+type = VarSet
+trigger1 = p2Statetype != A
+trigger1 = movecontact
+trigger1 = animelemtime(3)=3
+v = 7
+value = 1
+
+[State end]
+type = changestate
+trigger1 = var(7) = 1
+trigger1 = var(50) = 1
+value = 200
+
+;----------------------------------------------------------------
+;STAND LOW PUNCH 2-1
+[Statedef 202]
+type    = S
+movetype= A
+physics = S
+poweradd= 0
+ctrl = 0
+anim = 204
+velset = 0,0
+sprpriority = 2
+
+[State 0, stop]
+type = posset
+triggerall = enemy,AuthorName != "OMEGAPSYCHO-BOSS"
+trigger1 = Time = 0
+y = 0
+[State 0, stop]
+type = posset
+trigger1 = 1
+trigger1 = Pos Y >0
+y = 0
+
+[State 0, 2]
+type = VelSet
+trigger1 = time = 0
+x = 0
+y = 0
+
+[State ]
+type = Helper
+triggerall = p2statetype != A
+triggerall = Var(1) <600
+triggerall = numhelper(8001) = 0
+trigger1 = movehit
+trigger1 = time <= 10
+helpertype = Normal
+ID = 8001
+name = "BLOOD_SPLAT_2" 
+postype = p2
+pos = 0+(const(size.head.pos.x)),0+(const(size.head.pos.y))
+stateno = 8000
+ignorehitpause = 1
+ownpal = 1
+keyctrl = 0
+
+[State 7, move_sound]
+type = PlaySnd
+trigger1 = Animelem = 2
+value = S1, ifelse(random<=500,1,2)
+
+[State 7, voice]
+type = PlaySnd
+trigger1 = Animelem = 2
+value = S200, ifelse(random<=500,1,2)
+
+[State ]
+type = Hitdef
+triggerall = enemy,AuthorName = "OMEGAPSYCHO-BOSS"
+trigger1 = !time
+damage = 30,3
+getpower = 0,0
+givepower = 0,0
+PauseTime = 1, 1
+attr = SCA,NA
+Hitflag = MAF
+guardflag = 
+animtype = light
+air.animtype = Light
+priority = 4, hit
+sparkno = -1
+guard.sparkno = -1
+sparkxy = 0, 0
+hitsound = S3,ifelse(random<=500,1,ifelse(random>500,2,3))
+guardsound = S2,ifelse(random<=500,1,ifelse(random>500,2,3))
+ground.type = low
+air.type = low
+ground.slidetime = 10
+ground.hittime = 14
+ground.velocity = -3
+guard.velocity = -3
+air.velocity = -1,-4
+air.cornerpush.veloff = -4
+ground.cornerpush.veloff = -3
+YAccel = .31
+air.fall = 1
+fall.recover = 0
+fall.xvelocity = 0
+fall.yvelocity = 0
+kill = 1
+guard.kill = 1
+
+[State ]
+type = Hitdef
+triggerall = enemy,AuthorName != "OMEGAPSYCHO-BOSS"
+trigger1 = Var(1) <600
+trigger1 = !time
+damage = 30,3
+getpower = 0,0
+givepower = 0,0
+PauseTime = 1, 1
+attr = SCA,NA
+Hitflag = MAF
+guardflag = M
+animtype = light
+air.animtype = Light
+priority = 4, hit
+sparkno = -1
+guard.sparkno = -1
+sparkxy = 0, 0
+hitsound = S3,ifelse(random<=500,1,ifelse(random>500,2,3))
+guardsound = S2,ifelse(random<=500,1,ifelse(random>500,2,3))
+ground.type = High
+air.type = low
+ground.slidetime = 10
+ground.hittime = 14
+ground.velocity = 0
+guard.velocity = 0
+air.velocity = -1,-4
+air.cornerpush.veloff = -4
+ground.cornerpush.veloff = 0
+YAccel = .31
+air.fall = 1
+fall.recover = 0
+fall.xvelocity = 0
+fall.yvelocity = 0
+p2facing = 1
+kill = !var(58) || 1*p2stateno = 49999
+guard.kill = !var(58) || 1*p2stateno = 49999
+p1stateno = ifelse(p2statetype=A&&Var(0)>1,123456,(ifelse(FrontEdgeBodyDist <64&&Var(1)>599,123456,-1)))
+[State ]
+type = Hitdef
+triggerall = enemy,AuthorName != "OMEGAPSYCHO-BOSS"
+trigger1 = Var(1)>=600
+trigger1 = !time
+damage = 0,0
+getpower = 0,0
+givepower = 0,0
+PauseTime = 1, 1
+attr = SCA,NA
+Hitflag = MAF
+guardflag = 
+animtype = light
+air.animtype = Light
+priority = 4, hit
+sparkno = -1
+guard.sparkno = -1
+sparkxy = 0, 0
+hitsound = S3,ifelse(random<=500,1,ifelse(random>500,2,3))
+guardsound = S2,ifelse(random<=500,1,ifelse(random>500,2,3))
+ground.type = High
+air.type = low
+ground.slidetime = 10
+ground.hittime = 14
+ground.velocity = -3
+guard.velocity = -3
+air.velocity = -1,-4
+air.cornerpush.veloff = -4
+ground.cornerpush.veloff = -3
+YAccel = .31
+air.fall = 1
+fall.recover = 0
+fall.xvelocity = 0
+fall.yvelocity = 0
+p2facing = 1
+kill = !var(58) || 1*p2stateno = 49999
+guard.kill = !var(58) || 1*p2stateno = 49999
+p1stateno = ifelse(p2statetype=A&&Var(0)>1,123456,(ifelse(FrontEdgeBodyDist <64&&Var(1)>599,123456,-1)))
+p2stateno = ifelse(p2statetype!=A,123456,123459)
+
+[State 300, 5]
+type = movehitreset
+Trigger1 = time = 0
+
+[State -2, Low_High_Punches]
+Type = VarRangeSet
+trigger1 = time <= 0
+Value = 0
+First = 2
+Last = 3
+
+[State 0, 1]
+type = Varadd
+trigger1 = p2Statetype = A
+trigger1 = movecontact
+trigger1 = animelemtime(3)=3
+v = 0
+value = 2
+
+[State 0, 1]
+type = Varadd
+trigger1 = p2Statetype != A
+trigger1 = movecontact
+trigger1 = animelemtime(3)=3
+v = 1
+value = 100
+
+[State 0, 1]
+type = Varset
+trigger1 = var(50) = 0
+trigger1 = time >1
+trigger1 = command = "x"
+v = 2
+value = 1
+[State 0, 1]
+type = Varset
+trigger1 = var(50) = 0
+trigger1 = var(2) = 0
+trigger1 = time >1
+trigger1 = command = "y"
+v = 3
+value = 1
+
+
+[State end]
+type = changestate
+triggerall = animtime = 0
+trigger1 = var(2) = 0
+trigger1 = var(3) = 0
+value = 204
+
+[State end]
+type = changestate
+triggerall = animtime = 0
+trigger1 = var(2) >= 1
+value = 201
+[State end]
+type = changestate
+triggerall = animtime = 0
+trigger1 = var(3) >= 1
+value = 203
+
+[State 0, 1]
+type = VarSet
+trigger1 = time<=1
+v = 7
+value = 0
+
+[State 0, 1]
+type = VarSet
+trigger1 = p2Statetype != A
+trigger1 = movecontact
+trigger1 = animelemtime(3)=3
+v = 7
+value = 1
+
+[State end]
+type = changestate
+trigger1 = var(7) = 1
+trigger1 = var(50) = 1
+value = 203
+
+;----------------------------------------------------------------
+;STAND LOW PUNCH 2-2
+[Statedef 203]
+type    = S
+movetype= A
+physics = S
+poweradd= 0
+ctrl = 0
+anim = 206
+velset = 0,0
+sprpriority = 2
+
+[State 0, stop]
+type = posset
+triggerall = enemy,AuthorName != "OMEGAPSYCHO-BOSS"
+trigger1 = Time = 0
+y = 0
+[State 0, stop]
+type = posset
+trigger1 = 1
+trigger1 = Pos Y >0
+y = 0
+
+[State 0, 2]
+type = VelSet
+trigger1 = time = 0
+x = 0
+y = 0
+
+[State ]
+type = Helper
+triggerall = p2statetype != A
+triggerall = Var(1) <600
+triggerall = numhelper(8001) = 0
+trigger1 = movehit
+trigger1 = time <= 10
+helpertype = Normal
+ID = 8001
+name = "BLOOD_SPLAT_2" 
+postype = p2
+pos = 0+(const(size.head.pos.x)),0+(const(size.head.pos.y))
+stateno = 8000
+ignorehitpause = 1
+ownpal = 1
+keyctrl = 0
+
+[State 7, move_sound]
+type = PlaySnd
+trigger1 = Animelem = 2
+value = S1, ifelse(random<=500,1,2)
+
+[State ]
+type = Hitdef
+triggerall = enemy,AuthorName = "OMEGAPSYCHO-BOSS"
+trigger1 = !time
+damage = 30,3
+getpower = 0,0
+givepower = 0,0
+PauseTime = 1, 1
+attr = SCA,NA
+Hitflag = MAF
+guardflag = 
+animtype = light
+air.animtype = Light
+priority = 4, hit
+sparkno = -1
+guard.sparkno = -1
+sparkxy = 0, 0
+hitsound = S3,ifelse(random<=500,1,ifelse(random>500,2,3))
+guardsound = S2,ifelse(random<=500,1,ifelse(random>500,2,3))
+ground.type = low
+air.type = low
+ground.slidetime = 10
+ground.hittime = 14
+ground.velocity = -3
+guard.velocity = -3
+air.velocity = -1,-4
+air.cornerpush.veloff = -4
+ground.cornerpush.veloff = -3
+YAccel = .31
+air.fall = 1
+fall.recover = 0
+fall.xvelocity = 0
+fall.yvelocity = 0
+kill = 1
+guard.kill = 1
+
+[State ]
+type = Hitdef
+triggerall = enemy,AuthorName != "OMEGAPSYCHO-BOSS"
+trigger1 = Var(1) <600
+trigger1 = !time
+damage = 30,3
+getpower = 0,0
+givepower = 0,0
+PauseTime = 1, 1
+attr = SCA,NA
+Hitflag = MAF
+guardflag = M
+animtype = light
+air.animtype = Light
+priority = 4, hit
+sparkno = -1
+guard.sparkno = -1
+sparkxy = 0, 0
+hitsound = S3,ifelse(random<=500,1,ifelse(random>500,2,3))
+guardsound = S2,ifelse(random<=500,1,ifelse(random>500,2,3))
+ground.type = High
+air.type = low
+ground.slidetime = 10
+ground.hittime = 14
+ground.velocity = 0
+guard.velocity = 0
+air.velocity = -1,-4
+air.cornerpush.veloff = -4
+ground.cornerpush.veloff = 0
+YAccel = .31
+air.fall = 1
+fall.recover = 0
+fall.xvelocity = 0
+fall.yvelocity = 0
+p2facing = 1
+kill = !var(58) || 1*p2stateno = 49999
+guard.kill = !var(58) || 1*p2stateno = 49999
+p1stateno = ifelse(p2statetype=A&&Var(0)>1,123456,(ifelse(FrontEdgeBodyDist <64&&Var(1)>599,123456,-1)))
+[State ]
+type = Hitdef
+triggerall = enemy,AuthorName != "OMEGAPSYCHO-BOSS"
+trigger1 = Var(1)>=600
+trigger1 = !time
+damage = 0,0
+getpower = 0,0
+givepower = 0,0
+PauseTime = 1, 1
+attr = SCA,NA
+Hitflag = MAF
+guardflag = 
+animtype = light
+air.animtype = Light
+priority = 4, hit
+sparkno = -1
+guard.sparkno = -1
+sparkxy = 0, 0
+hitsound = S3,ifelse(random<=500,1,ifelse(random>500,2,3))
+guardsound = S2,ifelse(random<=500,1,ifelse(random>500,2,3))
+ground.type = High
+air.type = low
+ground.slidetime = 10
+ground.hittime = 14
+ground.velocity = -3
+guard.velocity = -3
+air.velocity = -1,-4
+air.cornerpush.veloff = -4
+ground.cornerpush.veloff = -3
+YAccel = .31
+air.fall = 1
+fall.recover = 0
+fall.xvelocity = 0
+fall.yvelocity = 0
+p2facing = 1
+kill = !var(58) || 1*p2stateno = 49999
+guard.kill = !var(58) || 1*p2stateno = 49999
+p1stateno = ifelse(p2statetype=A&&Var(0)>1,123456,(ifelse(FrontEdgeBodyDist <64&&Var(1)>599,123456,-1)))
+p2stateno = ifelse(p2statetype!=A,123456,123459)
+
+[State 300, 5]
+type = movehitreset
+Trigger1 = time = 0
+
+[State -2, Low_High_Punches]
+Type = VarRangeSet
+trigger1 = time <= 0
+Value = 0
+First = 2
+Last = 3
+
+[State 0, 1]
+type = Varadd
+trigger1 = p2Statetype = A
+trigger1 = movecontact
+trigger1 = animelemtime(3)=3
+v = 0
+value = 2
+
+[State 0, 1]
+type = Varadd
+trigger1 = p2Statetype != A
+trigger1 = movecontact
+trigger1 = animelemtime(3)=3
+v = 1
+value = 100
+
+[State 0, 1]
+type = Varset
+trigger1 = var(50) = 0
+trigger1 = time >1
+trigger1 = command = "x"
+v = 2
+value = 1
+[State 0, 1]
+type = Varset
+trigger1 = var(50) = 0
+trigger1 = var(2) = 0
+trigger1 = time >1
+trigger1 = command = "y"
+v = 3
+value = 1
+
+[State end]
+type = changestate
+triggerall = animtime = 0
+trigger1 = var(2) = 0
+trigger1 = var(3) = 0
+value = 204
+
+[State end]
+type = changestate
+triggerall = animtime = 0
+trigger1 = var(2) >= 1
+value = 200
+[State end]
+type = changestate
+triggerall = animtime = 0
+trigger1 = var(3) >= 1
+value = 202
+
+[State 0, 1]
+type = VarSet
+trigger1 = time<=1
+v = 7
+value = 0
+
+[State 0, 1]
+type = VarSet
+trigger1 = p2Statetype != A
+trigger1 = movecontact
+trigger1 = animelemtime(3)=3
+v = 7
+value = 1
+
+[State end]
+type = changestate
+trigger1 = var(7) = 1
+trigger1 = var(50) = 1
+value = 202
+
+;----------------------------------------------------------------
+;STAND LOW & HIGH PUNCH END
+[Statedef 204]
+type    = S
+movetype= A
+physics = S
+poweradd= 0
+ctrl = 0
+velset = 0,0
+sprpriority = 2
+
+[State -2, Low_High_Punches]
+Type = VarRangeSet
+trigger1 = 1
+Value = 0
+First = 2
+Last = 3
+
+[State 0, 1]
+type = ChangeAnim
+triggerall = Prevstateno = 200
+trigger1 = !time
+value = 201
+
+[State 0, 1]
+type = ChangeAnim
+triggerall = Prevstateno = 201
+trigger1 = !time
+value = 203
+
+[State 0, 1]
+type = ChangeAnim
+triggerall = Prevstateno = 202
+trigger1 = !time
+value = 205
+
+[State 0, 1]
+type = ChangeAnim
+triggerall = Prevstateno = 203
+trigger1 = !time
+value = 207
+
+[State end]
+type = changestate
+trigger1 = time > 3
+trigger1 = animtime = 0
+value = 0
+Ctrl = 1
+
+;----------------------------------------------------------------
+;UPPERCUT
+[Statedef 210]
+type    = S
+movetype= A
+physics = N
+poweradd= 0
+anim = 210
+ctrl = 0
+
+[State 300, 4]
+type = ChangeAnim
+Trigger1 = movehit
+persistent = 0
+value = 211
+
+[State 300, 4]
+type = CtrlSet
+Trigger1 = 1
+Trigger1 = anim = 211
+value = 0
+
+[State 0, stop]
+type = posset
+triggerall = enemy,AuthorName != "OMEGAPSYCHO-BOSS"
+trigger1 = Time = 0
+y = 0
+[State 0, stop]
+type = posset
+trigger1 = 1
+trigger1 = Pos Y >0
+y = 0
+
+[State 0, 2]
+type = VelSet
+trigger1 = time = 0
+x = 0
+y = 0
+
+[State ]
+type = Helper
+triggerall = numhelper(8000) = 0
+trigger1 = movehit
+trigger1 = time <10
+helpertype = Normal
+ID = 8000
+name = "BLOOD_SPLAT_1" 
+postype = p1
+pos = (50)*const(size.xscale),(-130)*const(size.yscale)
+stateno = 8000
+ignorehitpause = 1
+ownpal = 1
+keyctrl = 0
+
+[State ]
+type = Helper
+triggerall = numhelper(8010) <= 4
+trigger1 = time <10
+trigger1 = movehit
+helpertype = Normal
+ID = 8010
+name = "BLOOD_BATH_L" 
+postype = p1
+pos = (50)*const(size.xscale),(-130)*const(size.yscale)
+stateno = 8010
+ignorehitpause = 1
+ownpal = 1
+keyctrl = 0
+[State ]
+type = Helper
+triggerall = numhelper(8010) <= 4
+trigger1 = time <10
+trigger1 = movehit
+helpertype = Normal
+ID = 8011
+name = "BLOOD_BATH_R" 
+postype = p1
+pos = (50)*const(size.xscale),(-130)*const(size.yscale)
+stateno = 8011
+ignorehitpause = 1
+ownpal = 1
+keyctrl = 0
+
+[State 7, Miss]
+type = PlaySnd
+trigger1 = Time = 3
+value = S1, 4
+volumescale = 100
+
+[State 300, 0]
+type = Hitdef
+trigger1 = Time = 0
+damage = 180,30
+pausetime = 1,1
+attr = SCA, NA
+Hitflag = MA
+guardflag = M
+animtype = heavy
+air.animtype = back
+priority = 2, miss
+sparkno = -1
+guard.sparkno = -1
+sparkxy = 0, 0
+hitsound = S3,Ifelse(random<500,6,Ifelse(random>=500,7,8))
+guardsound = S2,Ifelse(random<500,1,Ifelse(random>=500,2,3))
+ground.type = high
+air.type = high
+ground.slidetime = 10
+guard.slidetime = 15
+ground.hittime = 10
+guard.hittime = 15
+ground.velocity = -1.5, -10
+air.velocity = -1.5, -10
+guard.velocity = 0
+air.cornerpush.veloff = -5
+ground.cornerpush.veloff = -5
+yaccel = .3
+fall = 1
+fall.recover = 0
+envshake.time = 38
+envshake.freq = 100
+envshake.ampl = 4
+;envshake.phase = 1
+fall.xvelocity = 0
+fall.yvelocity = 0
+p2facing = 1
+kill = !var(58) || 1*p2stateno = 49999
+guard.kill = !var(58) || 1*p2stateno = 49999
+
+[State ,Voice_OLD]
+type = Playsnd
+triggerall = var(25) = 1
+trigger1 = movehit
+persistent = 0
+value = S35,ifelse(random<=500,1,2)
+abspan = 0
+volumescale = 100
+
+[State ,Voice_NEW]
+type = Playsnd
+triggerall = var(25) = 0
+trigger1 = movehit
+persistent = 0
+value = S36,var(5)
+abspan = 0
+volumescale = 100
+
+[State 300, 7]
+type = changestate
+trigger1 = animtime = 0
+value = 0
+ctrl = 1
+
+;---------------------------------------------------------------
+;STRONG PUNCH CLOSE
+[Statedef 240]
+type    = S
+movetype= A
+physics = N
+poweradd= 0
+anim = 240
+ctrl = 0
+
+[State 0, stop]
+type = posset
+triggerall = enemy,AuthorName != "OMEGAPSYCHO-BOSS"
+trigger1 = Time = 0
+y = 0
+[State 0, stop]
+type = posset
+trigger1 = 1
+trigger1 = Pos Y >0
+y = 0
+
+[State 0, 2]
+type = VelSet
+trigger1 = time = 0
+x = 0
+y = 0
+
+[State ]
+type = Helper
+triggerall = numhelper(8011) <= 4
+trigger1 = movehit
+trigger1 = time <= 10
+helpertype = Normal
+ID = 8011
+name = "BLOOD_BATH_R" 
+postype = p1
+pos = (60)*const(size.xscale),(-115)*const(size.yscale)
+stateno = 8011
+ignorehitpause = 1
+ownpal = 1
+keyctrl = 0
+[State ]
+type = Helper
+triggerall = numhelper(8000) = 0
+trigger1 = movehit
+trigger1 = time <= 10
+helpertype = Normal
+ID = 8000
+name = "BLOOD_SPLAT_1" 
+postype = p1
+pos = (60)*const(size.xscale),(-115)*const(size.yscale)
+stateno = 8000
+ignorehitpause = 1
+ownpal = 1
+keyctrl = 0
+
+[State 7, Miss]
+type = PlaySnd
+trigger1 = Time = 3
+value = S1, 4
+volumescale = 100
+
+[State 300, 0]
+type = Hitdef
+triggerall = enemy,AuthorName != "OMEGAPSYCHO-BOSS"
+trigger1 = animelem = 3
+damage = 80,10
+pausetime = 1,1
+attr = SCA, NA
+Hitflag = MA
+guardflag = M
+animtype = heavy
+air.animtype = back
+priority = 4, hit
+sparkno = -1
+guard.sparkno = -1
+sparkxy = 0, 0
+hitsound = S3,Ifelse(random<500,4,5)
+guardsound = S2,Ifelse(random<500,2,3)
+ground.type = high
+air.type = high
+ground.slidetime = 14
+ground.hittime = 20
+guard.ctrltime = 20
+ground.velocity = -5, 0
+guard.velocity = -5
+air.velocity = -3,-5
+air.cornerpush.veloff = -5
+ground.cornerpush.veloff = -1
+YAccel = .3
+air.fall = 1
+fall = 0
+fall.recover = 0
+envshake.time = 30
+envshake.freq = 90
+envshake.ampl = 3
+fall.xvelocity = 0
+fall.yvelocity = 0
+p2facing = 1
+p1stateno = ifelse(P2Statetype=A&&P2bodydist x<40,123456,ifelse(FrontEdgeBodyDist <64,123456,-1))
+p2stateno = ifelse(p2Statetype!=A,123457,123459)
+kill = !var(58) || 1*p2stateno = 49999
+guard.kill = !var(58) || 1*p2stateno = 49999
+
+[State 300, 0]
+type = Hitdef
+triggerall = enemy,AuthorName = "OMEGAPSYCHO-BOSS"
+trigger1 = !Time
+damage = 80,10
+pausetime = 1,1
+attr = SCA, NA
+Hitflag = MA
+guardflag = M
+animtype = heavy
+air.animtype = back
+priority = 4, hit
+sparkno = -1
+guard.sparkno = -1
+sparkxy = 0, 0
+hitsound = S3,Ifelse(random<500,4,5)
+guardsound = S2,Ifelse(random<500,2,3)
+ground.type = high
+air.type = high
+ground.slidetime = 14
+ground.hittime = 20
+guard.ctrltime = 20
+ground.velocity = -5, 0
+guard.velocity = -5
+air.velocity = -3,-5
+air.cornerpush.veloff = -5
+ground.cornerpush.veloff = -1
+YAccel = .3
+air.fall = 1
+fall = 0
+fall.recover = 0
+envshake.time = 30
+envshake.freq = 90
+envshake.ampl = 3
+fall.xvelocity = 0
+fall.yvelocity = 0
+kill = 1
+guard.kill = 1
+
+[State 300, 5]
+type = movehitreset
+Trigger1 = animelem >= 5
+
+[State 300, 7]
+type = changestate
+trigger1 = animtime = 0
+value = 0
+ctrl = 1
+
+;----------------------------------------------------------------
+;JUMP PUNCH
+[Statedef 245]
+type    = A
+movetype= A
+physics = A
+poweradd= 0
+anim = 245
+ctrl = 0
+
+[State 7, voice]
+type = PlaySnd
+trigger1 = Animelem = 2
+value = S200, ifelse(random<=500,1,2)
+
+[State 7, voice]
+type = PlaySnd
+trigger1 = Animelem = 2
+value = S1, ifelse(random<=500,1,2)
+
+[State ]
+type = Helper
+triggerall = numhelper(8011) <= 4
+trigger1 = movehit
+trigger1 = time <= 16
+helpertype = Normal
+ID = 8011
+name = "BLOOD_BATH_R" 
+postype = p1
+pos = (60)*const(size.xscale),(-90)*const(size.yscale)
+stateno = 8011
+ignorehitpause = 1
+ownpal = 1
+keyctrl = 0
+[State ]
+type = Helper
+triggerall = numhelper(8001) = 0
+trigger1 = movehit
+trigger1 = time <= 16
+helpertype = Normal
+ID = 8001
+name = "BLOOD_SPLAT_1" 
+postype = p1
+pos = (60)*const(size.xscale),(-90)*const(size.yscale)
+stateno = 8000
+ignorehitpause = 1
+ownpal = 1
+keyctrl = 0
+
+[State 300, 0]
+type = Hitdef
+triggerall = enemy,AuthorName != "OMEGAPSYCHO-BOSS"
+trigger1 = !Time
+damage = 80,10
+pausetime = 1,1
+attr = SCA, NA
+Hitflag = MA
+guardflag = M
+animtype = heavy
+air.animtype = back
+priority = 4, hit
+sparkno = -1
+guard.sparkno = -1
+sparkxy = 0, 0
+hitsound = S3,Ifelse(random<500,4,5)
+guardsound = S2,Ifelse(random<500,2,3)
+ground.type = high
+air.type = high
+ground.slidetime = 14
+ground.hittime = 20
+guard.ctrltime = 20
+ground.velocity = -1, 0
+guard.velocity = -2
+air.velocity = -2.5,-4
+air.cornerpush.veloff = -4
+ground.cornerpush.veloff = -1
+YAccel = .3
+air.fall = 1
+fall = 0
+fall.recover = 0
+envshake.time = 30
+envshake.freq = 90
+envshake.ampl = 3
+fall.xvelocity = 0
+fall.yvelocity = 0
+p2facing = 1
+p2stateno = ifelse(p2Statetype!=A,123457,123459)
+kill = !var(58) || 1*p2stateno = 49999
+guard.kill = !var(58) || 1*p2stateno = 49999
+
+[State 300, 0]
+type = Hitdef
+triggerall = enemy,AuthorName = "OMEGAPSYCHO-BOSS"
+trigger1 = !Time
+damage = 80,10
+pausetime = 1,1
+attr = SCA, NA
+Hitflag = MA
+guardflag = M
+animtype = heavy
+air.animtype = back
+priority = 4, hit
+sparkno = -1
+guard.sparkno = -1
+sparkxy = 0, 0
+hitsound = S3,Ifelse(random<500,4,5)
+guardsound = S2,Ifelse(random<500,2,3)
+ground.type = high
+air.type = high
+ground.slidetime = 14
+ground.hittime = 20
+guard.ctrltime = 20
+ground.velocity = -1, 0
+guard.velocity = -2
+air.velocity = -2.5,-4
+air.cornerpush.veloff = -4
+ground.cornerpush.veloff = -1
+YAccel = .3
+air.fall = 1
+fall = 0
+fall.recover = 0
+envshake.time = 30
+envshake.freq = 90
+envshake.ampl = 3
+fall.xvelocity = 0
+fall.yvelocity = 0
+kill = 1
+guard.kill = 1
+
+[State 245, 0]
+type = turn
+triggerall = p2bodydist x <= -20 && (enemynear,backedgedist != 0)
+trigger1 = !time
+
+[State 300, 5]
+type = movehitreset
+Trigger1 = animelem >= 5
+
+[State 300, 7]
+type = changestate
+trigger1 = movecontact
+value = 251
+
+[State 300, 7]
+type = changestate
+trigger1 = Vel Y > 0
+trigger1 = Pos Y >= 0
+value = 52
+ctrl = 1
+
+;----------------------------------------------------------------
+;JUMP KICK NEUTRAL
+[Statedef 248]
+type    = A
+movetype= A
+physics = A
+anim = 248
+poweradd= 0
+ctrl = 0
+
+[State 7, voice]
+type = PlaySnd
+trigger1 = Animelem = 2
+value = S200, ifelse(random<=500,1,2)
+
+[State 7, voice]
+type = PlaySnd
+trigger1 = Animelem = 2
+value = S1, ifelse(random<=500,1,2)
+
+[State 300, 0]
+type = Hitdef
+triggerall = enemy,AuthorName != "OMEGAPSYCHO-BOSS"
+trigger1 = !Time
+damage = 80,10
+pausetime = 1,1
+attr = SCA, NA
+Hitflag = MA
+guardflag = M
+animtype = heavy
+air.animtype = back
+priority = 4, hit
+sparkno = -1
+guard.sparkno = -1
+sparkxy = 0, 0
+hitsound = S3,Ifelse(random<500,2,3)
+guardsound = S2,Ifelse(random<500,2,3)
+ground.type = high
+air.type = high
+ground.slidetime = 14
+ground.hittime = 20
+guard.ctrltime = 20
+ground.velocity = -1, 0
+guard.velocity = -2
+air.velocity = -2.5,-4
+air.cornerpush.veloff = -4
+ground.cornerpush.veloff = -1
+YAccel = .3
+air.fall = 1
+fall = 0
+fall.recover = 0
+fall.xvelocity = 0
+fall.yvelocity = 0
+p2facing = 1
+p2stateno = ifelse(p2Statetype!=A,123457,123459)
+kill = !var(58) || 1*p2stateno = 49999
+guard.kill = !var(58) || 1*p2stateno = 49999
+
+[State 300, 0]
+type = Hitdef
+triggerall = enemy,AuthorName = "OMEGAPSYCHO-BOSS"
+trigger1 = !Time
+damage = 80,10
+pausetime = 1,1
+attr = SCA, NA
+Hitflag = MA
+guardflag = M
+animtype = heavy
+air.animtype = back
+priority = 4, hit
+sparkno = -1
+guard.sparkno = -1
+sparkxy = 0, 0
+hitsound = S3,Ifelse(random<500,2,3)
+guardsound = S2,Ifelse(random<500,2,3)
+ground.type = high
+air.type = high
+ground.slidetime = 14
+ground.hittime = 20
+guard.ctrltime = 20
+ground.velocity = -1, 0
+guard.velocity = -2
+air.velocity = -2.5,-4
+air.cornerpush.veloff = -4
+ground.cornerpush.veloff = -1
+YAccel = .3
+air.fall = 1
+fall = 0
+fall.recover = 0
+fall.xvelocity = 0
+fall.yvelocity = 0
+kill = 1
+guard.kill = 1
+
+[State 245, 0]
+type = turn
+triggerall = p2bodydist x <= -20 && (enemynear,backedgedist != 0)
+trigger1 = !time
+
+[State 300, 5]
+type = movehitreset
+Trigger1 = animelem >= 3
+
+[State 300, 7]
+type = changestate
+trigger1 = movecontact
+value = 251
+
+[State 300, 7]
+type = changestate
+trigger1 = Vel Y > 0
+trigger1 = Pos Y >= 0
+value = 52
+ctrl = 1
+
+;----------------------------------------------------------------
+;JUMP KICK
+[Statedef 250]
+type    = A
+movetype= A
+physics = A
+poweradd= 0
+anim = 250
+ctrl = 0
+
+[State 7, voice]
+type = PlaySnd
+trigger1 = Animelem = 2
+value = S200, ifelse(random<=500,1,2)
+
+[State 7, voice]
+type = PlaySnd
+trigger1 = Animelem = 2
+value = S1, ifelse(random<=500,1,2)
+
+[State ]
+type = Helper
+triggerall = numhelper(8011) <= 4
+trigger1 = movehit
+trigger1 = time <= 15
+helpertype = Normal
+ID = 8011
+name = "BLOOD_BATH_R" 
+postype = p1
+pos = (70)*const(size.xscale),(-70)*const(size.yscale)
+stateno = 8011
+ignorehitpause = 1
+ownpal = 1
+keyctrl = 0
+[State ]
+type = Helper
+triggerall = numhelper(8001) = 0
+trigger1 = movehit
+helpertype = Normal
+ID = 8001
+name = "BLOOD_SPLAT_1" 
+postype = p1
+pos = (70)*const(size.xscale),(-70)*const(size.yscale)
+stateno = 8000
+ignorehitpause = 1
+ownpal = 1
+keyctrl = 0
+
+[State 1101, 5]
+type = Hitdef
+trigger1 = !time
+attr = SCA, NA
+damage = 140,14
+animtype = light
+air.animtype = back
+hitflag = MA
+guardflag = M
+pausetime = 16,2
+guard.pausetime = 10,13
+sparkno = -1
+guard.sparkno = -1
+sparkxy = -9999,-8888
+hitsound = S3,Ifelse(random<=500,6,Ifelse(random>500,7,8))
+guardsound = S2,Ifelse(random<=500,1,Ifelse(random>500,2,3))
+ground.type = high
+air.type = high
+ground.slidetime = 28
+ground.hittime  = 36
+air.hittime = 36
+ground.velocity = -3,-6.5  ;8
+air.velocity = -3,-6.5  ;8
+fall = 1
+air.recover = 0
+air.fall = 1
+fall.recover = 0
+fall.xvelocity = 0
+fall.yvelocity = 0
+fall.recovertime = 40
+down.hittime = 12
+down.velocity = -3,0
+down.hittime = 30
+guard.ctrltime = 25
+yaccel = .4
+air.juggle = 1
+envshake.time = 25
+envshake.freq = 120
+envshake.ampl = 4
+kill = !var(58)|| 1*p2stateno = 49999
+guard.kill = !var(58)|| 1*p2stateno = 49999
+
+[State 245, 0]
+type = turn
+triggerall = p2bodydist x <= -20 && (enemynear,backedgedist != 0)
+trigger1 = !time
+
+[State 300, 5]
+type = movehitreset
+Trigger1 = animelem >= 5
+
+[State 300, 7]
+type = changestate
+trigger1 = movecontact
+value = 251
+
+[State 300, 7]
+type = changestate
+trigger1 = Vel Y > 0
+trigger1 = Pos Y >= 0
+value = 52
+ctrl = 1
+
+;----------------------------------------------------------------
+;JUMP HIT END
+[Statedef 251]
+type    = A
+movetype= I
+physics = A
+poweradd= 0
+ctrl = 0
+
+[State 300, 4]
+type = ChangeAnim
+Trigger1 = Prevstateno = 245
+Trigger1 = !time
+persistent = 0
+value = 246
+
+[State 300, 4]
+type = ChangeAnim
+Trigger1 = Prevstateno = 248
+Trigger1 = !time
+persistent = 0
+value = 249
+
+[State 300, 4]
+type = ChangeAnim
+Trigger1 = Prevstateno = 250
+Trigger1 = !time
+persistent = 0
+value = 251
+
+[State 352,6]
+type = VelSet
+trigger1 = time = 0
+x = 0
+y = 0
+
+[State 5030, 1]
+type = VelAdd
+trigger1 = animelem = 2
+y = GetHitVar(yaccel)
+
+[State 300, 7]
+type = changestate
+trigger1 = Vel Y > 0
+trigger1 = Pos Y >= 0
+value = 52
+ctrl = 1
+
+;---------------------------------------------------------------
+;LOW KICK NEUTRAL
+[Statedef 254]
+type    = S
+movetype= A
+physics = N
+poweradd= 0
+Anim = 254
+ctrl = 0
+
+[State 0, stop]
+type = posset
+triggerall = enemy,AuthorName != "OMEGAPSYCHO-BOSS"
+trigger1 = Time = 0
+y = 0
+[State 0, stop]
+type = posset
+trigger1 = 1
+trigger1 = Pos Y >0
+y = 0
+
+[State 0, 2]
+type = VelSet
+trigger1 = time = 0
+x = 0
+y = 0
+
+[State 7, move_sound]
+type = PlaySnd
+trigger1 = Animelem = 2
+value = S1, ifelse(random<=500,1,2)
+
+[State 7, voice]
+type = PlaySnd
+trigger1 = Animelem = 2
+value = S200, ifelse(random<=500,1,2)
+
+[State 300, 0]
+type = Hitdef
+triggerall = enemy,AuthorName != "OMEGAPSYCHO-BOSS"
+trigger1 = !Time
+damage = 80,10
+pausetime = 1,1
+attr = SCA, NA
+Hitflag = MA
+guardflag = M
+animtype = heavy
+air.animtype = back
+priority = 4, hit
+sparkno = -1
+guard.sparkno = -1
+sparkxy = 0, 0
+hitsound = S3,Ifelse(random<500,2,3)
+guardsound = S2,Ifelse(random<500,2,3)
+ground.type = Low
+air.type = high
+ground.slidetime = 14
+ground.hittime = 20
+guard.ctrltime = 20
+ground.velocity = -5, 0
+guard.velocity = -5
+air.velocity = -3,-5
+air.cornerpush.veloff = -5
+ground.cornerpush.veloff = -1
+YAccel = .3
+air.fall = 1
+fall = 0
+fall.recover = 0
+fall.xvelocity = 0
+fall.yvelocity = 0
+p2facing = 1
+p1stateno = ifelse(P2Statetype=A&&P2bodydist x<40,123456,ifelse(FrontEdgeBodyDist <64,123456,-1))
+kill = !var(58) || 1*p2stateno = 49999
+guard.kill = !var(58) || 1*p2stateno = 49999
+
+[State 300, 0]
+type = Hitdef
+triggerall = enemy,AuthorName = "OMEGAPSYCHO-BOSS"
+trigger1 = !Time
+damage = 80,10
+pausetime = 1,1
+attr = SCA, NA
+Hitflag = MA
+guardflag = M
+animtype = heavy
+air.animtype = back
+priority = 4, hit
+sparkno = -1
+guard.sparkno = -1
+sparkxy = 0, 0
+hitsound = S3,Ifelse(random<500,2,3)
+guardsound = S2,Ifelse(random<500,2,3)
+ground.type = Low
+air.type = high
+ground.slidetime = 14
+ground.hittime = 20
+guard.ctrltime = 20
+ground.velocity = -5, 0
+guard.velocity = -5
+air.velocity = -3,-5
+air.cornerpush.veloff = -5
+ground.cornerpush.veloff = -1
+YAccel = .3
+air.fall = 1
+fall = 0
+fall.recover = 0
+fall.xvelocity = 0
+fall.yvelocity = 0
+kill = 1
+guard.kill = 1
+
+[State 300, 7]
+type = changestate
+trigger1 = animtime = 0
+value = 0
+ctrl = 1
+
+;---------------------------------------------------------------
+;HIGH KICK NEUTRAL
+[Statedef 255]
+type    = S
+movetype= A
+physics = N
+poweradd= 0
+anim = 255
+ctrl = 0
+
+[State 0, stop]
+type = posset
+triggerall = enemy,AuthorName != "OMEGAPSYCHO-BOSS"
+trigger1 = Time = 0
+y = 0
+[State 0, stop]
+type = posset
+trigger1 = 1
+trigger1 = Pos Y >0
+y = 0
+
+[State 0, 2]
+type = VelSet
+trigger1 = time = 0
+x = 0
+y = 0
+
+[State 7, move_sound]
+type = PlaySnd
+trigger1 = Animelem = 2
+value = S1, ifelse(random<=500,1,2)
+
+[State 7, voice]
+type = PlaySnd
+trigger1 = Animelem = 2
+value = S200, ifelse(random<=500,1,2)
+
+[State ]
+type = Helper
+triggerall = numhelper(8011) <= 4
+trigger1 = movehit
+trigger1 = time <= 16
+helpertype = Normal
+ID = 8011
+name = "BLOOD_BATH_R" 
+postype = p1
+pos = (88)*const(size.xscale),(-110)*const(size.yscale)
+stateno = 8011
+ignorehitpause = 1
+ownpal = 1
+keyctrl = 0
+[State ]
+type = Helper
+triggerall = numhelper(8001) = 0
+trigger1 = movehit
+trigger1 = time <= 16
+helpertype = Normal
+ID = 8001
+name = "BLOOD_SPLAT_1" 
+postype = p1
+pos = (88)*const(size.xscale),(-110)*const(size.yscale)
+stateno = 8000
+ignorehitpause = 1
+ownpal = 1
+keyctrl = 0
+
+[State 300, 0]
+type = Hitdef
+triggerall = enemy,AuthorName != "OMEGAPSYCHO-BOSS"
+trigger1 = !Time
+damage = 80,10
+pausetime = 10,1
+attr = SCA, NA
+Hitflag = MA
+guardflag = M
+animtype = heavy
+air.animtype = back
+priority = 4, hit
+sparkno = -1
+guard.sparkno = -1
+sparkxy = 0, 0
+hitsound = S3,Ifelse(random<500,4,5)
+guardsound = S2,Ifelse(random<500,2,3)
+ground.type = high
+air.type = high
+ground.slidetime = 14
+ground.hittime = 20
+guard.ctrltime = 20
+ground.velocity = -5, 0
+guard.velocity = -5
+air.velocity = -3,-5
+air.cornerpush.veloff = -5
+ground.cornerpush.veloff = -1
+YAccel = .3
+air.fall = 1
+fall = 0
+fall.recover = 0
+envshake.time = 30
+envshake.freq = 90
+envshake.ampl = 3
+fall.xvelocity = 0
+fall.yvelocity = 0
+p2facing = 1
+p1stateno = ifelse(P2Statetype=A&&P2bodydist x<40,123456,ifelse(FrontEdgeBodyDist <64,123456,-1))
+p2stateno = ifelse(p2Statetype!=A,123457,123459)
+kill = !var(58) || 1*p2stateno = 49999
+guard.kill = !var(58) || 1*p2stateno = 49999
+
+[State 300, 0]
+type = Hitdef
+triggerall = enemy,AuthorName = "OMEGAPSYCHO-BOSS"
+trigger1 = !Time
+damage = 80,10
+pausetime = 1,1
+attr = SCA, NA
+Hitflag = MA
+guardflag = M
+animtype = heavy
+air.animtype = back
+priority = 4, hit
+sparkno = -1
+guard.sparkno = -1
+sparkxy = 0, 0
+hitsound = S3,Ifelse(random<500,4,5)
+guardsound = S2,Ifelse(random<500,2,3)
+ground.type = high
+air.type = high
+ground.slidetime = 14
+ground.hittime = 20
+guard.ctrltime = 20
+ground.velocity = -5, 0
+guard.velocity = -5
+air.velocity = -3,-5
+air.cornerpush.veloff = -5
+ground.cornerpush.veloff = -1
+YAccel = .3
+air.fall = 1
+fall = 0
+fall.recover = 0
+envshake.time = 30
+envshake.freq = 90
+envshake.ampl = 3
+fall.xvelocity = 0
+fall.yvelocity = 0
+kill = 1
+guard.kill = 1
+
+[State 300, 5]
+type = movehitreset
+Trigger1 = animelem >= 7
+
+[State 300, 7]
+type = changestate
+trigger1 = animtime = 0
+value = 0
+ctrl = 1
+
+;---------------------------------------------------------------
+;CLOSE KICK 
+[Statedef 257]
+type    = S
+movetype= A
+physics = N
+anim = 257
+poweradd= 0
+ctrl = 0
+
+[State 0, stop]
+type = posset
+triggerall = enemy,AuthorName != "OMEGAPSYCHO-BOSS"
+trigger1 = Time = 0
+y = 0
+[State 0, stop]
+type = posset
+trigger1 = 1
+trigger1 = Pos Y >0
+y = 0
+
+[State 0, 2]
+type = VelSet
+trigger1 = time = 0
+x = 0
+y = 0
+
+[State 1101, 5]
+type = Hitdef
+triggerall = enemy,AuthorName != "OMEGAPSYCHO-BOSS"
+trigger1 = !time
+attr = SCA, NA
+damage = 86,20
+animtype = light
+air.animtype = back
+hitflag = MA
+guardflag = M
+pausetime = 1,1
+guard.pausetime = 10,13
+sparkno = -1
+guard.sparkno = -1
+sparkxy = -9999,-8888
+hitsound = S3,Ifelse(random<500,2,3)
+guardsound = S2,Ifelse(random<500,2,3)
+ground.type = high
+air.type = high
+ground.slidetime = 28
+ground.hittime  = 36
+air.hittime = 36
+ground.velocity = -3,-6.5  ;8
+air.velocity = -3,-6.5  ;8
+fall = 1
+air.recover = 0
+air.fall = 1
+fall.recover = 0
+fall.xvelocity = 0
+fall.yvelocity = 0
+fall.recovertime = 40
+down.hittime = 12
+down.velocity = -3,0
+down.hittime = 30
+guard.ctrltime = 25
+yaccel = .4
+air.juggle = 1
+p1stateno = ifelse(P2Statetype=A&&P2bodydist x<40,123456,-1)
+kill = !var(58)|| 1*p2stateno = 49999
+guard.kill = !var(58)|| 1*p2stateno = 49999
+
+[State 1101, 5]
+type = Hitdef
+triggerall = enemy,AuthorName = "OMEGAPSYCHO-BOSS"
+trigger1 = !time
+attr = SCA, NA
+damage = 86,20
+animtype = light
+air.animtype = back
+hitflag = MA
+guardflag = M
+pausetime = 1,1
+guard.pausetime = 10,13
+sparkno = -1
+guard.sparkno = -1
+sparkxy = -9999,-8888
+hitsound = S3,Ifelse(random<500,2,3)
+guardsound = S2,Ifelse(random<500,2,3)
+ground.type = high
+air.type = high
+ground.slidetime = 28
+ground.hittime  = 36
+air.hittime = 36
+ground.velocity = -3,-6.5  ;8
+air.velocity = -3,-6.5  ;8
+fall = 1
+air.recover = 0
+air.fall = 1
+fall.recover = 0
+fall.xvelocity = 0
+fall.yvelocity = 0
+fall.recovertime = 40
+down.hittime = 12
+down.velocity = -3,0
+down.hittime = 30
+guard.ctrltime = 25
+yaccel = .4
+air.juggle = 1
+kill = 1
+guard.kill = 1
+
+[State 300, 5]
+type = movehitreset
+Trigger1 = animelem >= 4
+
+[State 300, 7]
+type = changestate
+trigger1 = animtime = 0
+value = 0
+ctrl = 1
+
+;---------------------------------------------------------------
+;CROUCH KICK 
+[Statedef 259]
+type    = S
+movetype= A
+physics = N
+poweradd= 0
+anim = 259
+ctrl = 0
+
+[State 0, stop]
+type = posset
+triggerall = enemy,AuthorName != "OMEGAPSYCHO-BOSS"
+trigger1 = Time = 0
+y = 0
+[State 0, stop]
+type = posset
+trigger1 = 1
+trigger1 = Pos Y >0
+y = 0
+
+[State 0, 2]
+type = VelSet
+trigger1 = time = 0
+x = 0
+y = 0
+
+[State 300, 0]
+type = Hitdef
+trigger1 = !Time
+damage = 60,6
+pausetime = 1,1
+attr = SCA, NA
+Hitflag = MA
+guardflag = M
+animtype = heavy
+air.animtype = back
+priority = 4, hit
+sparkno = -1
+guard.sparkno = -1
+sparkxy = 0, 0
+hitsound = S3,Ifelse(random<500,2,3)
+guardsound = S2,Ifelse(random<500,2,3)
+ground.type = Low
+air.type = high
+ground.slidetime = 14
+ground.hittime = 20
+guard.ctrltime = 20
+ground.velocity = -5, 0
+guard.velocity = -5
+air.velocity = -3,-5
+air.cornerpush.veloff = -5
+ground.cornerpush.veloff = -1
+YAccel = .3
+air.fall = 1
+fall = 0
+fall.recover = 0
+fall.xvelocity = 0
+fall.yvelocity = 0
+p2facing = 1
+kill = !var(58) || 1*p2stateno = 49999
+guard.kill = !var(58) || 1*p2stateno = 49999
+
+[State 300, 5]
+type = movehitreset
+Trigger1 = animelem >= 4
+
+[State 300, 7]
+type = changestate
+trigger1 = animtime = 0
+value = 11
+ctrl = 1
+
+;-------------------------------------------------------------------------------
+;LIEDOWN KICK
+[StateDef 260]
+Type = C
+MoveType = A
+Physics = N
+Ctrl = 0
+VelSet = 0
+anim = 260
+SprPriority = -10
+
+[State 0, stop]
+type = posset
+triggerall = enemy,AuthorName != "OMEGAPSYCHO-BOSS"
+trigger1 = Time = 0
+y = 0
+[State 0, stop]
+type = posset
+trigger1 = 1
+trigger1 = Pos Y >0
+y = 0
+
+[State 0, 2]
+type = VelSet
+trigger1 = time = 0
+x = 0
+y = 0
+
+[State 1000, 3]
+type = SprPriority
+trigger1 = Animelem = 1
+value = -10
+
+[State 1000, 3]
+type = SprPriority
+trigger1 = Animelem = 5
+value = 10
+
+[State 7, voice]
+type = PlaySnd
+trigger1 = Animelem = 2
+value = S200, ifelse(random<=500,1,2)
+
+[State 7, Miss]
+type = PlaySnd
+trigger1 = Animelem = 3
+value = S1, ifelse(random<=500,3,4)
+volumescale = 100
+
+[State 350]
+Type = HitDef
+Trigger1 = time = 0
+Attr = SCA, NA
+HitFlag = MA
+GuardFlag = L
+Damage = 120,12
+GetPower = 0
+GivePower = 0
+PauseTime = 3,16
+SparkNo = -1
+Guard.SparkNo = -1
+sparkxy = -9999,-8888
+hitsound = S3,Ifelse(random<500,2,3)
+guardsound = S2,Ifelse(random<500,2,3)
+AnimType = Hard
+Ground.Type = Trip
+Ground.SlideTime = 21
+Ground.HitTime = 20
+Guard.HitTime = 29
+Ground.Velocity = -1*Const(Size.XScale), -2
+Guard.Velocity = -1*Const(Size.XScale)
+Air.Velocity = -1*Const(Size.XScale), -2
+Ground.CornerPush.VelOff = -18*Const(Size.XScale)
+Fall = 1
+Fall.Recover = 0
+Fall.YVelocity = 0
+YAccel = .4 
+P2Facing = 1
+kill = !var(58) || 1*p2stateno = 49999
+guard.kill = !var(58) || 1*p2stateno = 49999
+
+[State 350]
+Type = ChangeState
+Trigger1 = AnimTime = 0
+Value = 0
+Ctrl = 1
+
+;---------------------------------------------------------------
+;BACK STRONG KICK
+[Statedef 270]
+type    = S
+movetype= A
+physics = N
+Anim = 270
+poweradd= 0
+ctrl = 0
+
+[State 0, stop]
+type = posset
+triggerall = enemy,AuthorName != "OMEGAPSYCHO-BOSS"
+trigger1 = Time = 0
+y = 0
+[State 0, stop]
+type = posset
+trigger1 = 1
+trigger1 = Pos Y >0
+y = 0
+
+[State 0, 2]
+type = VelSet
+trigger1 = time = 0
+x = 0
+y = 0
+
+[State 7, Miss]
+type = PlaySnd
+trigger1 = Animelem = 2
+value = S1, 4
+volumescale = 100
+
+[State ]
+type = Helper
+triggerall = numhelper(8010) <= 4
+trigger1 = movehit
+trigger1 = time <= 16
+helpertype = Normal
+ID = 8010
+name = "BLOOD_BATH_L" 
+postype = p1
+pos = (70)*const(size.xscale),(-111)*const(size.yscale)
+stateno = 8010
+ignorehitpause = 1
+ownpal = 1
+keyctrl = 0
+[State ]
+type = Helper
+triggerall = numhelper(8011) <= 4
+trigger1 = movehit
+trigger1 = time <= 16
+helpertype = Normal
+ID = 8011
+name = "BLOOD_BATH_R" 
+postype = p1
+pos = (70)*const(size.xscale),(-111)*const(size.yscale)
+stateno = 8011
+ignorehitpause = 1
+ownpal = 1
+keyctrl = 0
+[State ]
+type = Helper
+triggerall = numhelper(8001) = 0
+trigger1 = movehit
+trigger1 = time <= 16
+helpertype = Normal
+ID = 8001
+name = "BLOOD_SPLAT_1" 
+postype = p1
+pos = (70)*const(size.xscale),(-111)*const(size.yscale)
+stateno = 8000
+ignorehitpause = 1
+ownpal = 1
+keyctrl = 0
+
+[State 300, 0]
+type = Hitdef
+triggerall = enemy,AuthorName != "OMEGAPSYCHO-BOSS"
+trigger1 = !Time
+damage = 100,20
+pausetime = 4,8
+attr = SCA, NA
+Hitflag = MA
+guardflag = M
+animtype = heavy
+air.animtype = back
+priority = 4, hit
+sparkno = -1
+guard.sparkno = -1
+sparkxy = 0, 0
+hitsound = S3,Ifelse(random<500,4,5)
+guardsound = S2,Ifelse(random<500,2,3)
+ground.type = high
+air.type = high
+ground.slidetime = 14
+ground.hittime = 20
+guard.ctrltime = 20
+ground.velocity = -5, 0
+guard.velocity = -5
+air.velocity = -3,-5
+air.cornerpush.veloff = -5
+ground.cornerpush.veloff = -1
+YAccel = .3
+air.fall = 1
+fall = 0
+fall.recover = 0
+envshake.time = 30
+envshake.freq = 90
+envshake.ampl = 3
+fall.xvelocity = 0
+fall.yvelocity = 0
+p2facing = 1
+p1stateno = ifelse(P2Statetype=A&&P2bodydist x<40,123456,ifelse(FrontEdgeBodyDist <64,123456,-1))
+p2stateno = ifelse(p2Statetype!=A,123458,123459)
+kill = !var(58) || 1*p2stateno = 49999
+guard.kill = !var(58) || 1*p2stateno = 49999
+
+[State 300, 0]
+type = Hitdef
+triggerall = enemy,AuthorName = "OMEGAPSYCHO-BOSS"
+trigger1 = !Time
+damage = 100,20
+pausetime = 1,1
+attr = SCA, NA
+Hitflag = MA
+guardflag = M
+animtype = heavy
+air.animtype = back
+priority = 4, hit
+sparkno = -1
+guard.sparkno = -1
+sparkxy = 0, 0
+hitsound = S3,Ifelse(random<500,4,5)
+guardsound = S2,Ifelse(random<500,2,3)
+ground.type = high
+air.type = high
+ground.slidetime = 14
+ground.hittime = 20
+guard.ctrltime = 20
+ground.velocity = -5, 0
+guard.velocity = -5
+air.velocity = -3,-5
+air.cornerpush.veloff = -5
+ground.cornerpush.veloff = -1
+YAccel = .3
+air.fall = 1
+fall = 0
+fall.recover = 0
+envshake.time = 30
+envshake.freq = 90
+envshake.ampl = 3
+fall.xvelocity = 0
+fall.yvelocity = 0
+kill = 1
+guard.kill = 1
+
+[State 300, 5]
+type = movehitreset
+Trigger1 = animelem >= 6
+
+[State 300, 7]
+type = changestate
+trigger1 = animtime = 0
+value = 0
+ctrl = 1

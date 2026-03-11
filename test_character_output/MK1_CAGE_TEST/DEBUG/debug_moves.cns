@@ -1,0 +1,15 @@
+[State 0, Debug]
+type = CtrlSet
+trigger1 = Time = 0
+value = 1
+
+[State 1, Cycle Moves]
+type = ChangeState
+trigger1 = Time % 60 = 0
+value = (PrevStateNo + 1) % 1000
+ctrl = 1
+
+[State 2, Show Hitboxes]
+type = AssertSpecial
+trigger1 = 1
+flag = debug

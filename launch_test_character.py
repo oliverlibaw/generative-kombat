@@ -152,6 +152,11 @@ def main():
         default='MK1_CAGE_TEST',
         help='Character name for selection'
     )
+    parser.add_argument(
+        '--no-launch',
+        action='store_true',
+        help='Install/configure only (do not launch Ikemen GO)'
+    )
     
     args = parser.parse_args()
     
@@ -197,6 +202,10 @@ def main():
     print("- D: Reset to stance")
     print("- W: Pause cycling")
     print("="*50 + "\n")
+    
+    if args.no_launch:
+        print("Skipping launch (--no-launch)")
+        return
     
     launch_game(ikemen_exe, args.character_name)
 

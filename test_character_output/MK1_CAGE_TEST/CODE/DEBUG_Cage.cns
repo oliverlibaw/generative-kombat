@@ -1,0 +1,121 @@
+;===================================================================
+; DEBUG CNS - Automatic Move Cycling and Debug Features
+;===================================================================
+
+[Statedef -3]
+; Enable debug mode
+type = CtrlSet
+trigger1 = 1
+value = 1
+
+[Statedef -2]
+; Automatic move cycling - cycle through states every 120 frames (2 seconds at 60fps)
+type = ChangeState
+trigger1 = Time % 120 = 0
+trigger1 = RoundState = 2  ; Only during fight
+value = (PrevStateNo + 1) % 1000
+ctrl = 1
+
+; Reset to stance if we get stuck in invalid states
+type = ChangeState
+trigger1 = StateNo > 6000
+value = 0
+ctrl = 1
+
+[Statedef -1]
+; Debug display - show current state and sprite info
+type = DisplayToClipboard
+trigger1 = 1
+text = "State: %d, Anim: %d, Time: %d"
+params = StateNo, Anim, Time
+
+; Force player control
+type = CtrlSet
+trigger1 = 1
+value = 1
+
+;===================================================================
+; DEBUG COMMANDS - Override normal commands for testing
+;===================================================================
+
+[Command]
+name = "debug_next"
+command = a
+time = 1
+
+[Command]
+name = "debug_prev"
+command = s
+time = 1
+
+[Command]
+name = "debug_reset"
+command = d
+time = 1
+
+[Command]
+name = "debug_pause"
+command = w
+time = 1
+
+;===================================================================
+; DEBUG STATES - Manual control for testing
+;===================================================================
+
+[Statedef 8000]
+type = S
+movetype = I
+physics = S
+ctrl = 1
+
+[State 8000, Next Move]
+type = ChangeState
+trigger1 = Command = "debug_next"
+value = StateNo + 1
+ctrl = 1
+
+[State 8000, Previous Move]
+type = ChangeState
+trigger1 = Command = "debug_prev"
+value = StateNo - 1
+ctrl = 1
+
+[State 8000, Reset]
+type = ChangeState
+trigger1 = Command = "debug_reset"
+value = 0
+ctrl = 1
+
+[State 8000, Debug Info]
+type = DisplayToClipboard
+trigger1 = 1
+text = "DEBUG - State: %d | Anim: %d | Time: %d | A:Next S:Prev D:Reset W:Pause"
+params = StateNo, Anim, Time
+
+;===================================================================
+; COMMON STATES OVERRIDE - Add debug info to all states
+;===================================================================
+
+[StateDef -4, Debug Overlay]
+type = AssertSpecial
+trigger1 = 1
+flag = debug
+
+[StateDef -4, Show Clsn]
+type = AssertSpecial
+trigger1 = 1
+flag = noshadow
+
+[StateDef -4, Debug Display]
+type = DisplayToClipboard
+trigger1 = 1
+text = "Johnny Cage AI Test | State: %d | Anim: %d | Palfx: %d"
+params = StateNo, Anim, PalFX
+
+; Force hitbox display
+[StateDef -4, Force Hitboxes]
+type = HitOverride
+trigger1 = 0
+attr = SCA, NA, SA, HA, NP, SP, HP
+statetime = 1
+forceair = 0

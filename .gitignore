@@ -19,8 +19,7 @@ venv/
 .idea/
 
 # Local outputs / generated artifacts
-/test_character_output/
-/sff_compare_output/
+# (intentionally not ignored; committed for reproducible builds)
 
 # Ikemen runtime logs / local state
 ikemen-go-stable/debug.log

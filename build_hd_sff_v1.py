@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import argparse
 import struct
+import time
 from dataclasses import dataclass
 from pathlib import Path
 from tempfile import TemporaryDirectory
@@ -86,7 +87,9 @@ def rgba_to_mugen_pcx(source_path: Path, temp_dir: Path) -> bytes:
     opaque_mask = alpha.point(lambda a: 255 if a > 0 else 0)
     rgb = Image.new("RGB", rgba.size, (0, 0, 0))
     rgb.paste(rgba.convert("RGB"), mask=opaque_mask)
-    quantized = rgb.quantize(colors=255, method=Image.Quantize.MEDIANCUT, dither=Image.Dither.NONE)
+    # MEDIANCUT can be extremely slow across hundreds of sprites.
+    # FASTOCTREE is typically much faster and good enough for these sprite conversions.
+    quantized = rgb.quantize(colors=255, method=Image.Quantize.FASTOCTREE, dither=Image.Dither.NONE)
 
     qdata = list(quantized.getdata())
     adata = list(alpha.getdata())
@@ -123,18 +126,19 @@ def build_sff(signature_and_version: bytes, palette_type: int, sprites: List[Spr
 
     with TemporaryDirectory() as temp_dir_raw:
         temp_dir = Path(temp_dir_raw)
-        payloads: List[bytes] = []
-        for sprite in sprites:
+        content = bytearray(header)
+        current_offset = 512
+        total = len(sprites)
+        started = time.time()
+
+        for index, sprite in enumerate(sprites):
             pair = (sprite.group, sprite.image)
             source = merged_images.get(pair)
             if source is None:
                 raise FileNotFoundError(f"Missing merged sprite for pair {pair}")
-            payloads.append(rgba_to_mugen_pcx(source, temp_dir))
 
-        content = bytearray(header)
-        current_offset = 512
-        for index, (sprite, payload) in enumerate(zip(sprites, payloads)):
-            next_offset = current_offset + 32 + len(payload) if index < len(sprites) - 1 else 0
+            payload = rgba_to_mugen_pcx(source, temp_dir)
+            next_offset = current_offset + 32 + len(payload) if index < total - 1 else 0
             sub = bytearray(32)
             scaled_axis_x = int(round(sprite.axis_x * axis_scale))
             scaled_axis_y = int(round(sprite.axis_y * axis_scale))
@@ -149,6 +153,13 @@ def build_sff(signature_and_version: bytes, palette_type: int, sprites: List[Spr
             content.extend(sub)
             content.extend(payload)
             current_offset = next_offset
+
+            # Progress output so long runs don't look hung.
+            if (index + 1) % 25 == 0 or (index + 1) == total:
+                elapsed = time.time() - started
+                rate = (index + 1) / elapsed if elapsed > 0 else 0.0
+                remaining = (total - (index + 1)) / rate if rate > 0 else 0.0
+                print(f"SFF build: {index + 1}/{total} sprites ({rate:.2f} sprites/s, ETA {remaining:.0f}s)")
 
         output_path.write_bytes(content)
 
