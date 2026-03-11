@@ -1,0 +1,404 @@
+;----------------------------------------------------------------
+;PUSH BACK
+[Statedef 123456]
+type    = S
+movetype= H
+physics = S
+poweradd= 0
+ctrl = 0
+velset = 0,0
+sprpriority = 2
+
+[State ]
+type = Posset
+trigger1 = time = 0
+y = 0
+
+[State ]
+type = velset
+trigger1 = 1
+x = -2.5
+
+[State 5120, 3]
+type = NotHitBy
+trigger1 = time <25
+value = SCA
+time = 1
+
+[State PUSH] 
+type = ChangeAnim
+triggerall = !time
+trigger1 = AuthorName = "OMEGAPSYCHO-MK"
+trigger2 = AuthorName = "OMEGAPSYCHO-MKSecret"
+value = 5400
+
+[State PUSH] 
+type = ChangeAnim2
+trigger1 = AuthorName != "OMEGAPSYCHO-MK"
+trigger1 = AuthorName != "OMEGAPSYCHO-MKSecret"
+trigger1 = !time
+value = 5401
+
+[State end]
+type = selfstate
+triggerall = animtime = 0
+trigger1 = alive = 1
+trigger2 = life>0
+value = 0
+Ctrl = 1
+
+[State end]
+type = selfstate
+triggerall = animtime = 0
+trigger1 = alive = 0
+trigger2 = life<=0
+value = 5050
+ctrl = 0
+
+;----------------------------------------------------------------
+;PUSH BACK by Strong Hit
+[Statedef 123457]
+type    = S
+movetype= H
+physics = S
+poweradd= 0
+ctrl = 0
+velset = 0,0
+sprpriority = 2
+
+[State 49999, 2]
+type = LifeAdd
+trigger1 = time = 0
+trigger1 = life >1
+trigger1 = enemynear,Var(58)=0
+value = -80
+[State 49999, 2]
+type = LifeSet
+trigger1 = time = 0
+trigger1 = life <=1
+trigger1 = enemynear,Var(58)=1
+value = 1
+
+[State ]
+type = Posset
+trigger1 = time = 0
+y = 0
+
+[State ]
+type = velset
+trigger1 = 1
+x = -2
+
+[State 5120, 3]
+type = NotHitBy
+trigger1 = time <25
+value = SCA
+time = 1
+
+[State PUSH] 
+type = ChangeAnim
+triggerall = !time
+trigger1 = AuthorName = "OMEGAPSYCHO-MK"
+trigger2 = AuthorName = "OMEGAPSYCHO-MKSecret"
+value = 5400
+
+[State PUSH] 
+type = ChangeAnim2
+trigger1 = AuthorName != "OMEGAPSYCHO-MK"
+trigger1 = AuthorName != "OMEGAPSYCHO-MKSecret"
+trigger1 = !time
+value = 5401
+
+[State end]
+type = selfstate
+triggerall = animtime = 0
+trigger1 = alive = 1
+trigger2 = life>0
+value = 0
+Ctrl = 1
+
+[State end]
+type = selfstate
+triggerall = animtime = 0
+trigger1 = alive = 0
+trigger2 = life<=0
+value = 5050
+ctrl = 0
+
+;----------------------------------------------------------------
+;PUSH BACK by Strong Hit
+[Statedef 123458]
+type    = S
+movetype= H
+physics = S
+ctrl = 0
+velset = 0,0
+sprpriority = 2
+
+[State 49999, 2]
+type = LifeAdd
+trigger1 = time = 0
+trigger1 = life >1
+trigger1 = enemynear,Var(58)=0
+value = -100
+[State 49999, 2]
+type = LifeSet
+trigger1 = time = 0
+trigger1 = life <=1
+trigger1 = enemynear,Var(58)=1
+value = 1
+
+[State ]
+type = Posset
+trigger1 = time = 0
+y = 0
+
+[State ]
+type = velset
+trigger1 = 1
+x = -3
+
+[State 5120, 3]
+type = NotHitBy
+trigger1 = time <25
+value = SCA
+time = 1
+
+[State PUSH] 
+type = ChangeAnim
+triggerall = !time
+trigger1 = AuthorName = "OMEGAPSYCHO-MK"
+trigger2 = AuthorName = "OMEGAPSYCHO-MKSecret"
+value = 5400
+
+[State PUSH] 
+type = ChangeAnim2
+trigger1 = AuthorName != "OMEGAPSYCHO-MK"
+trigger1 = AuthorName != "OMEGAPSYCHO-MKSecret"
+trigger1 = !time
+value = 5401
+
+[State end]
+type = selfstate
+triggerall = animtime = 0
+trigger1 = alive = 1
+trigger2 = life>0
+value = 0
+Ctrl = 1
+
+[State end]
+type = selfstate
+triggerall = animtime = 0
+trigger1 = alive = 0
+trigger2 = life<=0
+value = 5050
+ctrl = 0
+;---------------------------------------------------------------------------
+; P2 HITA_UP
+[Statedef 123459]
+type    = A
+movetype= H
+physics = N
+anim = 5030
+ctrl = 0
+
+[State 300, 4]
+type = CtrlSet
+Trigger1 = 1
+value = 0
+
+[State 5030, 1]
+type = VelAdd
+trigger1 = 1
+y = GetHitVar(yaccel)
+[State 5030, 2]
+type = HitVelSet
+trigger1 = Time = 0
+x = 2
+y = -2
+
+[State 5030, 4]
+type = SelfState
+trigger1 = 1
+trigger1 = Pos Y < 0
+value = 5030
+ctrl = 0
+
+[State 5030, 4]
+type = SelfState
+trigger1 = 1
+trigger1 = Pos Y >= 0
+value = 5110
+ctrl = 0
+
+;---------------------------------------------------------------------------------------
+;PREPARE TO DIE
+[Statedef 49999]
+type = S
+movetype = H
+physics = N
+juggle = 1
+ctrl = 0
+velset = 0,0
+
+[State 5120, 3]
+type = NotHitBy
+trigger1 = time <1
+value = SCA
+time = 1
+
+[State ]
+type = Posset
+trigger1 = time = 0
+y = 0
+
+[State ]
+type = Velset
+trigger1 = time = 0
+x = 0 
+y = 0
+
+[State 7, 1]
+type = turn
+trigger1 = p2dist x <=-5
+trigger1 = p2statetype != A
+
+[State 49999, 1]
+type = LifeSet
+trigger1 = Time <300
+trigger1 = P2life <= 1
+value = 1
+
+[State 49999, 4]
+type = LifeSet
+trigger1 = Time >=300
+trigger1 = P2StateNo != [3000,3200] 
+value = 0
+
+[State 49999, 5]
+type = ChangeAnim2
+trigger1 = AuthorName != "OMEGAPSYCHO-MK"
+trigger1 = AuthorName != "OMEGAPSYCHO-MKSecret"
+trigger1 = !time
+value = 49999
+
+[State 49999, 5]
+type = ChangeAnim
+triggerall = !time
+trigger1 = AuthorName = "OMEGAPSYCHO-MK"
+trigger2 = AuthorName = "OMEGAPSYCHO-MKSecret"
+value = 5300
+
+[State 49999, 3]
+type = SelfState
+trigger1 = win
+trigger2 = P2Life <= 0
+value = 0
+ctrl = 1
+
+[State 49999, 3]
+type = SelfState
+trigger1 = Time = 305
+trigger1 = P2StateNo != [3000,3200] 
+trigger2 = life <= 0
+trigger3 = lose
+value = 5050
+ctrl = 0
+
+;-----------------------------------------------------------------
+;FATALITY HELPER
+[StateDef 29000]
+type = S
+movetype = A
+physics = N
+anim = 29000
+velset = 0,0
+ctrl = 1
+
+[State 5120, 3]
+type = NotHitBy
+trigger1 = time <1
+value = SCA
+time = 1
+
+[State 7000, 1]
+type = HitDef
+trigger1 = P2Stateno != 29001
+trigger1 = 1
+attr = SCA, NA
+damage = 0,0
+animtype = Heavy
+hitflag = MF
+guardflag = A 
+priority = 7
+pausetime = 0,3
+sparkxy = 0,0
+sparkno = -1
+gurad.sparkno = -1
+hitsound = -1
+guardsound = -1
+ground.type = High
+ground.slidetime = 0
+ground.hittime = 0
+ground.velocity = 0
+air.velocity = 0
+air.fall = 1
+fall = 0
+numhits = 0
+p2stateno = 29001
+
+[State 300, 5]
+type = DestroySelf
+trigger1 = Time >100
+
+;---------------------------------------------------------------------------------------
+;DIE
+[Statedef 29001]
+type = S
+movetype= I
+physics = N
+juggle = 1
+ctrl = 0
+velset = 0,0
+
+[State 5120, 3]
+type = NotHitBy
+trigger1 = time <1
+value = SCA
+time = 1
+
+[State 7, 1]
+type = turn
+trigger1 = p2bodydist x<=-15
+trigger1 = p2statetype != A
+
+[State 5610, 8]
+type = AssertSpecial
+trigger1 = time > 1
+flag = NoBarDisplay
+
+[State 49999, 1]
+type = LifeSet
+trigger1 = 1
+value = 1
+
+[State 49999, 5]
+type = ChangeAnim2
+trigger1 = AuthorName != "OMEGAPSYCHO-MK"
+trigger1 = AuthorName != "OMEGAPSYCHO-MKSecret"
+trigger1 = !time
+value = 49999
+
+[State 49999, 5]
+type = ChangeAnim
+triggerall = !time
+trigger1 = AuthorName = "OMEGAPSYCHO-MK"
+trigger2 = AuthorName = "OMEGAPSYCHO-MKSecret"
+value = 5300
+
+
+;This prevent freeze game
+[State 49999, 5]
+type = SelfState
+trigger1 = time >600
+value = 0

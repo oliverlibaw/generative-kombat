@@ -1,0 +1,2105 @@
+;-------------------------------------------------------------------
+;BLOOD SPLAT 1 & 2
+[Statedef 8000]
+type = S
+movetype = I
+physics = N
+anim = ifelse(ishelper(8000),1020,1021)
+
+[State 1000, 3]
+type = SprPriority
+trigger1 = 1
+value = 30
+
+[State ]
+type = velset
+trigger1 = 1
+y = 0
+x = 0
+
+[State ]
+type = assertspecial
+trigger1 = 1
+flag = noshadow
+
+[State end]
+type = Destroyself
+trigger1 = animtime = 0
+
+;-------------------------------------------------------------
+;BLOOD BATH L
+[Statedef 8010]
+type    = A
+movetype= I
+physics = N
+velset = 0,0
+ctrl = 0
+sprpriority = 3
+
+[State y]
+type = VarRandom
+trigger1 = 1
+v = 0
+range = -3,-6
+[State x]
+type = VarRandom
+trigger1 = 1
+v = 1
+range = -1,-4
+
+[State ]
+type = velset
+trigger1 = time = 1
+y = var(0)
+x = var(1)
+
+[State end]
+type = changeanim
+trigger1 = time = 0
+value = 1017
+
+[State ]
+type = veladd
+trigger1 = time >= 3
+y = .1
+
+[State ]
+type = veladd
+trigger1 = time >= 10
+y = .2
+
+[State ]
+type = assertspecial
+trigger1 = 1
+flag = noshadow
+
+[State 1000, 3]
+type = SprPriority
+trigger1 = 1
+value = 20
+
+[State end]
+type = changestate
+triggerall = time >= 5
+trigger1 = (Vel Y > 0)&&(Pos Y >= 0)
+value = 8012
+
+;-------------------------------------------------------------
+;BLOOD BATH R
+[Statedef 8011]
+type    = A
+movetype= I
+physics = N
+velset = 0,0
+ctrl = 0
+sprpriority = 3
+
+[State 1000, 3]
+type = SprPriority
+trigger1 = 1
+value = 20
+
+[State y]
+type = VarRandom
+trigger1 = 1
+v = 0
+range = -3,-6
+[State x]
+type = VarRandom
+trigger1 = 1
+v = 1
+range = 1,4
+
+[State ]
+type = velset
+trigger1 = time = 1
+y = var(0)
+x = var(1)
+
+[State end]
+type = changeanim
+trigger1 = time = 0
+value = 1018
+
+[State ]
+type = veladd
+trigger1 = time >= 3
+y = .1
+
+[State ]
+type = veladd
+trigger1 = time >= 10
+y = .2
+
+[State ]
+type = assertspecial
+trigger1 = 1
+flag = noshadow
+
+[State end]
+type = changestate
+triggerall = time >= 5
+trigger1 = (Vel Y > 0)&&(Pos Y >= 0)
+value = 8012
+;****************************************************************
+;END BLOOD
+[Statedef 8012]
+type    = A
+movetype= I
+physics = N
+ctrl = 0
+anim = 1019
+sprpriority = 3
+
+[State 7, Blood_sound]
+type = PlaySnd
+trigger1 = root,var(25) = 1
+trigger1 = animelem = 1
+value = S10,ifelse(random<=500,2,ifelse(random>500,3,5))
+volumescale = 90
+
+[State 7, blood_sound]
+type = PlaySnd
+trigger1 = root,var(25) = 0
+trigger1 = animelem = 1
+value = S10,ifelse(random<=500,6,ifelse(random>500,7,8))
+volumescale = 90
+
+[State ]
+type = velset
+trigger1 = 1
+y = 0
+x = 0
+
+[State ]
+type = posset
+trigger1 = 1
+y = 6
+
+[State ]
+type = assertspecial
+trigger1 = 1
+flag = noshadow
+
+[State end]
+type = destroyself
+trigger1 = time = 35
+
+;---------------------------------------------------------------------------
+;BLOOD FLOOR
+[Statedef 1023]
+type    = S
+movetype= H
+physics = N
+velset = 0,0
+ctrl = 0
+anim = 9999
+
+[State 5030, 2]
+type = PosSet
+trigger1 = 1
+x = (enemy,pos x+1)
+y = 0
+
+[State 5030, 2]
+type = VelSet
+trigger1 = 1
+x = 0
+y = 0
+
+[State 5030, 4]
+type = Changestate
+triggerall = 1
+trigger1 = RoundState = 4
+trigger2 = Root,Stateno = [180,182]
+Value = 1024
+
+;---------------------------------------------------------------------------
+;BLOOD FLOOR APPEAR
+[Statedef 1024]
+type    = S
+movetype= H
+physics = N
+velset = 0,0
+ctrl = 0
+anim = 1023
+
+[State 1007, Finish]
+type = AngleDraw
+trigger1 = time = 0
+value = 0
+scale = 1,1
+
+[State 5, 0]
+type = AngleDraw
+trigger1 = time >0
+value = 0
+scale = FVar(14) * Const(size.xscale), 1.2
+
+[State -2, VarAdd]
+type = Varset
+trigger1 = time = 0
+ignorehitpause = 1
+fv = 14
+value = 0.4
+
+[State 7010, 3]
+type = SprPriority
+trigger1 = 1
+value = -40 
+
+[State -2, VarAdd]
+type = Varadd 
+trigger1 = time >0
+ignorehitpause = 1
+fv = 14
+value = 0.004
+
+[State 5030, 2]
+type = VelSet
+trigger1 = 1
+x = 0
+y = 0
+
+[State 5030, 4]
+type = Destroyself
+trigger1 = time > 10000
+trigger2 = 1
+trigger2 = Roundstate <=1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+;--------------------------------------------------------------------
+;BONE 1
+[Statedef 7651]
+type = S
+movetype = I
+physics = N
+anim = 2050
+
+[State -2, 1]
+type = PalFX
+trigger1 = root,var(34) = 1 && root,var(26) = 0
+trigger1 = root,var(28) = 1
+trigger1 = (GameTime%2)=0
+trigger1 = time>1
+time = 1
+add = 0,50,0
+ignorehitpause = 1
+
+[State 0, AngleAdd]
+type = AngleAdd
+trigger1 = time >0
+value = 2
+[State 0, AngleSet]
+type = AngleSet
+trigger1 = time = 0 
+value = 0
+ignorehitpause = 0
+persistent = 1
+[State 0, AngleDraw]
+type = AngleDraw
+trigger1 = time > 0
+
+[State ]
+type = velset
+trigger1 = time = 1
+y = -4.3
+x = 0.2
+
+[State ]
+type = veladd
+trigger1 = time >= 3
+y = .1
+
+[State ]
+type = veladd
+trigger1 = time >= 10
+y = .2
+
+[State ]
+type = assertspecial
+trigger1 = 1
+flag = noshadow
+
+[State end]
+type = changestate
+triggerall = time >= 5
+trigger1 = (Vel Y > 0)&&(Pos Y >= 0)
+value = 7511
+
+;---------------------------------------------------------------------
+;BONE 2
+[Statedef 7652]
+type = S
+movetype = I
+physics = N
+anim = 2051
+
+[State -2, 1]
+type = PalFX
+trigger1 = root,var(34) = 1 && root,var(26) = 0
+trigger1 = root,var(28) = 1
+trigger1 = (GameTime%3)=0
+trigger1 = time>2
+time = 1
+add = 0,50,0
+ignorehitpause = 1
+
+[State 0, AngleAdd]
+type = AngleAdd
+trigger1 = time >0
+value = -1.3
+[State 0, AngleSet]
+type = AngleSet
+trigger1 = time = 0 
+value = 0
+ignorehitpause = 0
+persistent = 1
+[State 0, AngleDraw]
+type = AngleDraw
+trigger1 = time > 0
+
+[State ]
+type = velset
+trigger1 = time = 1
+y = -5.2
+x = 0.7
+
+[State ]
+type = veladd
+trigger1 = time >= 3
+y = .1
+
+[State ]
+type = veladd
+trigger1 = time >= 10
+y = .2
+
+[State ]
+type = assertspecial
+trigger1 = 1
+flag = noshadow
+
+[State end]
+type = changestate
+triggerall = time >= 5
+trigger1 = (Vel Y > 0)&&(Pos Y >= 0)
+value = 7511
+
+;---------------------------------------------------------------------
+;BONE 3
+[Statedef 7653]
+type = S
+movetype = I
+physics = N
+anim = 2052
+
+[State -2, 1]
+type = PalFX
+trigger1 = root,var(34) = 1 && root,var(26) = 0
+trigger1 = root,var(28) = 1
+trigger1 = (GameTime%3)=0
+trigger1 = time>3
+time = 1
+add = 0,50,0
+ignorehitpause = 1
+
+[State 0, AngleAdd]
+type = AngleAdd
+trigger1 = time >0
+value = 5
+[State 0, AngleSet]
+type = AngleSet
+trigger1 = time = 0 
+value = 0
+ignorehitpause = 0
+persistent = 1
+[State 0, AngleDraw]
+type = AngleDraw
+trigger1 = time > 0
+
+[State ]
+type = velset
+trigger1 = time = 1
+y = -5
+x = -0.4
+
+[State ]
+type = veladd
+trigger1 = time >= 3
+y = .1
+
+[State ]
+type = veladd
+trigger1 = time >= 10
+y = .2
+
+[State ]
+type = assertspecial
+trigger1 = 1
+flag = noshadow
+
+[State end]
+type = changestate
+triggerall = time >= 5
+trigger1 = (Vel Y > 0)&&(Pos Y >= 0)
+value = 7511
+
+;---------------------------------------------------------------------
+;BONE 4
+[Statedef 7654]
+type = S
+movetype = I
+physics = N
+anim = 2053
+
+[State -2, 1]
+type = PalFX
+trigger1 = root,var(34) = 1 && root,var(26) = 0
+trigger1 = root,var(28) = 1
+trigger1 = (GameTime%4)=0
+trigger1 = time>4
+time = 1
+add = 0,50,0
+ignorehitpause = 1
+
+[State 0, AngleAdd]
+type = AngleAdd
+trigger1 = time >0
+value = -2
+[State 0, AngleSet]
+type = AngleSet
+trigger1 = time = 0 
+value = 0
+ignorehitpause = 0
+persistent = 1
+[State 0, AngleDraw]
+type = AngleDraw
+trigger1 = time > 0
+
+[State ]
+type = velset
+trigger1 = time = 1
+y = -6
+x = -0.5
+
+[State ]
+type = veladd
+trigger1 = time >= 3
+y = .1
+
+[State ]
+type = veladd
+trigger1 = time >= 10
+y = .2
+
+[State ]
+type = assertspecial
+trigger1 = 1
+flag = noshadow
+
+[State end]
+type = changestate
+triggerall = time >= 5
+trigger1 = (Vel Y > 0)&&(Pos Y >= 0)
+value = 7511
+
+;---------------------------------------------------------------------
+;BONE 5
+[Statedef 7655]
+type = S
+movetype = I
+physics = N
+anim = 2054
+
+[State -2, 1]
+type = PalFX
+trigger1 = root,var(34) = 1 && root,var(26) = 0
+trigger1 = root,var(28) = 1
+trigger1 = (GameTime%5)=0
+trigger1 = time>5
+time = 1
+add = 0,50,0
+ignorehitpause = 1
+
+[State 0, AngleAdd]
+type = AngleAdd
+trigger1 = time >0
+value = 3
+[State 0, AngleSet]
+type = AngleSet
+trigger1 = time = 0 
+value = 0
+ignorehitpause = 0
+persistent = 1
+[State 0, AngleDraw]
+type = AngleDraw
+trigger1 = time > 0
+
+[State ]
+type = velset
+trigger1 = time = 1
+y = -4.8
+x = 0.6
+
+[State ]
+type = veladd
+trigger1 = time >= 3
+y = .1
+
+[State ]
+type = veladd
+trigger1 = time >= 10
+y = .2
+
+[State ]
+type = assertspecial
+trigger1 = 1
+flag = noshadow
+
+[State end]
+type = changestate
+triggerall = time >= 5
+trigger1 = (Vel Y > 0)&&(Pos Y >= 0)
+value = 7511
+
+;---------------------------------------------------------------------
+;BONE 6
+[Statedef 7656]
+type = S
+movetype = I
+physics = N
+anim = 2055
+
+[State -2, 1]
+type = PalFX
+trigger1 = root,var(34) = 1 && root,var(26) = 0
+trigger1 = root,var(28) = 1
+trigger1 = (GameTime%2)=0
+trigger1 = time>6
+time = 1
+add = 0,50,0
+ignorehitpause = 1
+
+[State 0, AngleAdd]
+type = AngleAdd
+trigger1 = time >0
+value = -1
+[State 0, AngleSet]
+type = AngleSet
+trigger1 = time = 0 
+value = 0
+ignorehitpause = 0
+persistent = 1
+[State 0, AngleDraw]
+type = AngleDraw
+trigger1 = time > 0
+
+[State ]
+type = velset
+trigger1 = time = 1
+y = -7
+x = -0.7
+
+[State ]
+type = veladd
+trigger1 = time >= 3
+y = .1
+
+[State ]
+type = veladd
+trigger1 = time >= 10
+y = .2
+
+[State ]
+type = assertspecial
+trigger1 = 1
+flag = noshadow
+
+[State end]
+type = changestate
+triggerall = time >= 5
+trigger1 = (Vel Y > 0)&&(Pos Y >= 0)
+value = 7511
+
+
+;---------------------------------------------------------------------
+;BONE 7
+[Statedef 7657]
+type = S
+movetype = I
+physics = N
+anim = 2056
+
+[State -2, 1]
+type = PalFX
+trigger1 = root,var(34) = 1 && root,var(26) = 0
+trigger1 = root,var(28) = 1
+trigger1 = (GameTime%3)=0
+trigger1 = time>7
+time = 1
+add = 0,50,0
+ignorehitpause = 1
+
+[State 0, AngleAdd]
+type = AngleAdd
+trigger1 = time >0
+value = 1
+[State 0, AngleSet]
+type = AngleSet
+trigger1 = time = 0 
+value = 0
+ignorehitpause = 0
+persistent = 1
+[State 0, AngleDraw]
+type = AngleDraw
+trigger1 = time > 0
+
+[State ]
+type = velset
+trigger1 = time = 1
+y = -9
+x = -0.8
+
+[State ]
+type = veladd
+trigger1 = time >= 3
+y = .1
+
+[State ]
+type = veladd
+trigger1 = time >= 10
+y = .2
+
+[State ]
+type = assertspecial
+trigger1 = 1
+flag = noshadow
+
+[State end]
+type = changestate
+triggerall = time >= 5
+trigger1 = (Vel Y > 0)&&(Pos Y >= 0)
+value = 7511
+
+
+;---------------------------------------------------------------------
+;BONE 8
+[Statedef 7658]
+type = S
+movetype = I
+physics = N
+anim = 2057
+
+[State -2, 1]
+type = PalFX
+trigger1 = root,var(34) = 1 && root,var(26) = 0
+trigger1 = root,var(28) = 1
+trigger1 = (GameTime%4)=0
+trigger1 = time>8
+time = 1
+add = 0,50,0
+ignorehitpause = 1
+
+[State ]
+type = velset
+trigger1 = time = 1
+y = -5.4
+x = 1
+
+[State ]
+type = veladd
+trigger1 = time >= 3
+y = .1
+
+[State ]
+type = veladd
+trigger1 = time >= 10
+y = .2
+
+[State ]
+type = assertspecial
+trigger1 = 1
+flag = noshadow
+
+[State end]
+type = changestate
+triggerall = time >= 5
+trigger1 = (Vel Y > 0)&&(Pos Y >= 0)
+value = 7511
+
+[State 0, AngleAdd]
+type = AngleAdd
+trigger1 = time >0
+value = 7
+[State 0, AngleSet]
+type = AngleSet
+trigger1 = time = 0 
+value = 0
+ignorehitpause = 0
+persistent = 1
+[State 0, AngleDraw]
+type = AngleDraw
+trigger1 = time > 0
+
+
+;---------------------------------------------------------------------
+;BONE 9
+[Statedef 7659]
+type = S
+movetype = I
+physics = N
+anim = 2058
+
+[State -2, 1]
+type = PalFX
+trigger1 = root,var(34) = 1 && root,var(26) = 0
+trigger1 = root,var(28) = 1
+trigger1 = (GameTime%4)=0
+trigger1 = time>9
+time = 1
+add = 0,50,0
+ignorehitpause = 1
+
+[State ]
+type = velset
+trigger1 = time = 1
+y = 1.4
+x = 0
+
+[State ]
+type = veladd
+trigger1 = time >= 3
+y = .1
+
+[State ]
+type = veladd
+trigger1 = time >= 10
+y = .2
+
+[State ]
+type = assertspecial
+trigger1 = 1
+flag = noshadow
+
+[State end]
+type = changestate
+triggerall = time >= 5
+trigger1 = (Vel Y > 0)&&(Pos Y >= 0)
+value = 7511
+
+[State 0, AngleAdd]
+type = AngleAdd
+trigger1 = time >0
+value = 7
+[State 0, AngleSet]
+type = AngleSet
+trigger1 = time = 0 
+value = 0
+ignorehitpause = 0
+persistent = 1
+[State 0, AngleDraw]
+type = AngleDraw
+trigger1 = time > 0
+
+;---------------------------------------------------------------------
+;BONE 10
+[Statedef 7660]
+type = S
+movetype = I
+physics = N
+anim = 2059
+
+[State -2, 1]
+type = PalFX
+trigger1 = root,var(34) = 1 && root,var(26) = 0
+trigger1 = root,var(28) = 1
+trigger1 = (GameTime%2)=0
+trigger1 = time>10
+time = 1
+add = 0,50,0
+ignorehitpause = 1
+
+[State 0, AngleAdd]
+type = AngleAdd
+trigger1 = time >0
+value = 2
+[State 0, AngleSet]
+type = AngleSet
+trigger1 = time = 0 
+value = 0
+ignorehitpause = 0
+persistent = 1
+[State 0, AngleDraw]
+type = AngleDraw
+trigger1 = time > 0
+
+[State ]
+type = velset
+trigger1 = time = 1
+y = 6.6
+x = -1.4
+
+[State ]
+type = veladd
+trigger1 = time >= 3
+y = .1
+
+[State ]
+type = veladd
+trigger1 = time >= 10
+y = .2
+
+[State ]
+type = assertspecial
+trigger1 = 1
+flag = noshadow
+
+[State end]
+type = changestate
+triggerall = time >= 5
+trigger1 = (Vel Y > 0)&&(Pos Y >= 0)
+value = 7511
+
+;---------------------------------------------------------------------
+;BONE 11
+[Statedef 7661]
+type = S
+movetype = I
+physics = N
+anim = 2060
+
+[State -2, 1]
+type = PalFX
+trigger1 = root,var(34) = 1 && root,var(26) = 0
+trigger1 = root,var(28) = 1
+trigger1 = (GameTime%3)=0
+trigger1 = time>0
+time = 1
+add = 0,50,0
+ignorehitpause = 1
+
+[State 0, AngleAdd]
+type = AngleAdd
+trigger1 = time >0
+value = 2
+[State 0, AngleSet]
+type = AngleSet
+trigger1 = time = 0 
+value = 0
+ignorehitpause = 0
+persistent = 1
+[State 0, AngleDraw]
+type = AngleDraw
+trigger1 = time > 0
+
+[State ]
+type = velset
+trigger1 = time = 1
+y = -8.6
+x = -1.2
+
+[State ]
+type = veladd
+trigger1 = time >= 3
+y = .1
+
+[State ]
+type = veladd
+trigger1 = time >= 10
+y = .2
+
+[State ]
+type = assertspecial
+trigger1 = 1
+flag = noshadow
+
+[State end]
+type = changestate
+triggerall = time >= 5
+trigger1 = (Vel Y > 0)&&(Pos Y >= 0)
+value = 7511
+
+;---------------------------------------------------------------------
+;BONE 12
+[Statedef 7662]
+type = S
+movetype = I
+physics = N
+anim = 2061
+
+[State -2, 1]
+type = PalFX
+trigger1 = root,var(34) = 1 && root,var(26) = 0
+trigger1 = root,var(28) = 1
+trigger1 = (GameTime%4)=0
+trigger1 = time>1
+time = 1
+add = 0,50,0
+ignorehitpause = 1
+
+[State 0, AngleAdd]
+type = AngleAdd
+trigger1 = time >0
+value = 2
+[State 0, AngleSet]
+type = AngleSet
+trigger1 = time = 0 
+value = 0
+ignorehitpause = 0
+persistent = 1
+[State 0, AngleDraw]
+type = AngleDraw
+trigger1 = time > 0
+
+[State ]
+type = velset
+trigger1 = time = 1
+y = -9.6
+x = 0.8
+
+[State ]
+type = veladd
+trigger1 = time >= 3
+y = .1
+
+[State ]
+type = veladd
+trigger1 = time >= 10
+y = .2
+
+[State ]
+type = assertspecial
+trigger1 = 1
+flag = noshadow
+
+[State end]
+type = changestate
+triggerall = time >= 5
+trigger1 = (Vel Y > 0)&&(Pos Y >= 0)
+value = 7511
+
+;---------------------------------------------------------------------
+;BONE 13
+[Statedef 7663]
+type = S
+movetype = I
+physics = N
+anim = 2062
+
+[State -2, 1]
+type = PalFX
+trigger1 = root,var(34) = 1 && root,var(26) = 0
+trigger1 = root,var(28) = 1
+trigger1 = (GameTime%5)=0
+trigger1 = time>7
+time = 1
+add = 0,50,0
+ignorehitpause = 1
+
+[State 0, AngleAdd]
+type = AngleAdd
+trigger1 = time >0
+value = 15
+[State 0, AngleSet]
+type = AngleSet
+trigger1 = time = 0 
+value = 0
+ignorehitpause = 0
+persistent = 1
+[State 0, AngleDraw]
+type = AngleDraw
+trigger1 = time > 0
+
+[State ]
+type = velset
+trigger1 = time = 1
+y = -11.6
+x = 1.1
+
+[State ]
+type = veladd
+trigger1 = time >= 3
+y = .1
+
+[State ]
+type = veladd
+trigger1 = time >= 10
+y = .2
+
+[State ]
+type = assertspecial
+trigger1 = 1
+flag = noshadow
+
+[State end]
+type = changestate
+triggerall = time >= 5
+trigger1 = (Vel Y > 0)&&(Pos Y >= 0)
+value = 7511
+
+;---------------------------------------------------------------------
+;BONE 14
+[Statedef 7664]
+type = S
+movetype = I
+physics = N
+anim = 2063
+
+[State -2, 1]
+type = PalFX
+trigger1 = root,var(34) = 1 && root,var(26) = 0
+trigger1 = root,var(28) = 1
+trigger1 = (GameTime%2)=0
+trigger1 = time>10
+time = 1
+add = 0,50,0
+ignorehitpause = 1
+
+[State 0, AngleAdd]
+type = AngleAdd
+trigger1 = time >0
+value = -6
+[State 0, AngleSet]
+type = AngleSet
+trigger1 = time = 0 
+value = 0
+ignorehitpause = 0
+persistent = 1
+[State 0, AngleDraw]
+type = AngleDraw
+trigger1 = time > 0
+
+[State ]
+type = velset
+trigger1 = time = 1
+y = -5.6
+x = -0.9
+
+[State ]
+type = veladd
+trigger1 = time >= 3
+y = .1
+
+[State ]
+type = veladd
+trigger1 = time >= 10
+y = .2
+
+[State ]
+type = assertspecial
+trigger1 = 1
+flag = noshadow
+
+[State end]
+type = changestate
+triggerall = time >= 5
+trigger1 = (Vel Y > 0)&&(Pos Y >= 0)
+value = 7511
+
+;---------------------------------------------------------------------
+;BONE 15
+[Statedef 7665]
+type = S
+movetype = I
+physics = N
+anim = 2064
+
+[State -2, 1]
+type = PalFX
+trigger1 = root,var(34) = 1 && root,var(26) = 0
+trigger1 = root,var(28) = 1
+trigger1 = (GameTime%2)=0
+trigger1 = time>0
+time = 1
+add = 0,50,0
+ignorehitpause = 1
+
+[State 0, AngleAdd]
+type = AngleAdd
+trigger1 = time >0
+value = 9
+[State 0, AngleSet]
+type = AngleSet
+trigger1 = time = 0 
+value = 0
+ignorehitpause = 0
+persistent = 1
+[State 0, AngleDraw]
+type = AngleDraw
+trigger1 = time > 0
+
+[State ]
+type = velset
+trigger1 = time = 1
+y = -14.4
+x = -0.7
+
+[State ]
+type = veladd
+trigger1 = time >= 3
+y = .1
+
+[State ]
+type = veladd
+trigger1 = time >= 10
+y = .2
+
+[State ]
+type = assertspecial
+trigger1 = 1
+flag = noshadow
+
+[State end]
+type = changestate
+triggerall = time >= 5
+trigger1 = (Vel Y > 0)&&(Pos Y >= 0)
+value = 7511
+
+;---------------------------------------------------------------------
+;BONE 16
+[Statedef 7670]
+type = S
+movetype = I
+physics = N
+anim = 2065
+
+[State -2, 1]
+type = PalFX
+trigger1 = root,var(34) = 1 && root,var(26) = 0
+trigger1 = root,var(28) = 1
+trigger1 = (GameTime%2)=0
+trigger1 = time>0
+time = 1
+add = 0,50,0
+ignorehitpause = 1
+
+[State 0, AngleAdd]
+type = AngleAdd
+trigger1 = time >0
+value = -2.5
+[State 0, AngleSet]
+type = AngleSet
+trigger1 = time = 0 
+value = 0
+ignorehitpause = 0
+persistent = 1
+[State 0, AngleDraw]
+type = AngleDraw
+trigger1 = time > 0
+
+[State ]
+type = velset
+trigger1 = time = 1
+y = -7.1
+x = -0.1
+
+[State ]
+type = veladd
+trigger1 = time >= 3
+y = .1
+
+[State ]
+type = veladd
+trigger1 = time >= 10
+y = .2
+
+[State ]
+type = assertspecial
+trigger1 = 1
+flag = noshadow
+
+[State end]
+type = changestate
+triggerall = time >= 5
+trigger1 = (Vel Y > 0)&&(Pos Y >= 0)
+value = 7511
+
+;---------------------------------------------------------------------
+;BONE 17
+[Statedef 7671]
+type = S
+movetype = I
+physics = N
+anim = 2066
+
+[State -2, 1]
+type = PalFX
+trigger1 = root,var(34) = 1 && root,var(26) = 0
+trigger1 = root,var(28) = 1
+trigger1 = (GameTime%2)=0
+trigger1 = time>0
+time = 1
+add = 0,50,0
+ignorehitpause = 1
+
+[State 0, AngleAdd]
+type = AngleAdd
+trigger1 = time >0
+value = 3.3
+[State 0, AngleSet]
+type = AngleSet
+trigger1 = time = 0 
+value = 0
+ignorehitpause = 0
+persistent = 1
+[State 0, AngleDraw]
+type = AngleDraw
+trigger1 = time > 0
+
+[State ]
+type = velset
+trigger1 = time = 1
+y = -5.1
+x = 0.1
+
+[State ]
+type = veladd
+trigger1 = time >= 3
+y = .1
+
+[State ]
+type = veladd
+trigger1 = time >= 10
+y = .2
+
+[State ]
+type = assertspecial
+trigger1 = 1
+flag = noshadow
+
+[State end]
+type = changestate
+triggerall = time >= 5
+trigger1 = (Vel Y > 0)&&(Pos Y >= 0)
+value = 7511
+
+;---------------------------------------------------------------------
+;BONE 18
+[Statedef 7672]
+type = S
+movetype = I
+physics = N
+anim = 2067
+
+[State -2, 1]
+type = PalFX
+trigger1 = root,var(34) = 1 && root,var(26) = 0
+trigger1 = root,var(28) = 1
+trigger1 = (GameTime%2)=0
+trigger1 = time>0
+time = 1
+add = 0,50,0
+ignorehitpause = 1
+
+[State 0, AngleAdd]
+type = AngleAdd
+trigger1 = time >0
+value = -4.7
+[State 0, AngleSet]
+type = AngleSet
+trigger1 = time = 0 
+value = 0
+ignorehitpause = 0
+persistent = 1
+[State 0, AngleDraw]
+type = AngleDraw
+trigger1 = time > 0
+
+[State ]
+type = velset
+trigger1 = time = 1
+y = -9.1
+x = -1.4
+
+[State ]
+type = veladd
+trigger1 = time >= 3
+y = .1
+
+[State ]
+type = veladd
+trigger1 = time >= 10
+y = .2
+
+[State ]
+type = assertspecial
+trigger1 = 1
+flag = noshadow
+
+[State end]
+type = changestate
+triggerall = time >= 5
+trigger1 = (Vel Y > 0)&&(Pos Y >= 0)
+value = 7511
+
+;---------------------------------------------------------------------
+;BONE 19
+[Statedef 7673]
+type = S
+movetype = I
+physics = N
+anim = 2052
+
+[State -2, 1]
+type = PalFX
+trigger1 = root,var(34) = 1 && root,var(26) = 0
+trigger1 = root,var(28) = 1
+trigger1 = (GameTime%2)=0
+trigger1 = time>0
+time = 1
+add = 0,50,0
+ignorehitpause = 1
+
+[State 0, AngleAdd]
+type = AngleAdd
+trigger1 = time >0
+value = 7.7
+[State 0, AngleSet]
+type = AngleSet
+trigger1 = time = 0 
+value = 0
+ignorehitpause = 0
+persistent = 1
+[State 0, AngleDraw]
+type = AngleDraw
+trigger1 = time > 0
+
+[State ]
+type = velset
+trigger1 = time = 1
+y = -7.9
+x = 1.5
+
+[State ]
+type = veladd
+trigger1 = time >= 3
+y = .1
+
+[State ]
+type = veladd
+trigger1 = time >= 10
+y = .2
+
+[State ]
+type = assertspecial
+trigger1 = 1
+flag = noshadow
+
+[State end]
+type = changestate
+triggerall = time >= 5
+trigger1 = (Vel Y > 0)&&(Pos Y >= 0)
+value = 7511
+
+;---------------------------------------------------------------------
+;BONE 20
+[Statedef 7674]
+type = S
+movetype = I
+physics = N
+anim = 2056
+
+[State -2, 1]
+type = PalFX
+trigger1 = root,var(34) = 1 && root,var(26) = 0
+trigger1 = root,var(28) = 1
+trigger1 = (GameTime%2)=0
+trigger1 = time>0
+time = 1
+add = 0,50,0
+ignorehitpause = 1
+
+[State 0, AngleAdd]
+type = AngleAdd
+trigger1 = time >0
+value = -18.7
+[State 0, AngleSet]
+type = AngleSet
+trigger1 = time = 0 
+value = 0
+ignorehitpause = 0
+persistent = 1
+[State 0, AngleDraw]
+type = AngleDraw
+trigger1 = time > 0
+
+[State ]
+type = velset
+trigger1 = time = 1
+y = -14.6
+x = -0.1
+
+[State ]
+type = veladd
+trigger1 = time >= 3
+y = .1
+
+[State ]
+type = veladd
+trigger1 = time >= 10
+y = .2
+
+[State ]
+type = assertspecial
+trigger1 = 1
+flag = noshadow
+
+[State end]
+type = changestate
+triggerall = time >= 5
+trigger1 = (Vel Y > 0)&&(Pos Y >= 0)
+value = 7511
+
+;--------------------------------------------------------------------
+;BONE 22
+[Statedef 7675]
+type = S
+movetype = I
+physics = N
+anim = 2057
+
+[State -2, 1]
+type = PalFX
+trigger1 = root,var(34) = 1 && root,var(26) = 0
+trigger1 = root,var(28) = 1
+trigger1 = (GameTime%2)=0
+trigger1 = time>0
+time = 1
+add = 0,50,0
+ignorehitpause = 1
+
+[State 0, AngleAdd]
+type = AngleAdd
+trigger1 = time >0
+value = 15.1
+[State 0, AngleSet]
+type = AngleSet
+trigger1 = time = 0 
+value = 0
+ignorehitpause = 0
+persistent = 1
+[State 0, AngleDraw]
+type = AngleDraw
+trigger1 = time > 0
+
+[State ]
+type = velset
+trigger1 = time = 1
+y = -9.2
+x = 0.9
+
+[State ]
+type = veladd
+trigger1 = time >= 3
+y = .1
+
+[State ]
+type = veladd
+trigger1 = time >= 10
+y = .2
+
+[State ]
+type = assertspecial
+trigger1 = 1
+flag = noshadow
+
+[State end]
+type = changestate
+triggerall = time >= 5
+trigger1 = (Vel Y > 0)&&(Pos Y >= 0)
+value = 7511
+
+;--------------------------------------------------------------------
+;BONE 23
+[Statedef 7676]
+type = S
+movetype = I
+physics = N
+anim = 2058
+
+[State -2, 1]
+type = PalFX
+trigger1 = root,var(34) = 1 && root,var(26) = 0
+trigger1 = root,var(28) = 1
+trigger1 = (GameTime%2)=0
+trigger1 = time>0
+time = 1
+add = 0,50,0
+ignorehitpause = 1
+
+[State 0, AngleAdd]
+type = AngleAdd
+trigger1 = time >0
+value = 4.8
+[State 0, AngleSet]
+type = AngleSet
+trigger1 = time = 0 
+value = 0
+ignorehitpause = 0
+persistent = 1
+[State 0, AngleDraw]
+type = AngleDraw
+trigger1 = time > 0
+
+[State ]
+type = velset
+trigger1 = time = 1
+y = -8.2
+x = -1.4
+
+[State ]
+type = veladd
+trigger1 = time >= 3
+y = .1
+
+[State ]
+type = veladd
+trigger1 = time >= 10
+y = .2
+
+[State ]
+type = assertspecial
+trigger1 = 1
+flag = noshadow
+
+[State end]
+type = changestate
+triggerall = time >= 5
+trigger1 = (Vel Y > 0)&&(Pos Y >= 0)
+value = 7511
+
+;--------------------------------------------------------------------
+;BONE 24
+[Statedef 7680]
+type = S
+movetype = I
+physics = N
+anim = 2059
+
+[State -2, 1]
+type = PalFX
+trigger1 = root,var(34) = 1 && root,var(26) = 0
+trigger1 = root,var(28) = 1
+trigger1 = (GameTime%2)=0
+trigger1 = time>0
+time = 1
+add = 0,50,0
+ignorehitpause = 1
+
+[State 0, AngleAdd]
+type = AngleAdd
+trigger1 = time >0
+value = 8.0
+[State 0, AngleSet]
+type = AngleSet
+trigger1 = time = 0 
+value = 0
+ignorehitpause = 0
+persistent = 1
+[State 0, AngleDraw]
+type = AngleDraw
+trigger1 = time > 0
+
+[State ]
+type = velset
+trigger1 = time = 1
+y = -7.3
+x = -1.3
+
+[State ]
+type = veladd
+trigger1 = time >= 3
+y = .1
+
+[State ]
+type = veladd
+trigger1 = time >= 10
+y = .2
+
+[State ]
+type = assertspecial
+trigger1 = 1
+flag = noshadow
+
+[State end]
+type = changestate
+triggerall = time >= 5
+trigger1 = (Vel Y > 0)&&(Pos Y >= 0)
+value = 7511
+
+;-------------------------------------------------------------------
+;BONE 25
+[Statedef 7681]
+type = S
+movetype = I
+physics = N
+anim = 2060
+
+[State -2, 1]
+type = PalFX
+trigger1 = root,var(34) = 1 && root,var(26) = 0
+trigger1 = root,var(28) = 1
+trigger1 = (GameTime%2)=0
+trigger1 = time>0
+time = 1
+add = 0,50,0
+ignorehitpause = 1
+
+[State 0, AngleAdd]
+type = AngleAdd
+trigger1 = time >0
+value = -8.3
+[State 0, AngleSet]
+type = AngleSet
+trigger1 = time = 0 
+value = 0
+ignorehitpause = 0
+persistent = 1
+[State 0, AngleDraw]
+type = AngleDraw
+trigger1 = time > 0
+
+[State ]
+type = velset
+trigger1 = time = 1
+y = -13.4
+x = 1.3
+
+[State ]
+type = veladd
+trigger1 = time >= 3
+y = .1
+
+[State ]
+type = veladd
+trigger1 = time >= 10
+y = .2
+
+[State ]
+type = assertspecial
+trigger1 = 1
+flag = noshadow
+
+[State end]
+type = changestate
+triggerall = time >= 5
+trigger1 = (Vel Y > 0)&&(Pos Y >= 0)
+value = 7511
+
+;-------------------------------------------------------------------
+;BONE 26
+[Statedef 7682]
+type = S
+movetype = I
+physics = N
+anim = 2063
+
+[State -2, 1]
+type = PalFX
+trigger1 = root,var(34) = 1 && root,var(26) = 0
+trigger1 = root,var(28) = 1
+trigger1 = (GameTime%2)=0
+trigger1 = time>0
+time = 1
+add = 0,50,0
+ignorehitpause = 1
+
+[State 0, AngleAdd]
+type = AngleAdd
+trigger1 = time >0
+value = 12.3
+[State 0, AngleSet]
+type = AngleSet
+trigger1 = time = 0 
+value = 0
+ignorehitpause = 0
+persistent = 1
+[State 0, AngleDraw]
+type = AngleDraw
+trigger1 = time > 0
+
+[State ]
+type = velset
+trigger1 = time = 1
+y = -7.5
+x = -0.7
+
+[State ]
+type = veladd
+trigger1 = time >= 3
+y = .1
+
+[State ]
+type = veladd
+trigger1 = time >= 10
+y = .2
+
+[State ]
+type = assertspecial
+trigger1 = 1
+flag = noshadow
+
+[State end]
+type = changestate
+triggerall = time >= 5
+trigger1 = (Vel Y > 0)&&(Pos Y >= 0)
+value = 7511
+
+;-------------------------------------------------------------------
+;BONE 27
+[Statedef 7683]
+type = S
+movetype = I
+physics = N
+anim = 2063
+
+[State -2, 1]
+type = PalFX
+trigger1 = root,var(34) = 1 && root,var(26) = 0
+trigger1 = root,var(28) = 1
+trigger1 = (GameTime%2)=0
+trigger1 = time>0
+time = 1
+add = 0,50,0
+ignorehitpause = 1
+
+[State 0, AngleAdd]
+type = AngleAdd
+trigger1 = time >0
+value = -14.6
+[State 0, AngleSet]
+type = AngleSet
+trigger1 = time = 0 
+value = 0
+ignorehitpause = 0
+persistent = 1
+[State 0, AngleDraw]
+type = AngleDraw
+trigger1 = time > 0
+
+[State ]
+type = velset
+trigger1 = time = 1
+y = -1.6
+x = 1.7
+
+[State ]
+type = veladd
+trigger1 = time >= 3
+y = .1
+
+[State ]
+type = veladd
+trigger1 = time >= 10
+y = .2
+
+[State ]
+type = assertspecial
+trigger1 = 1
+flag = noshadow
+
+[State end]
+type = changestate
+triggerall = time >= 5
+trigger1 = (Vel Y > 0)&&(Pos Y >= 0)
+value = 7511
+
+;-------------------------------------------------------------------
+;BONE 28
+[Statedef 7684]
+type = S
+movetype = I
+physics = N
+anim = 2063
+
+[State -2, 1]
+type = PalFX
+trigger1 = root,var(34) = 1 && root,var(26) = 0
+trigger1 = root,var(28) = 1
+trigger1 = (GameTime%2)=0
+trigger1 = time>0
+time = 1
+add = 0,50,0
+ignorehitpause = 1
+
+[State 0, AngleAdd]
+type = AngleAdd
+trigger1 = time >0
+value = 3.9
+[State 0, AngleSet]
+type = AngleSet
+trigger1 = time = 0 
+value = 0
+ignorehitpause = 0
+persistent = 1
+[State 0, AngleDraw]
+type = AngleDraw
+trigger1 = time > 0
+
+[State ]
+type = velset
+trigger1 = time = 1
+y = -1.4
+x = -1.8
+
+[State ]
+type = veladd
+trigger1 = time >= 3
+y = .1
+
+[State ]
+type = veladd
+trigger1 = time >= 10
+y = .2
+
+[State ]
+type = assertspecial
+trigger1 = 1
+flag = noshadow
+
+[State end]
+type = changestate
+triggerall = time >= 5
+trigger1 = (Vel Y > 0)&&(Pos Y >= 0)
+value = 7511
+
+;-------------------------------------------------------------------
+;BONE 29
+[Statedef 7685]
+type = S
+movetype = I
+physics = N
+anim = 2068
+
+[State -2, 1]
+type = PalFX
+trigger1 = root,var(34) = 1 && root,var(26) = 0
+trigger1 = root,var(28) = 1
+trigger1 = (GameTime%2)=0
+trigger1 = time>0
+time = 1
+add = 0,50,0
+ignorehitpause = 1
+
+[State 0, AngleAdd]
+type = AngleAdd
+trigger1 = time >0
+value = -5.9
+[State 0, AngleSet]
+type = AngleSet
+trigger1 = time = 0 
+value = 0
+ignorehitpause = 0
+persistent = 1
+[State 0, AngleDraw]
+type = AngleDraw
+trigger1 = time > 0
+
+[State ]
+type = velset
+trigger1 = time = 1
+y = -9.9
+x = -1.8
+
+[State ]
+type = veladd
+trigger1 = time >= 3
+y = .1
+
+[State ]
+type = veladd
+trigger1 = time >= 10
+y = .2
+
+[State ]
+type = assertspecial
+trigger1 = 1
+flag = noshadow
+
+[State end]
+type = changestate
+triggerall = time >= 5
+trigger1 = (Vel Y > 0)&&(Pos Y >= 0)
+value = 7511
+
+;-------------------------------------------------------------------
+;BONE 30
+[Statedef 7686]
+type = S
+movetype = I
+physics = N
+anim = 2069
+
+[State -2, 1]
+type = PalFX
+trigger1 = root,var(34) = 1 && root,var(26) = 0
+trigger1 = root,var(28) = 1
+trigger1 = (GameTime%2)=0
+trigger1 = time>0
+time = 1
+add = 0,50,0
+ignorehitpause = 1
+
+[State 0, AngleAdd]
+type = AngleAdd
+trigger1 = time >0
+value = 10
+[State 0, AngleSet]
+type = AngleSet
+trigger1 = time = 0 
+value = 0
+ignorehitpause = 0
+persistent = 1
+[State 0, AngleDraw]
+type = AngleDraw
+trigger1 = time > 0
+
+[State ]
+type = velset
+trigger1 = time = 1
+y = -8.6
+x = 1.5
+
+[State ]
+type = veladd
+trigger1 = time >= 3
+y = .1
+
+[State ]
+type = veladd
+trigger1 = time >= 10
+y = .2
+
+[State ]
+type = assertspecial
+trigger1 = 1
+flag = noshadow
+
+[State end]
+type = changestate
+triggerall = time >= 5
+trigger1 = (Vel Y > 0)&&(Pos Y >= 0)
+value = 7511
+
+;--------------------------------------------------------------------------
+;END BONES 1
+[Statedef 7511]
+type    = A
+movetype= I
+physics = N
+ctrl = 0
+sprpriority = -10
+
+[State -2, 1]
+type = PalFX
+trigger1 = root,var(34) = 1 && root,var(26) = 0
+trigger1 = root,var(28) = 1
+trigger1 = (GameTime%2)=0
+trigger1 = time>0
+time = 1
+add = 0,50,0
+ignorehitpause = 1
+
+[State 1900,stomp]
+type = playsnd
+trigger1 = Time = 0
+value = S70,ifelse(random<=500,1,2)
+Volumescale = 100
+
+[State ]
+type = velset
+trigger1 = !time
+y = -5
+
+[State ]
+type = posset
+trigger1 = !time
+y = 0
+
+[State ]
+type = veladd
+trigger1 = 1
+y = .3
+
+[State ]
+type = assertspecial
+trigger1 = 1
+flag = noshadow
+
+[State end]
+type = changestate
+trigger1 = time >10
+trigger1 = pos y >=0
+trigger1 = vel y >0
+value = 7512
+;--------------------------------------------------------------------------
+;END BONES 2
+[Statedef 7512]
+type    = A
+movetype= I
+physics = N
+ctrl = 0
+sprpriority = -10
+
+[State ]
+type = velset
+trigger1 = 1
+y = 0
+x = 0
+
+[State ]
+type = posset
+trigger1 = !time
+y = 0
+
+[State ]
+type = veladd
+trigger1 = 1
+y = 0
+x = 0
+
+[State ]
+type = assertspecial
+trigger1 = 1
+flag = noshadow

@@ -1,0 +1,31 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Virtual environments
+.venv/
+venv/
+.venv_*/
+
+# OS / IDE
+.DS_Store
+.vscode/
+.idea/
+
+# Local outputs / generated artifacts
+/test_character_output/
+/sff_compare_output/
+
+# Ikemen runtime logs / local state
+ikemen-go-stable/debug.log
+ikemen-go-stable/save/replays/
+
+# Secrets
+.env
+.env.*

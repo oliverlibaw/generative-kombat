@@ -1,0 +1,217 @@
+;---------------------------------------------------------------------------
+;THROW CAGE
+[Statedef 410]
+type = S
+movetype = A
+anim = 410
+velset = 0,0
+ctrl = 0
+
+[State 0, stop]
+type = posset
+triggerall = enemy,AuthorName != "OMEGAPSYCHO-BOSS"
+trigger1 = Time = 0
+y = 0
+[State 0, stop]
+type = posset
+trigger1 = 1
+trigger1 = Pos Y >0
+y = 0
+
+[State 0, 2]
+type = VelSet
+trigger1 = time = 0
+x = 0
+y = 0
+
+[State 345, 0]
+type = HitDef
+triggerall = p2movetype != H
+Trigger1 = !Time
+damage = 0,0
+guard.pausetime = 3,8
+attr = SCA, NT
+guardflag =
+priority = 6, Miss
+sparkno = -1
+guard.sparkno = -1
+sprpriority = 2
+hitsound = S3,1
+guardsound = S3,1
+ground.type = Low
+ground.slidetime = 22
+ground.hittime  = 30
+air.hittime = 30
+ground.velocity = -5,-1
+air.animtype = Back
+fall = 1
+air.fall = 1
+fall.recover = 0
+air.recover = 0
+fall.recovertime = 40
+air.velocity = -5,-1
+down.hittime = 12
+down.velocity = -5,0
+down.hittime = 30
+guard.ctrltime = 15
+yaccel = .50
+p1facing = 1
+p2facing = 1 
+p1stateno = 411
+p2stateno = 412
+numhits = 1 
+kill = !var(58) || 1*p2stateno = 49999
+guard.kill = !var(58) || 1*p2stateno = 49999
+
+[State 930, 0]
+type = Changestate
+trigger1 = Animtime = 0
+value = 200
+ctrl = 1
+
+;---------------------------------------------------------------------------
+;THROW GET CAGE
+[Statedef 411]
+type = S
+movetype = A
+anim = 411
+velset = 0,0
+ctrl = 0
+
+[State 352, 0]
+type = targetbind
+trigger1 = animelem = 1
+pos = (40)*const(size.xscale), 0
+
+[State 352, 0]
+type = targetbind
+trigger1 = animelem = 2
+pos = (55)*const(size.xscale), (-70)*const(size.yscale)
+
+[State 352, 0]
+type = targetbind
+trigger1 = animelem = 3
+pos = (26)*const(size.xscale), (-105)*const(size.yscale)
+
+[State 352, 0]
+type = targetbind
+trigger1 = animelem = 4
+pos = (-15)*const(size.xscale), (-130)*const(size.yscale)
+
+[State 7, Danger]
+type = PlaySnd
+trigger1 = animelem = 2
+value = S215,1
+volumescale = 100
+
+[State 930, 0]
+type = Changestate
+trigger1 = Animtime = 0
+value = 0
+ctrl = 1
+
+;---------------------------------------------------------------------------
+;P2 STATE 1 Throw
+[Statedef 412]
+type = S
+movetype = H
+velset = 0,0
+ctrl = 0 
+
+[State -2, ScreenBound]
+type = ScreenBound
+trigger1 = 1
+value = 0
+movecamera = 0,0
+
+[State 181, 1]
+type = NotHitBy
+trigger1 = 1
+value = SCA
+time = 1
+
+[State 820, 2]
+type = ChangeAnim2
+Trigger1 = Time = 0
+value = 412
+
+[State 1000, 3]
+type = SprPriority
+trigger1 = time > 0
+value = -1
+
+[State 930, 0]
+type = Changestate
+trigger1 = Animtime = 0
+value = 413
+
+[State 5030, 4]
+type = SelfState
+triggerall = 1
+trigger1 = enemynear,alive = 0
+value = 5100
+
+;-----------------------------------------------------------------------
+;P2 STATE Throw 3
+[Statedef 413]
+type    = A
+movetype= H
+physics = N
+ctrl = 0
+
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 = AuthorName = "OMEGAPSYCHO-MK" || AuthorName = "OMEGAPSYCHO-MKSecret"
+trigger1 = !Time
+value = S215, 2
+Volumescale = 100
+
+[State -2, TargetLifeadd]
+type = Lifeadd
+trigger1 = Time = 2
+kill = ifelse(enemy,var(58)= 0,1,0)
+value = -160
+
+[State 181, 1]
+type = NotHitBy
+trigger1 = 1
+value = SCA
+time = 1
+
+[State -2, TargetLifeadd]
+type = Posset
+trigger1 = time = 0
+y = -37
+
+[State -2, TargetLifeadd]
+type = Posadd
+trigger1 = time = 0
+x = 35
+
+[State 443, 0]
+type = ChangeAnim
+trigger1 = !time
+value = 5050
+
+[State 443, 0]
+type = PlayerPush
+trigger1 = 1
+value = 0
+
+[State 5030, 2]
+type = VelSet
+trigger1 = Time = 0
+x = 4
+y = -4
+
+[State 5030, 1]
+type = veladd
+trigger1 = 1
+y = .3
+
+[State 5030, 4]
+type = SelfState
+trigger1 = time > 0
+trigger1 = Vel Y > 0
+trigger1 = Pos Y >= 9
+value = 5100

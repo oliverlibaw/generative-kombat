@@ -1,0 +1,34 @@
+[Info]
+localcoord = 320,240
+name = "JOHNNY CAGE MK1" 
+displayname = "JOHNNY CAGE" 
+versiondate = 06,01,2015
+mugenversion = 1.0
+author = "OMEGAPSYCHO-MK"
+Pal.Defaults = 1
+
+[Files]
+cmd     = CODE/Cmd_Cage.cmd
+cns     = CODE/johnny_scaled.cns
+st      = CODE/Common_Cage.cns
+st0     = CODE/-2_Cage.cns
+st1     = CODE/Moves_Cage.cns
+st2     = CODE/Specials_Cage.cns
+st3     = CODE/Throws_Cage.cns
+st4     = CODE/Fatalities_Cage.cns
+st5     = CODE/OBJECTS_Cage.cns
+st6     = CODE/Engines_Cage.cns
+st7     = CODE/Others_Cage.cns
+st8     = CODE/P2States_Cage.cns
+st9     = CONFIG.def
+stcommon = CODE/Common_Cage.cns
+sprite  = CODE/johnny_hd.sff
+anim    = CODE/johnny_scaled.air
+sound   = CODE/CAGE.snd    
+
+pal1    = act/Cage_Original.act
+pal2    = act/Cage_DarkBlue.act
+pal3    = act/Cage_Yellow.act
+pal4    = act/Cage_Purple.act
+pal5    = act/Cage_Green.act
+Pal6    = act/Cage_Blue.act

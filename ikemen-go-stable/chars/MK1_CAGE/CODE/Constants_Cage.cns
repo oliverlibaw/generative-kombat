@@ -1,0 +1,75 @@
+ï»¿
+[Data]
+life = 1250		;Amount of life to start with
+power = 3000	 	;Amount of maximum power
+attack = 125		;attack power (more is stronger)
+defence = 125		;defensive power (more is stronger)
+fall.defence_up = 0	;Percentage to increase defense everytime player is knocked down
+liedown.time = 15	;Time which player lies down for, before getting up
+airjuggle = 10		;Number of points for juggling
+sparkno = -1		;Default hit spark number for HitDefs
+guard.sparkno = 40	;Default guard spark number
+KO.echo = 0		;1 to enable echo on KO
+volumescale = 100	;Volume offset (negative for softer)
+IntPersistIndex = 0
+FloatPersistIndex = 0
+
+
+[Size]
+xscale = .283333		;Horizontal scaling factor.
+yscale = .283333		;Vertical scaling factor.
+ground.back = 16		;Player width (back, ground)
+ground.front = 15		;Player width (front, ground)
+air.back = 15		;Player width (back, air)
+air.front = 15		;Player width (front, air)
+height = 166
+attack.dist = 438
+proj.attack.dist = 263
+proj.doscale = 1		;Set to 1 to scale projectiles too   
+head.pos = -8, -95		;Approximate position of head
+mid.pos = 0, -51		;Approximate position of midsection
+shadowoffset = 0
+offset = 0,0
+
+[Velocity]
+walk.fwd  = 2.5	
+walk.back = -2.2
+run.fwd  = 6, 0	
+run.back = -6,-3
+jump.neu = 0,-9.5 
+jump.back = -4	
+jump.fwd = 4	
+runjump.back = -4,-8
+runjump.fwd = 4,-8
+airjump.neu = 0,-8
+airjump.back = -3
+airjump.fwd = 3		
+
+[Movement]
+airjump.num = 0		;Number of air jumps allowed (opt)
+airjump.height = 35	;Minimum distance from ground before you can air jump (opt)
+yaccel = .50		;Vertical acceleration
+stand.friction = .85	;Friction coefficient when standing
+crouch.friction = .82	;Friction coefficient when crouching
+;---------------------------------------------------------------------------
+[Quotes]
+victory1 = "This is where you fall down."
+victory2 = "I'm in a hostile environment. I'm totally unprepared. And I'm surrounded by a bunch of guys who probably want to kick my ass... it's like being back in high school."
+victory3 = "My fans think that my moves are just wire work and special effects. Truth is, I am the special effects."
+victory4 = "Put -that- on your barby... shrimp."
+victory5 = "You got Caged!"
+victory6 = "Come to a little tournament, he said. Be good for the career, he said. Yeah right..."
+victory7 = "Those were 500 dollar sunglasses, asshole."
+victory8 = "This is our tournament. We fight it."
+victory9 = "Growing up, I was shy, I was weak. I actually got my ass kicked a lot. But martial arts changed all that, and I was reborn. And that gave the world... Johnny Cage."
+victory10 = "Does that look fake to you?!""
+victory11 = "Damn, I'm good!"
+victory12 = "Oh yeah!"
+victory13 = "Come on!"
+victory14 = "'Massive Strike?' 'Citizen Cage?' 'Ninja Mime?' None of those ring a bell?"
+victory15 = "They Might as well give me the belt right now. They do have belts right?"
+victory16 = "Nice stunt! Who's your agent?"
+victory17 = "That's it, ha ha, oh yeah, I am so pretty!"
+victory18 = "Finish him? Woah, woah, woah, wait a second. I don't want kill anyone."
+
+
