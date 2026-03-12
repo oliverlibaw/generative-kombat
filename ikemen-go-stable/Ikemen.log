@@ -1,0 +1,13 @@
+./external/script/start.lua:1403: chars/MK1_CAGE_TEST/MK1_CAGE.def:
+CONFIG.def
+open CONFIG.def: no such file or directory
+stack traceback:
+	[G]: in function 'game'
+	./external/script/start.lua:1403: in function 'f_game'
+	./external/script/start.lua:1839: in function 'launchFight'
+	external/script/default.lua:2: in function <external/script/default.lua:0>
+	./external/script/start.lua:1457: in function 'f'
+	external/script/main.lua:3104: in function 'loop'
+	external/script/main.lua:3188: in function 'loop'
+	external/script/main.lua:4155: in main chunk
+	[G]: ?

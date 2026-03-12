@@ -109,6 +109,7 @@
  ;   hiding unselectable AI only characters in mugen without need to create tons
  ;   of unnecessary select.def slots to do so). Excluded characters are not
  ;   added to MK1_CAGE_TEST/MK1_CAGE.def, stages/kfm.def
+MK1_CAGE_TEST/MK1_CAGE.def, stages/kfm.def
 randomselect pool and won't show up in VS 100 Kumite mode.
  ;
  ; - hidden

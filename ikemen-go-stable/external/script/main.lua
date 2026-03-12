@@ -1464,7 +1464,6 @@ function main.f_commandLine()
 		selectChar(v.player, main.t_charDef[v.character:lower()], v.pal)
 		setCom(v.num, v.ai)
 		remapInput(v.num, v.input)
-		overrideCharData(v.player, math.ceil(v.num / 2), v.override)
 		if start ~= nil then
 			if start.p[v.player].t_selected == nil then
 				start.p[v.player].t_selected = {}

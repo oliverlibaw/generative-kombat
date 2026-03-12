@@ -7,16 +7,16 @@ import argparse
 import csv
 import json
 import shutil
+import sys
 from pathlib import Path
 from typing import Any, Dict, List, Optional, Tuple
 from PIL import Image
-import sys
 
 # Add current directory to path to import our modules
 sys.path.append(str(Path(__file__).parent))
 
 from compare_sff_pairs import parse_sff_v1, decode_sprite
-from build_hd_sff_v1 import build_sff, rgba_to_mugen_pcx
+from build_hd_sff_v1 import build_sff, parse_template, rgba_to_mugen_pcx
 
 
 def load_size_overrides(path: Path) -> Dict[str, Dict[str, float]]:
@@ -44,9 +44,46 @@ def strip_white_background(image: Image.Image, threshold: int = 245) -> Image.Im
     visited = set()
     stack: List[Tuple[int, int]] = []
 
-    def is_whiteish(x: int, y: int) -> bool:
+    # Determine background color based on border pixels. AI renders are often
+    # "almost white" (off-white) so pure thresholding misses them.
+    border_samples: List[Tuple[int, int, int]] = []
+    for x in range(width):
+        for y in (0, height - 1):
+            r, g, b, a = pixels[x, y]
+            if a > 0:
+                border_samples.append((r, g, b))
+    for y in range(height):
+        for x in (0, width - 1):
+            r, g, b, a = pixels[x, y]
+            if a > 0:
+                border_samples.append((r, g, b))
+
+    if border_samples:
+        bg_r = int(sum(c[0] for c in border_samples) / len(border_samples))
+        bg_g = int(sum(c[1] for c in border_samples) / len(border_samples))
+        bg_b = int(sum(c[2] for c in border_samples) / len(border_samples))
+    else:
+        bg_r = bg_g = bg_b = 255
+
+    # Adaptive tolerance: start from the old threshold idea but allow near-bg.
+    # Also require a minimum brightness so we don't eat actual character pixels.
+    tolerance = max(12, 255 - threshold)
+
+    def is_backgroundish(x: int, y: int) -> bool:
         r, g, b, a = pixels[x, y]
-        return a > 0 and r >= threshold and g >= threshold and b >= threshold
+        if a == 0:
+            return True
+        # Brightness gate
+        if r < threshold or g < threshold or b < threshold:
+            return False
+        # Color distance to estimated border background
+        if abs(r - bg_r) > tolerance:
+            return False
+        if abs(g - bg_g) > tolerance:
+            return False
+        if abs(b - bg_b) > tolerance:
+            return False
+        return True
 
     for x in range(width):
         stack.append((x, 0))
@@ -62,7 +99,7 @@ def strip_white_background(image: Image.Image, threshold: int = 245) -> Image.Im
         if x < 0 or x >= width or y < 0 or y >= height:
             continue
         visited.add((x, y))
-        if not is_whiteish(x, y):
+        if not is_backgroundish(x, y):
             continue
         pixels[x, y] = (255, 255, 255, 0)
         stack.extend([(x - 1, y), (x + 1, y), (x, y - 1), (x, y + 1)])
@@ -355,6 +392,10 @@ def build_test_character(ai_dir: Path, upscaled_dir: Path, original_char_dir: Pa
         if act_src.exists():
             shutil.copytree(act_src, output_char_dir / "act", dirs_exist_ok=True)
         
+        config_src = original_char_dir / "CONFIG.def"
+        if config_src.exists():
+            shutil.copy2(config_src, output_char_dir / "CONFIG.def")
+
         shutil.copy2(original_char_dir / "MK1_CAGE.def", output_char_dir / "MK1_CAGE.def")
     
     # Get sprite mapping
@@ -400,8 +441,12 @@ def build_test_character(ai_dir: Path, upscaled_dir: Path, original_char_dir: Pa
         for pair in mapping.keys()
     }
     
+    # Build SFF using the original SFF's header/version + palette type.
+    # Hardcoding these can corrupt the output SFF and break transparency.
+    signature_and_version, palette_type, _template_sprites = parse_template(original_sff)
+
     # Build SFF with axis scaling (1.0 for original size)
-    build_sff(b'ElecbyteSpr\x00\x01', 0, sprites, merged_images, new_sff_path, 1.0)
+    build_sff(signature_and_version, palette_type, sprites, merged_images, new_sff_path, 1.0)
     
     # Scale AIR file for debug (larger hitboxes)
     original_air = output_code_dir / "Air_Cage.air"

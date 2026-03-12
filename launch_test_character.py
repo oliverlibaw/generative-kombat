@@ -67,15 +67,71 @@ def register_character(ikemen_dir: Path, char_entry: str):
         return
 
     content = select_def.read_text(encoding="utf-8")
-    if char_entry in content:
+    lines = content.splitlines()
+
+    # Only consider the character "registered" if it exists as an active line
+    # inside the [Characters] section (not in comments/help text).
+    def _is_active_entry(line: str) -> bool:
+        stripped = line.strip()
+        return bool(stripped) and not stripped.startswith(";")
+
+    in_characters = False
+    found_active = False
+    for line in lines:
+        stripped = line.strip()
+        if stripped.lower() == "[characters]":
+            in_characters = True
+            continue
+        if in_characters and stripped.startswith("[") and stripped.endswith("]"):
+            in_characters = False
+        if in_characters and _is_active_entry(line) and stripped == char_entry:
+            found_active = True
+            break
+
+    if found_active:
         print(f"Character already registered: {char_entry}")
         return
 
-    marker = "randomselect"
-    if marker in content:
-        content = content.replace(marker, f"{char_entry}\n{marker}", 1)
+    # Clean up any stray accidental insertions outside [Characters].
+    # (e.g. a broken line containing MK1_CAGE_TEST that ended up in comment blocks)
+    cleaned_lines = []
+    in_characters = False
+    for line in lines:
+        stripped = line.strip()
+        if stripped.lower() == "[characters]":
+            in_characters = True
+            cleaned_lines.append(line)
+            continue
+        if in_characters and stripped.startswith("[") and stripped.endswith("]"):
+            in_characters = False
+        if (not in_characters) and _is_active_entry(line) and ("MK1_CAGE_TEST" in stripped):
+            continue
+        cleaned_lines.append(line)
+    lines = cleaned_lines
+
+    # Insert into the actual [Characters] section.
+    insert_at = None
+    in_characters = False
+    for idx, line in enumerate(lines):
+        stripped = line.strip()
+        if stripped.lower() == "[characters]":
+            in_characters = True
+            continue
+        if in_characters:
+            # Insert before the first randomselect *within* the section.
+            if stripped.lower().startswith("randomselect"):
+                insert_at = idx
+                break
+            # If the section ends, fall back to inserting at the end of the section.
+            if stripped.startswith("[") and stripped.endswith("]"):
+                insert_at = idx
+                break
+    if insert_at is None:
+        lines.append(char_entry)
     else:
-        content = content.rstrip() + f"\n{char_entry}\n"
+        lines.insert(insert_at, char_entry)
+
+    content = "\n".join(lines) + "\n"
     select_def.write_text(content, encoding="utf-8")
     print(f"Registered character in select.def: {char_entry}")
 
@@ -92,8 +148,8 @@ def configure_debug_settings(ikemen_dir: Path):
     config["DebugMode"] = True
     config["DebugKeys"] = True
     config["DebugClipboardRows"] = max(4, int(config.get("DebugClipboardRows", 2)))
-    config["GameWidth"] = 640
-    config["GameHeight"] = 480
+    config["GameWidth"] = 1280
+    config["GameHeight"] = 720
     config["Fullscreen"] = False
     config["WindowCentered"] = True
     common_lua = list(config.get("CommonLua", []))

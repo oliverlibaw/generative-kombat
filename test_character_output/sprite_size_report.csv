@@ -1,59 +1,59 @@
 pair,source_kind,source_path,target_canvas,source_bbox,target_bbox,scale,offset_x,offset_y,override
 "9000,0",ai_or_fallback,/Users/oliverlibaw/Downloads/MK-assets/upscaled-original-low-res-sprites/9000-0.png,75x75,"(0, 0, 75, 75)","(0, 0, 75, 75)",1.0000,0,0,{}
-"9000,1",ai_or_fallback,/Users/oliverlibaw/Downloads/MK-assets/upscaled-original-low-res-sprites/9000-1.png,489x531,"(49, 106, 455, 473)","(49, 106, 455, 473)",1.0000,49,106,{}
+"9000,1",ai_or_fallback,/Users/oliverlibaw/Downloads/MK-assets/upscaled-original-low-res-sprites/9000-1.png,489x531,"(49, 106, 454, 473)","(49, 106, 455, 473)",1.0000,49,106,{}
 "9000,2",ai_or_fallback,/Users/oliverlibaw/Downloads/MK-assets/upscaled-original-low-res-sprites/9000-2.png,864x480,"(67, 28, 785, 452)","(67, 28, 785, 452)",1.0000,67,28,{}
-"9111,3",ai_or_fallback,/Users/oliverlibaw/Downloads/MK-assets/upscaled-original-low-res-sprites/9111-3.png,489x531,"(49, 52, 455, 473)","(49, 52, 455, 473)",1.0000,49,52,{}
-"0,0",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/0,0.png",252x393,"(3, 4, 260, 400)","(0, 0, 252, 393)",0.9805,0,5,"{""offset_x"": 0.0, ""offset_y"": 0.0, ""scale"": 1.0}"
-"0,3",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/0,3.png",255x390,"(4, 4, 259, 400)","(0, 0, 255, 390)",0.9848,2,0,{}
-"0,4",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/0,4.png",252x390,"(3, 2, 258, 400)","(0, 0, 252, 390)",0.9799,1,0,{}
-"0,5",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/0,5.png",252x393,"(3, 0, 257, 400)","(0, 0, 252, 393)",0.9825,1,0,{}
-"0,6",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/0,6.png",249x393,"(3, 1, 256, 400)","(0, 0, 249, 393)",0.9842,0,0,{}
-"0,7",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/0,7.png",249x396,"(3, 1, 261, 400)","(0, 0, 249, 396)",0.9651,0,11,{}
-"0,8",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/0,8.png",246x393,"(3, 4, 261, 400)","(0, 0, 246, 393)",0.9535,0,15,{}
+"9111,3",ai_or_fallback,/Users/oliverlibaw/Downloads/MK-assets/upscaled-original-low-res-sprites/9111-3.png,489x531,"(49, 52, 454, 473)","(49, 52, 455, 473)",1.0000,49,52,{}
+"0,0",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/0,0.png",252x393,"(0, 4, 261, 400)","(0, 0, 252, 393)",0.9655,0,11,"{""offset_x"": 0.0, ""offset_y"": 0.0, ""scale"": 1.0}"
+"0,3",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/0,3.png",255x390,"(4, 4, 261, 400)","(0, 0, 255, 390)",0.9848,1,0,{}
+"0,4",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/0,4.png",252x390,"(0, 0, 261, 400)","(0, 0, 252, 390)",0.9655,0,4,{}
+"0,5",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/0,5.png",252x393,"(0, 0, 261, 400)","(0, 0, 252, 393)",0.9655,0,7,{}
+"0,6",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/0,6.png",249x393,"(0, 0, 261, 400)","(0, 0, 249, 393)",0.9540,0,11,{}
+"0,7",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/0,7.png",249x396,"(0, 0, 261, 400)","(0, 0, 249, 396)",0.9540,0,14,{}
+"0,8",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/0,8.png",246x393,"(0, 4, 261, 400)","(0, 0, 246, 393)",0.9425,0,20,{}
 "1,0",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/1,0.png",213x399,"(0, 0, 214, 400)","(0, 0, 213, 399)",0.9953,0,1,{}
 "1,1",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/1,1.png",213x399,"(0, 0, 214, 400)","(0, 0, 213, 399)",0.9953,0,1,{}
-"10,0",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/10,0.png",276x378,"(6, 3, 295, 400)","(0, 0, 276, 378)",0.9521,0,0,{}
-"10,1",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/10,1.png",216x270,"(3, 111, 230, 400)","(0, 0, 216, 270)",0.9343,2,0,{}
-"10,2",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/10,2.png",210x216,"(9, 167, 231, 400)","(0, 0, 210, 216)",0.9270,2,0,{}
-"20,0",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/20,0.png",297x396,"(0, 4, 293, 393)","(0, 0, 297, 396)",1.0137,0,2,{}
-"20,1",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/20,1.png",231x408,"(66, 2, 296, 399)","(0, 0, 231, 408)",1.0043,0,9,{}
-"20,2",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/20,2.png",228x408,"(73, 2, 297, 400)","(0, 0, 228, 408)",1.3538,-74,-131,"{""offset_x"": -36.0, ""offset_y"": 0.0, ""scale"": 1.33}"
-"20,3",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/20,3.png",228x402,"(76, 4, 300, 398)","(0, 0, 228, 402)",1.3639,-79,-135,"{""offset_x"": -40.0, ""offset_y"": 0.0, ""scale"": 1.34}"
-"20,4",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/20,4.png",228x402,"(78, 5, 301, 399)","(0, 0, 228, 402)",1.0203,0,0,{}
-"20,5",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/20,5.png",228x402,"(77, 4, 301, 399)","(0, 0, 228, 402)",1.0177,0,0,{}
+"10,0",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/10,0.png",276x378,"(7, 3, 295, 400)","(0, 0, 276, 378)",0.9521,1,0,{}
+"10,1",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/10,1.png",216x270,"(3, 112, 230, 400)","(0, 0, 216, 270)",0.9375,1,0,{}
+"10,2",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/10,2.png",210x216,"(9, 167, 237, 400)","(0, 0, 210, 216)",0.9211,0,1,{}
+"20,0",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/20,0.png",297x396,"(0, 0, 301, 400)","(0, 0, 297, 396)",0.9867,0,1,{}
+"20,1",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/20,1.png",231x408,"(67, 3, 295, 398)","(0, 0, 231, 408)",1.0132,0,8,{}
+"20,2",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/20,2.png",228x408,"(74, 3, 297, 400)","(0, 0, 228, 408)",1.3598,-74,-132,"{""offset_x"": -36.0, ""offset_y"": 0.0, ""scale"": 1.33}"
+"20,3",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/20,3.png",228x402,"(77, 5, 299, 398)","(0, 0, 228, 402)",1.3707,-78,-137,"{""offset_x"": -40.0, ""offset_y"": 0.0, ""scale"": 1.34}"
+"20,4",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/20,4.png",228x402,"(78, 5, 301, 400)","(0, 0, 228, 402)",1.0177,0,0,{}
+"20,5",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/20,5.png",228x402,"(77, 4, 301, 400)","(0, 0, 228, 402)",1.0152,0,0,{}
 "20,6",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/20,6.png",228x399,"(79, 8, 301, 400)","(0, 0, 228, 399)",1.0179,1,0,{}
-"20,7",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/20,7.png",228x393,"(79, 13, 301, 398)","(0, 0, 228, 393)",1.3678,-80,-134,"{""offset_x"": -42.0, ""offset_y"": 0.0, ""scale"": 1.34}"
-"20,8",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/20,8.png",228x393,"(73, 13, 298, 400)","(0, 0, 228, 393)",1.0133,0,1,{}
+"20,7",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/20,7.png",228x393,"(0, 0, 301, 400)","(0, 0, 228, 393)",1.0150,-81,-13,"{""offset_x"": -42.0, ""offset_y"": 0.0, ""scale"": 1.34}"
+"20,8",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/20,8.png",228x393,"(73, 13, 301, 400)","(0, 0, 228, 393)",1.0000,0,6,{}
 "40,0",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/40,0.png",156x372,"(3, 4, 168, 399)","(0, 0, 156, 372)",0.9418,0,0,"{""offset_x"": 0.0, ""offset_y"": 0.0, ""scale"": 1.0}"
-"40,1",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/40,1.png",174x201,"(43, 12, 328, 345)","(0, 0, 174, 201)",0.7062,-44,-34,"{""offset_x"": -30.0, ""offset_y"": 0.0, ""scale"": 1.17}"
-"40,2",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/40,2.png",201x186,"(43, 7, 370, 334)","(0, 0, 201, 186)",0.6484,-19,-41,"{""offset_x"": -13.0, ""offset_y"": -15.0, ""scale"": 1.14}"
-"40,3",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/40,3.png",204x171,"(43, 29, 369, 379)","(0, 0, 204, 171)",0.5961,-16,-38,"{""offset_x"": -21.0, ""offset_y"": 0.0, ""scale"": 1.22}"
-"40,4",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/40,4.png",183x201,"(22, 28, 325, 385)","(0, 0, 183, 201)",0.6137,-2,-18,"{""offset_x"": 0.0, ""offset_y"": 0.0, ""scale"": 1.09}"
-"40,5",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/40,5.png",174x204,"(43, 6, 325, 332)","(0, 0, 174, 204)",0.7157,-26,-29,"{""offset_x"": -12.0, ""offset_y"": 0.0, ""scale"": 1.16}"
-"40,6",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/40,6.png",198x183,"(4, 7, 328, 353)","(0, 0, 198, 183)",0.5871,-23,-17,"{""offset_x"": -27.0, ""offset_y"": 3.0, ""scale"": 1.11}"
-"40,7",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/40,7.png",204x174,"(25, 28, 348, 333)","(0, 0, 204, 174)",0.6390,-3,-8,"{""offset_x"": -2.0, ""offset_y"": 13.0, ""scale"": 1.12}"
+"40,1",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/40,1.png",174x201,"(43, 21, 327, 344)","(0, 0, 174, 201)",0.7168,-45,-31,"{""offset_x"": -30.0, ""offset_y"": 0.0, ""scale"": 1.17}"
+"40,2",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/40,2.png",201x186,"(43, 7, 369, 332)","(0, 0, 201, 186)",0.6524,-19,-41,"{""offset_x"": -13.0, ""offset_y"": -15.0, ""scale"": 1.14}"
+"40,3",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/40,3.png",204x171,"(43, 62, 368, 379)","(0, 0, 204, 171)",0.6581,-26,-38,"{""offset_x"": -21.0, ""offset_y"": 0.0, ""scale"": 1.22}"
+"40,4",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/40,4.png",183x201,"(23, 51, 320, 383)","(0, 0, 183, 201)",0.6599,-7,-18,"{""offset_x"": 0.0, ""offset_y"": 0.0, ""scale"": 1.09}"
+"40,5",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/40,5.png",174x204,"(43, 7, 325, 332)","(0, 0, 174, 204)",0.7157,-26,-29,"{""offset_x"": -12.0, ""offset_y"": 0.0, ""scale"": 1.16}"
+"40,6",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/40,6.png",198x183,"(43, 7, 328, 353)","(0, 0, 198, 183)",0.5871,-12,-17,"{""offset_x"": -27.0, ""offset_y"": 3.0, ""scale"": 1.11}"
+"40,7",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/40,7.png",204x174,"(26, 39, 348, 331)","(0, 0, 204, 174)",0.6674,-8,-8,"{""offset_x"": -2.0, ""offset_y"": 13.0, ""scale"": 1.12}"
 "40,8",ai_or_fallback,/Users/oliverlibaw/Downloads/MK-assets/upscaled-original-low-res-sprites/40-8.png,183x201,"(0, 0, 183, 201)","(0, 0, 183, 201)",1.0000,0,0,{}
-"40,9",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/40,9.png",92x126,"(1, 2, 288, 399)","(0, 0, 92, 126)",0.3174,0,0,{}
-"40,10",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/40,10.png",237x360,"(2, 4, 264, 400)","(0, 0, 237, 360)",0.9227,-3,-5,"{""offset_x"": 0.0, ""offset_y"": 0.0, ""scale"": 1.02}"
-"40,11",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/40,11.png",159x336,"(6, 5, 189, 395)","(0, 0, 159, 336)",0.8615,0,0,{}
-"120,0",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/120,0.png",222x390,"(2, 4, 227, 400)","(0, 0, 222, 390)",0.9848,0,0,{}
+"40,9",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/40,9.png",92x126,"(3, 3, 288, 398)","(0, 0, 92, 126)",0.3190,0,0,{}
+"40,10",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/40,10.png",237x360,"(4, 4, 264, 400)","(0, 0, 237, 360)",0.9273,-2,-7,"{""offset_x"": 0.0, ""offset_y"": 0.0, ""scale"": 1.02}"
+"40,11",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/40,11.png",159x336,"(6, 5, 188, 395)","(0, 0, 159, 336)",0.8615,1,0,{}
+"120,0",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/120,0.png",222x390,"(0, 4, 227, 400)","(0, 0, 222, 390)",0.9780,0,3,{}
 "120,1",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/120,1.png",219x384,"(3, 9, 225, 400)","(0, 0, 219, 384)",0.9821,0,0,{}
-"120,2",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/120,2.png",222x384,"(3, 9, 228, 400)","(0, 0, 222, 384)",0.9821,0,0,{}
-"120,3",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/120,3.png",234x285,"(1, 1, 327, 400)","(0, 0, 234, 285)",0.7143,0,0,{}
-"120,4",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/120,4.png",225x303,"(1, 3, 318, 400)","(0, 0, 225, 303)",0.7453,-3,1,"{""offset_x"": 3.0, ""offset_y"": -6.0, ""scale"": 1.05}"
-"180,0",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/180,0.png",222x411,"(3, 8, 215, 400)","(0, 0, 222, 411)",1.0472,0,1,{}
-"180,1",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/180,1.png",222x420,"(3, 1, 216, 400)","(0, 0, 222, 420)",1.0839,-2,-12,"{""offset_x"": 3.0, ""offset_y"": 0.0, ""scale"": 1.04}"
-"180,2",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/180,2.png",222x387,"(3, 30, 216, 400)","(0, 0, 222, 387)",1.0735,-3,-10,"{""offset_x"": 1.0, ""offset_y"": 0.0, ""scale"": 1.03}"
-"180,3",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/180,3.png",225x405,"(3, 13, 217, 400)","(0, 0, 225, 405)",1.0570,-1,-4,"{""offset_x"": 0.0, ""offset_y"": 0.0, ""scale"": 1.01}"
-"180,4",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/180,4.png",222x402,"(3, 15, 216, 400)","(0, 0, 222, 402)",1.0631,-2,-7,"{""offset_x"": 0.0, ""offset_y"": 0.0, ""scale"": 1.02}"
-"180,5",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/180,5.png",228x405,"(2, 13, 219, 400)","(0, 0, 228, 405)",1.0465,0,0,{}
-"180,6",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/180,6.png",222x411,"(3, 8, 216, 400)","(0, 0, 222, 411)",1.0839,-5,-14,"{""offset_x"": 0.0, ""offset_y"": 0.0, ""scale"": 1.04}"
+"120,2",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/120,2.png",222x384,"(0, 9, 230, 400)","(0, 0, 222, 384)",0.9652,0,7,{}
+"120,3",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/120,3.png",234x285,"(0, 1, 328, 400)","(0, 0, 234, 285)",0.7134,0,0,{}
+"120,4",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/120,4.png",225x303,"(0, 0, 328, 400)","(0, 0, 225, 303)",0.7203,-3,9,"{""offset_x"": 3.0, ""offset_y"": -6.0, ""scale"": 1.05}"
+"180,0",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/180,0.png",222x411,"(0, 8, 215, 400)","(0, 0, 222, 411)",1.0326,0,6,{}
+"180,1",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/180,1.png",222x420,"(0, 1, 220, 400)","(0, 0, 222, 420)",1.0495,-2,1,"{""offset_x"": 3.0, ""offset_y"": 0.0, ""scale"": 1.04}"
+"180,2",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/180,2.png",222x387,"(0, 30, 220, 400)","(0, 0, 222, 387)",1.0394,-3,2,"{""offset_x"": 1.0, ""offset_y"": 0.0, ""scale"": 1.03}"
+"180,3",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/180,3.png",225x405,"(0, 13, 217, 400)","(0, 0, 225, 405)",1.0472,-1,0,"{""offset_x"": 0.0, ""offset_y"": 0.0, ""scale"": 1.01}"
+"180,4",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/180,4.png",222x402,"(0, 15, 216, 400)","(0, 0, 222, 402)",1.0483,-2,-2,"{""offset_x"": 0.0, ""offset_y"": 0.0, ""scale"": 1.02}"
+"180,5",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/180,5.png",228x405,"(0, 13, 220, 400)","(0, 0, 228, 405)",1.0364,0,4,{}
+"180,6",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/180,6.png",222x411,"(0, 8, 220, 400)","(0, 0, 222, 411)",1.0495,-5,0,"{""offset_x"": 0.0, ""offset_y"": 0.0, ""scale"": 1.04}"
 "180,7",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/180,7.png",222x414,"(3, 4, 217, 400)","(0, 0, 222, 414)",1.0478,-1,-1,"{""offset_x"": 0.0, ""offset_y"": 0.0, ""scale"": 1.01}"
-"180,8",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/180,8.png",222x414,"(3, 2, 216, 400)","(0, 0, 222, 414)",1.0610,-2,-8,"{""offset_x"": 0.0, ""offset_y"": 0.0, ""scale"": 1.02}"
-"180,9",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/180,9.png",222x414,"(3, 5, 216, 400)","(0, 0, 222, 414)",1.0631,-2,-6,"{""offset_x"": 0.0, ""offset_y"": 0.0, ""scale"": 1.02}"
-"180,10",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/180,10.png",222x414,"(3, 5, 215, 400)","(0, 0, 222, 414)",1.0891,-5,-16,"{""offset_x"": 0.0, ""offset_y"": 0.0, ""scale"": 1.04}"
-"180,11",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/180,11.png",222x411,"(3, 7, 215, 400)","(0, 0, 222, 411)",1.0667,-2,-8,"{""offset_x"": 0.0, ""offset_y"": 0.0, ""scale"": 1.02}"
-"200,0",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/200,0.png",255x393,"(2, 15, 248, 387)","(0, 0, 255, 393)",1.4512,-7,-132,"{""offset_x"": 44.0, ""offset_y"": 15.0, ""scale"": 1.4}"
+"180,8",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/180,8.png",222x414,"(0, 2, 216, 400)","(0, 0, 222, 414)",1.0483,-2,-3,"{""offset_x"": 0.0, ""offset_y"": 0.0, ""scale"": 1.02}"
+"180,9",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/180,9.png",222x414,"(0, 5, 216, 400)","(0, 0, 222, 414)",1.0483,-2,0,"{""offset_x"": 0.0, ""offset_y"": 0.0, ""scale"": 1.02}"
+"180,10",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/180,10.png",222x414,"(0, 5, 220, 400)","(0, 0, 222, 414)",1.0495,-5,-1,"{""offset_x"": 0.0, ""offset_y"": 0.0, ""scale"": 1.04}"
+"180,11",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/180,11.png",222x411,"(0, 7, 215, 400)","(0, 0, 222, 411)",1.0532,-2,-3,"{""offset_x"": 0.0, ""offset_y"": 0.0, ""scale"": 1.02}"
+"200,0",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/200,0.png",255x393,"(4, 16, 248, 387)","(0, 0, 255, 393)",1.4631,-7,-135,"{""offset_x"": 44.0, ""offset_y"": 15.0, ""scale"": 1.4}"
 "200,1",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/200,1.png",231x405,"(20, 11, 242, 386)","(0, 0, 231, 405)",1.5296,-5,-154,"{""offset_x"": 50.0, ""offset_y"": 15.0, ""scale"": 1.47}"
 "200,2",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/200,2.png",312x393,"(45, 5, 268, 388)","(0, 0, 312, 393)",1.0261,41,0,{}
 "200,3",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/200,3.png",288x387,"(0, 0, 293, 400)","(0, 0, 288, 387)",0.9675,2,0,{}
@@ -61,123 +61,123 @@ pair,source_kind,source_path,target_canvas,source_bbox,target_bbox,scale,offset_
 "200,5",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/200,5.png",315x414,"(45, 2, 319, 387)","(0, 0, 315, 414)",1.0753,10,0,{}
 "201,5",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/201,5.png",234x396,"(45, 4, 240, 389)","(0, 0, 234, 396)",1.0286,16,0,{}
 "201,6",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/201,6.png",237x405,"(33, 27, 329, 397)","(0, 0, 237, 405)",1.0649,-77,11,"{""offset_x"": -38.0, ""offset_y"": 0.0, ""scale"": 1.33}"
-"201,8",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/201,8.png",291x408,"(32, 30, 303, 398)","(0, 0, 291, 408)",1.0738,0,13,{}
-"201,9",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/201,9.png",294x399,"(38, 8, 335, 398)","(0, 0, 294, 399)",1.0097,-3,5,"{""offset_x"": 0.0, ""offset_y"": 0.0, ""scale"": 1.02}"
+"201,8",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/201,8.png",291x408,"(32, 30, 303, 397)","(0, 0, 291, 408)",1.0738,0,14,{}
+"201,9",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/201,9.png",294x399,"(38, 8, 335, 397)","(0, 0, 294, 399)",1.0097,-3,6,"{""offset_x"": 0.0, ""offset_y"": 0.0, ""scale"": 1.02}"
 "210,0",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/210,0.png",303x222,"(4, 208, 250, 391)","(0, 0, 303, 222)",1.2131,2,0,{}
-"210,1",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/210,1.png",285x342,"(2, 111, 235, 392)","(0, 0, 285, 342)",1.2171,0,0,{}
-"210,2",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/210,2.png",261x399,"(6, 72, 256, 398)","(0, 0, 261, 399)",1.2319,-47,-2,"{""offset_x"": -23.0, ""offset_y"": 1.0, ""scale"": 1.18}"
+"210,1",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/210,1.png",285x342,"(2, 112, 235, 392)","(0, 0, 285, 342)",1.2214,0,0,{}
+"210,2",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/210,2.png",261x399,"(41, 72, 256, 398)","(0, 0, 261, 399)",1.4325,-47,-67,"{""offset_x"": -23.0, ""offset_y"": 1.0, ""scale"": 1.18}"
 "210,3",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/210,3.png",183x486,"(58, 3, 214, 399)","(0, 0, 183, 486)",1.1731,0,21,{}
-"210,4",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/210,4.png",210x417,"(13, 51, 188, 395)","(0, 0, 210, 417)",1.7280,-7,-167,"{""offset_x"": 39.0, ""offset_y"": 10.0, ""scale"": 1.44}"
-"240,0",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/240,0.png",231x360,"(1, 58, 223, 397)","(0, 0, 231, 360)",1.3527,-2,-99,"{""offset_x"": 33.0, ""offset_y"": 0.0, ""scale"": 1.3}"
+"210,4",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/210,4.png",210x417,"(13, 52, 188, 395)","(0, 0, 210, 417)",1.7280,-7,-166,"{""offset_x"": 39.0, ""offset_y"": 10.0, ""scale"": 1.44}"
+"240,0",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/240,0.png",231x360,"(2, 58, 222, 397)","(0, 0, 231, 360)",1.3650,-2,-103,"{""offset_x"": 33.0, ""offset_y"": 0.0, ""scale"": 1.3}"
 "240,1",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/240,1.png",234x393,"(5, 25, 226, 397)","(0, 0, 234, 393)",1.3311,-6,-97,"{""offset_x"": 24.0, ""offset_y"": 5.0, ""scale"": 1.26}"
-"240,2",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/240,2.png",261x417,"(34, 3, 284, 397)","(0, 0, 261, 417)",1.0440,0,6,{}
-"245,0",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/245,0.png",192x303,"(5, 4, 252, 392)","(0, 0, 192, 303)",0.7773,0,1,{}
-"245,1",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/245,1.png",234x294,"(7, 6, 318, 395)","(0, 0, 234, 294)",0.7524,0,1,{}
+"240,2",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/240,2.png",261x417,"(34, 3, 284, 400)","(0, 0, 261, 417)",1.0440,0,3,{}
+"245,0",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/245,0.png",192x303,"(5, 4, 251, 392)","(0, 0, 192, 303)",0.7805,0,0,{}
+"245,1",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/245,1.png",234x294,"(7, 6, 317, 395)","(0, 0, 234, 294)",0.7548,0,0,{}
 "248,0",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/248,0.png",228x393,"(2, 6, 235, 395)","(0, 0, 228, 393)",0.9785,0,12,{}
-"248,1",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/248,1.png",279x261,"(5, 8, 424, 398)","(0, 0, 279, 261)",0.6659,0,1,{}
-"248,2",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/248,2.png",312x306,"(4, 5, 404, 394)","(0, 0, 312, 306)",0.7800,0,3,{}
-"250,0",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/250,0.png",171x258,"(6, 4, 264, 400)","(0, 0, 171, 258)",0.6515,1,0,{}
-"250,1",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/250,1.png",297x273,"(4, 5, 431, 398)","(0, 0, 297, 273)",0.6947,0,0,{}
-"250,2",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/250,2.png",339x285,"(4, 2, 473, 397)","(0, 0, 339, 285)",0.7215,0,0,{}
-"254,0",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/254,0.png",252x357,"(63, 42, 311, 388)","(0, 0, 252, 357)",1.0161,0,5,{}
-"254,1",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/254,1.png",360x336,"(40, 68, 379, 388)","(0, 0, 360, 336)",1.0500,2,0,{}
-"255,0",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/255,0.png",246x405,"(4, 11, 384, 400)","(0, 0, 246, 405)",1.0487,-2,-3,"{""offset_x"": 75.0, ""offset_y"": 0.0, ""scale"": 1.62}"
-"255,1",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/255,1.png",168x411,"(67, 4, 375, 398)","(0, 0, 168, 411)",1.0909,-60,-19,"{""offset_x"": 24.0, ""offset_y"": 0.0, ""scale"": 2.0}"
+"248,1",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/248,1.png",279x261,"(5, 9, 424, 397)","(0, 0, 279, 261)",0.6659,0,3,{}
+"248,2",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/248,2.png",312x306,"(4, 5, 404, 393)","(0, 0, 312, 306)",0.7800,0,3,{}
+"250,0",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/250,0.png",171x258,"(0, 0, 264, 400)","(0, 0, 171, 258)",0.6450,0,0,{}
+"250,1",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/250,1.png",297x273,"(5, 5, 431, 398)","(0, 0, 297, 273)",0.6947,0,0,{}
+"250,2",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/250,2.png",339x285,"(4, 2, 473, 396)","(0, 0, 339, 285)",0.7228,0,0,{}
+"254,0",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/254,0.png",252x357,"(63, 43, 311, 388)","(0, 0, 252, 357)",1.0161,0,6,{}
+"254,1",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/254,1.png",360x336,"(40, 69, 379, 388)","(0, 0, 360, 336)",1.0533,1,0,{}
+"255,0",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/255,0.png",246x405,"(4, 11, 386, 400)","(0, 0, 246, 405)",1.0432,-2,-1,"{""offset_x"": 75.0, ""offset_y"": 0.0, ""scale"": 1.62}"
+"255,1",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/255,1.png",168x411,"(68, 4, 229, 398)","(0, 0, 168, 411)",2.0863,-60,-411,"{""offset_x"": 24.0, ""offset_y"": 0.0, ""scale"": 2.0}"
 "255,2",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/255,2.png",258x363,"(52, 31, 352, 391)","(0, 0, 258, 363)",1.1438,-9,-49,"{""offset_x"": 34.0, ""offset_y"": 0.0, ""scale"": 1.33}"
-"255,3",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/255,3.png",303x318,"(50, 87, 339, 388)","(0, 0, 303, 318)",1.0484,0,2,{}
+"255,3",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/255,3.png",303x318,"(50, 88, 339, 388)","(0, 0, 303, 318)",1.0484,0,3,{}
 "255,4",ai_or_fallback,/Users/oliverlibaw/Downloads/MK-assets/upscaled-original-low-res-sprites/255-4.png,315x375,"(0, 0, 315, 375)","(0, 0, 315, 375)",1.0000,0,0,{}
-"257,0",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/257,0.png",198x405,"(4, 5, 203, 399)","(0, 0, 198, 405)",1.4427,-12,-163,"{""offset_x"": 33.0, ""offset_y"": 0.0, ""scale"": 1.45}"
+"257,0",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/257,0.png",198x405,"(4, 5, 202, 399)","(0, 0, 198, 405)",1.4500,-12,-166,"{""offset_x"": 33.0, ""offset_y"": 0.0, ""scale"": 1.45}"
 "257,1",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/257,1.png",168x402,"(79, 4, 232, 393)","(0, 0, 168, 402)",1.0334,5,0,{}
-"257,2",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/257,2.png",210x396,"(73, 7, 276, 393)","(0, 0, 210, 396)",1.3747,-67,-135,"{""offset_x"": -32.0, ""offset_y"": 0.0, ""scale"": 1.34}"
-"259,0",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/259,0.png",237x156,"(6, 58, 534, 392)","(0, 0, 237, 156)",0.4489,0,6,{}
-"259,1",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/259,1.png",285x150,"(18, 70, 649, 393)","(0, 0, 285, 150)",0.4517,0,4,{}
-"259,2",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/259,2.png",348x180,"(8, 5, 723, 392)","(0, 0, 348, 180)",0.4651,7,0,{}
-"260,1",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/260,1.png",216x363,"(19, 30, 201, 335)","(0, 0, 216, 363)",1.1868,0,1,{}
+"257,2",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/257,2.png",210x396,"(74, 8, 275, 393)","(0, 0, 210, 396)",1.3783,-66,-135,"{""offset_x"": -32.0, ""offset_y"": 0.0, ""scale"": 1.34}"
+"259,0",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/259,0.png",237x156,"(8, 60, 533, 392)","(0, 0, 237, 156)",0.4514,0,6,{}
+"259,1",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/259,1.png",285x150,"(18, 74, 649, 393)","(0, 0, 285, 150)",0.4517,0,6,{}
+"259,2",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/259,2.png",348x180,"(8, 5, 722, 392)","(0, 0, 348, 180)",0.4651,8,0,{}
+"260,1",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/260,1.png",216x363,"(19, 31, 201, 335)","(0, 0, 216, 363)",1.1868,0,2,{}
 "260,2",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/260,2.png",204x246,"(41, 129, 212, 333)","(0, 0, 204, 246)",1.1930,0,3,{}
-"260,3",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/260,3.png",204x171,"(35, 199, 325, 347)","(0, 0, 204, 171)",1.1466,-37,1,"{""offset_x"": 28.0, ""offset_y"": 0.0, ""scale"": 1.63}"
-"260,4",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/260,4.png",366x195,"(49, 181, 356, 345)","(0, 0, 366, 195)",1.1890,0,0,{}
+"260,3",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/260,3.png",204x171,"(35, 199, 325, 346)","(0, 0, 204, 171)",1.1466,-37,2,"{""offset_x"": 28.0, ""offset_y"": 0.0, ""scale"": 1.63}"
+"260,4",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/260,4.png",366x195,"(50, 181, 355, 345)","(0, 0, 366, 195)",1.1890,1,0,{}
 "260,5",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/260,5.png",186x279,"(56, 166, 213, 399)","(0, 0, 186, 279)",1.1847,0,3,{}
 "260,6",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/260,6.png",300x276,"(3, 112, 251, 345)","(0, 0, 300, 276)",1.1845,3,0,{}
-"260,7",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/260,7.png",291x348,"(5, 51, 247, 346)","(0, 0, 291, 348)",1.1797,3,0,{}
+"260,7",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/260,7.png",291x348,"(6, 51, 246, 346)","(0, 0, 291, 348)",1.1797,4,0,{}
 "270,0",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/270,0.png",177x384,"(12, 27, 181, 396)","(0, 0, 177, 384)",1.0407,0,0,{}
-"270,1",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/270,1.png",246x369,"(6, 40, 240, 394)","(0, 0, 246, 369)",1.0424,1,0,{}
-"270,2",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/270,2.png",279x387,"(64, 21, 331, 393)","(0, 0, 279, 387)",1.0403,0,0,{}
+"270,1",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/270,1.png",246x369,"(6, 41, 240, 394)","(0, 0, 246, 369)",1.0453,0,0,{}
+"270,2",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/270,2.png",279x387,"(65, 22, 330, 393)","(0, 0, 279, 387)",1.0431,1,0,{}
 "270,3",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/270,3.png",198x381,"(91, 28, 281, 392)","(0, 0, 198, 381)",1.3339,2,-105,"{""offset_x"": 30.0, ""offset_y"": 0.0, ""scale"": 1.28}"
-"270,4",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/270,4.png",117x399,"(102, 11, 217, 391)","(0, 0, 117, 399)",1.0174,0,12,{}
+"270,4",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/270,4.png",117x399,"(102, 12, 217, 390)","(0, 0, 117, 399)",1.0174,0,14,{}
 "270,5",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/270,5.png",129x408,"(77, 5, 206, 395)","(0, 0, 129, 408)",2.0000,-61,-372,"{""offset_x"": 4.0, ""offset_y"": 0.0, ""scale"": 2.0}"
-"270,6",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/270,6.png",207x405,"(37, 12, 318, 399)","(0, 0, 207, 405)",1.1050,0,-23,"{""offset_x"": 52.0, ""offset_y"": 0.0, ""scale"": 1.5}"
-"330,0",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/330,0.png",249x360,"(3, 5, 272, 396)","(0, 0, 249, 360)",1.3074,-4,-145,"{""offset_x"": 48.0, ""offset_y"": 6.0, ""scale"": 1.42}"
-"330,1",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/330,1.png",246x345,"(3, 19, 273, 395)","(0, 0, 246, 345)",1.3029,-8,-140,"{""offset_x"": 45.0, ""offset_y"": 5.0, ""scale"": 1.43}"
-"330,2",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/330,2.png",246x339,"(0, 28, 272, 400)","(0, 0, 246, 339)",1.2933,-3,-142,"{""offset_x"": 50.0, ""offset_y"": 0.0, ""scale"": 1.43}"
-"330,3",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/330,3.png",264x336,"(1, 29, 288, 397)","(0, 0, 264, 336)",0.9130,1,0,{}
-"330,4",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/330,4.png",348x330,"(3, 35, 378, 399)","(0, 0, 348, 330)",0.9882,-12,-30,"{""offset_x"": 0.0, ""offset_y"": 0.0, ""scale"": 1.09}"
-"340,0",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/340,0.png",321x378,"(74, 1, 411, 398)","(0, 0, 321, 378)",1.1521,-4,-79,"{""offset_x"": 30.0, ""offset_y"": 0.0, ""scale"": 1.21}"
-"340,1",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/340,1.png",411x312,"(28, 69, 459, 398)","(0, 0, 411, 312)",0.9673,-3,-6,"{""offset_x"": 0.0, ""offset_y"": 0.0, ""scale"": 1.02}"
-"340,2",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/340,2.png",438x279,"(10, 105, 470, 398)","(0, 0, 438, 279)",0.9903,-9,-11,"{""offset_x"": 0.0, ""offset_y"": 0.0, ""scale"": 1.04}"
-"340,3",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/340,3.png",456x231,"(1, 154, 480, 400)","(0, 0, 456, 231)",0.9390,3,0,{}
-"340,4",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/340,4.png",456x234,"(1, 149, 480, 400)","(0, 0, 456, 234)",0.9323,4,0,{}
-"340,5",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/340,5.png",456x234,"(0, 145, 480, 398)","(0, 0, 456, 234)",0.9434,1,-5,"{""offset_x"": 0.0, ""offset_y"": 0.0, ""scale"": 1.02}"
+"270,6",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/270,6.png",207x405,"(37, 12, 237, 399)","(0, 0, 207, 405)",1.5525,0,-196,"{""offset_x"": 52.0, ""offset_y"": 0.0, ""scale"": 1.5}"
+"330,0",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/330,0.png",249x360,"(4, 6, 272, 396)","(0, 0, 249, 360)",1.3108,-3,-145,"{""offset_x"": 48.0, ""offset_y"": 6.0, ""scale"": 1.42}"
+"330,1",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/330,1.png",246x345,"(8, 19, 273, 395)","(0, 0, 246, 345)",1.3121,-6,-143,"{""offset_x"": 45.0, ""offset_y"": 5.0, ""scale"": 1.43}"
+"330,2",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/330,2.png",246x339,"(0, 28, 381, 400)","(0, 0, 246, 339)",0.9233,-3,-4,"{""offset_x"": 50.0, ""offset_y"": 0.0, ""scale"": 1.43}"
+"330,3",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/330,3.png",264x336,"(4, 30, 288, 397)","(0, 0, 264, 336)",0.9155,2,0,{}
+"330,4",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/330,4.png",348x330,"(3, 35, 377, 398)","(0, 0, 348, 330)",0.9909,-12,-30,"{""offset_x"": 0.0, ""offset_y"": 0.0, ""scale"": 1.09}"
+"340,0",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/340,0.png",321x378,"(75, 2, 410, 398)","(0, 0, 321, 378)",1.1550,-3,-79,"{""offset_x"": 30.0, ""offset_y"": 0.0, ""scale"": 1.21}"
+"340,1",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/340,1.png",411x312,"(29, 69, 459, 398)","(0, 0, 411, 312)",0.9673,-3,-6,"{""offset_x"": 0.0, ""offset_y"": 0.0, ""scale"": 1.02}"
+"340,2",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/340,2.png",438x279,"(13, 106, 469, 398)","(0, 0, 438, 279)",0.9937,-8,-11,"{""offset_x"": 0.0, ""offset_y"": 0.0, ""scale"": 1.04}"
+"340,3",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/340,3.png",456x231,"(0, 154, 481, 400)","(0, 0, 456, 231)",0.9390,2,0,{}
+"340,4",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/340,4.png",456x234,"(2, 150, 480, 400)","(0, 0, 456, 234)",0.9360,4,0,{}
+"340,5",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/340,5.png",456x234,"(0, 145, 481, 400)","(0, 0, 456, 234)",0.9360,3,-5,"{""offset_x"": 0.0, ""offset_y"": 0.0, ""scale"": 1.02}"
 "410,0",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/410,0.png",255x387,"(118, 36, 356, 400)","(0, 0, 255, 387)",1.0632,1,0,{}
 "410,1",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/410,1.png",309x321,"(87, 99, 398, 400)","(0, 0, 309, 321)",1.0532,-10,4,"{""offset_x"": 0.0, ""offset_y"": 0.0, ""scale"": 1.06}"
 "410,2",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/410,2.png",252x387,"(111, 36, 348, 398)","(0, 0, 252, 387)",1.3185,-14,-85,"{""offset_x"": 16.0, ""offset_y"": 5.0, ""scale"": 1.24}"
-"410,3",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/410,3.png",249x423,"(113, 4, 350, 399)","(0, 0, 249, 423)",1.6285,-122,-216,"{""offset_x"": -53.0, ""offset_y"": 4.0, ""scale"": 1.55}"
-"410,4",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/410,4.png",372x369,"(4, 53, 352, 399)","(0, 0, 372, 369)",1.2158,-20,-52,"{""offset_x"": 6.0, ""offset_y"": 0.0, ""scale"": 1.14}"
-"410,5",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/410,5.png",294x318,"(68, 100, 346, 398)","(0, 0, 294, 318)",1.2796,1,-63,"{""offset_x"": 32.0, ""offset_y"": 0.0, ""scale"": 1.21}"
-"410,6",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/410,6.png",309x351,"(57, 69, 347, 397)","(0, 0, 309, 351)",1.2893,-33,-67,"{""offset_x"": 0.0, ""offset_y"": 5.0, ""scale"": 1.21}"
-"5000,0",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/5000,0.png",255x399,"(42, 0, 298, 400)","(0, 0, 255, 399)",1.1654,-22,-67,"{""offset_x"": 0.0, ""offset_y"": 0.0, ""scale"": 1.17}"
-"5000,10",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/5000,10.png",258x381,"(28, 16, 290, 400)","(0, 0, 258, 381)",1.0241,-1,-12,"{""offset_x"": 4.0, ""offset_y"": 0.0, ""scale"": 1.04}"
-"5000,20",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/5000,20.png",258x390,"(0, 7, 261, 400)","(0, 0, 258, 390)",1.1566,-6,-65,"{""offset_x"": 16.0, ""offset_y"": 0.0, ""scale"": 1.17}"
-"5000,30",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/5000,30.png",219x399,"(33, 0, 255, 400)","(0, 0, 219, 399)",1.3416,-36,-138,"{""offset_x"": 4.0, ""offset_y"": 0.0, ""scale"": 1.36}"
+"410,3",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/410,3.png",249x423,"(114, 4, 349, 398)","(0, 0, 249, 423)",1.6423,-122,-220,"{""offset_x"": -53.0, ""offset_y"": 4.0, ""scale"": 1.55}"
+"410,4",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/410,4.png",372x369,"(4, 53, 351, 399)","(0, 0, 372, 369)",1.2158,-19,-52,"{""offset_x"": 6.0, ""offset_y"": 0.0, ""scale"": 1.14}"
+"410,5",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/410,5.png",294x318,"(68, 101, 346, 397)","(0, 0, 294, 318)",1.2796,1,-61,"{""offset_x"": 32.0, ""offset_y"": 0.0, ""scale"": 1.21}"
+"410,6",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/410,6.png",309x351,"(58, 70, 347, 396)","(0, 0, 309, 351)",1.2937,-33,-66,"{""offset_x"": 0.0, ""offset_y"": 5.0, ""scale"": 1.21}"
+"5000,0",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/5000,0.png",255x399,"(0, 0, 298, 400)","(0, 0, 255, 399)",1.0012,-22,-1,"{""offset_x"": 0.0, ""offset_y"": 0.0, ""scale"": 1.17}"
+"5000,10",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/5000,10.png",258x381,"(28, 16, 298, 400)","(0, 0, 258, 381)",0.9938,-1,-1,"{""offset_x"": 4.0, ""offset_y"": 0.0, ""scale"": 1.04}"
+"5000,20",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/5000,20.png",258x390,"(0, 0, 298, 400)","(0, 0, 258, 390)",1.0130,-6,-15,"{""offset_x"": 16.0, ""offset_y"": 0.0, ""scale"": 1.17}"
+"5000,30",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/5000,30.png",219x399,"(0, 0, 298, 400)","(0, 0, 219, 399)",0.9995,-36,-1,"{""offset_x"": 4.0, ""offset_y"": 0.0, ""scale"": 1.36}"
 "5010,0",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/5010,0.png",222x390,"(7, 8, 235, 400)","(0, 0, 222, 390)",1.0126,-1,-7,"{""offset_x"": 4.0, ""offset_y"": 0.0, ""scale"": 1.04}"
-"5010,10",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/5010,10.png",234x393,"(0, 3, 235, 400)","(0, 0, 234, 393)",0.9998,-1,-4,"{""offset_x"": 0.0, ""offset_y"": 0.0, ""scale"": 1.01}"
-"5010,20",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/5010,20.png",222x399,"(5, 0, 233, 400)","(0, 0, 222, 399)",1.0321,-7,-14,"{""offset_x"": 0.0, ""offset_y"": 0.0, ""scale"": 1.06}"
+"5010,10",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/5010,10.png",234x393,"(0, 0, 235, 400)","(0, 0, 234, 393)",0.9923,0,-4,"{""offset_x"": 0.0, ""offset_y"": 0.0, ""scale"": 1.01}"
+"5010,20",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/5010,20.png",222x399,"(0, 0, 235, 400)","(0, 0, 222, 399)",1.0014,-7,-2,"{""offset_x"": 0.0, ""offset_y"": 0.0, ""scale"": 1.06}"
 "5010,30",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/5010,30.png",216x396,"(10, 3, 232, 400)","(0, 0, 216, 396)",1.0022,-3,-2,"{""offset_x"": 0.0, ""offset_y"": 0.0, ""scale"": 1.03}"
-"5020,0",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/5020,0.png",210x255,"(4, 5, 325, 400)","(0, 0, 210, 255)",0.6456,1,0,{}
+"5020,0",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/5020,0.png",210x255,"(4, 5, 326, 400)","(0, 0, 210, 255)",0.6456,1,0,{}
 "5020,10",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/5020,10.png",210x261,"(0, 5, 326, 400)","(0, 0, 210, 261)",0.6442,0,7,{}
 "5020,20",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/5020,20.png",213x261,"(5, 4, 326, 400)","(0, 0, 213, 261)",0.6591,0,0,{}
-"5030,0",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/5030,0.png",234x375,"(102, 48, 299, 364)","(0, 0, 234, 375)",1.1867,0,0,{}
-"5030,10",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/5030,10.png",303x438,"(79, 39, 334, 367)","(0, 0, 303, 438)",1.2595,-6,25,"{""offset_x"": 3.0, ""offset_y"": 0.0, ""scale"": 1.06}"
+"5030,0",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/5030,0.png",234x375,"(102, 49, 299, 364)","(0, 0, 234, 375)",1.1878,0,1,{}
+"5030,10",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/5030,10.png",303x438,"(79, 40, 334, 367)","(0, 0, 303, 438)",1.2595,-6,26,"{""offset_x"": 3.0, ""offset_y"": 0.0, ""scale"": 1.06}"
 "5030,20",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/5030,20.png",318x330,"(80, 89, 345, 365)","(0, 0, 318, 330)",1.1957,0,0,{}
-"5030,30",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/5030,30.png",297x246,"(50, 155, 300, 364)","(0, 0, 297, 246)",1.1770,1,0,{}
-"5030,40",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/5030,40.png",240x285,"(34, 149, 236, 390)","(0, 0, 240, 285)",1.1826,0,0,{}
-"5040,0",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/5040,0.png",321x258,"(7, 102, 331, 397)","(0, 0, 321, 258)",1.4868,-81,-181,"{""offset_x"": 0.0, ""offset_y"": 0.0, ""scale"": 1.7}"
-"5040,10",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/5040,10.png",363x159,"(0, 270, 304, 399)","(0, 0, 363, 159)",1.2896,-15,-2,"{""offset_x"": 0.0, ""offset_y"": 5.0, ""scale"": 1.08}"
-"5060,0",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/5060,0.png",177x444,"(4, 2, 166, 395)","(0, 0, 177, 444)",1.1581,-6,-11,"{""offset_x"": 0.0, ""offset_y"": 0.0, ""scale"": 1.06}"
-"5070,0",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/5070,0.png",249x300,"(2, 3, 330, 397)","(0, 0, 249, 300)",0.7591,0,1,{}
+"5030,30",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/5030,30.png",297x246,"(50, 156, 300, 364)","(0, 0, 297, 246)",1.1827,0,0,{}
+"5030,40",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/5030,40.png",240x285,"(34, 150, 235, 389)","(0, 0, 240, 285)",1.1925,0,0,{}
+"5040,0",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/5040,0.png",321x258,"(7, 102, 330, 397)","(0, 0, 321, 258)",1.4868,-80,-181,"{""offset_x"": 0.0, ""offset_y"": 0.0, ""scale"": 1.7}"
+"5040,10",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/5040,10.png",363x159,"(0, 270, 304, 400)","(0, 0, 363, 159)",1.2896,-15,-4,"{""offset_x"": 0.0, ""offset_y"": 5.0, ""scale"": 1.08}"
+"5060,0",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/5060,0.png",177x444,"(4, 3, 166, 395)","(0, 0, 177, 444)",1.1581,-6,-10,"{""offset_x"": 0.0, ""offset_y"": 0.0, ""scale"": 1.06}"
+"5070,0",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/5070,0.png",249x300,"(3, 4, 330, 396)","(0, 0, 249, 300)",0.7615,0,2,{}
 "5070,10",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/5070,10.png",222x240,"(5, 9, 365, 395)","(0, 0, 222, 240)",0.6167,0,2,{}
-"5070,30",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/5070,30.png",240x189,"(13, 12, 492, 389)","(0, 0, 240, 189)",0.5010,0,0,{}
+"5070,30",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/5070,30.png",240x189,"(13, 12, 491, 389)","(0, 0, 240, 189)",0.5013,0,0,{}
 "5080,0",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/5080,0.png",294x363,"(35, 8, 327, 368)","(0, 0, 294, 363)",1.0068,0,1,{}
 "5080,1",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/5080,1.png",303x195,"(24, 63, 330, 260)","(0, 0, 303, 195)",0.9898,0,0,{}
-"5080,2",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/5080,2.png",297x231,"(21, 61, 321, 297)","(0, 0, 297, 231)",0.9788,1,0,{}
-"5080,3",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/5080,3.png",330x222,"(11, 137, 345, 364)","(0, 0, 330, 222)",0.9780,1,0,{}
-"5080,4",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/5080,4.png",324x171,"(11, 102, 341, 362)","(0, 0, 324, 171)",1.0063,-4,-91,"{""offset_x"": 0.0, ""offset_y"": 0.0, ""scale"": 1.53}"
-"5080,5",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/5080,5.png",321x147,"(1, 1, 873, 397)","(0, 0, 321, 147)",0.3681,0,1,{}
-"5080,6",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/5080,6.png",120x198,"(87, 83, 231, 398)","(0, 0, 120, 198)",0.6286,14,0,{}
-"5080,7",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/5080,7.png",168x297,"(64, 60, 255, 393)","(0, 0, 168, 297)",0.8796,0,4,{}
-"5080,8",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/5080,8.png",183x180,"(71, 107, 271, 387)","(0, 0, 183, 180)",0.6429,27,0,{}
-"5080,9",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/5080,9.png",303x273,"(4, 93, 330, 394)","(0, 0, 303, 273)",0.9070,3,0,{}
+"5080,2",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/5080,2.png",297x231,"(21, 61, 320, 297)","(0, 0, 297, 231)",0.9788,2,0,{}
+"5080,3",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/5080,3.png",330x222,"(12, 137, 345, 364)","(0, 0, 330, 222)",0.9780,2,0,{}
+"5080,4",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/5080,4.png",324x171,"(11, 184, 340, 361)","(0, 0, 324, 171)",1.4781,-81,-91,"{""offset_x"": 0.0, ""offset_y"": 0.0, ""scale"": 1.53}"
+"5080,5",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/5080,5.png",321x147,"(0, 0, 873, 400)","(0, 0, 321, 147)",0.3675,0,0,{}
+"5080,6",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/5080,6.png",120x198,"(87, 83, 230, 397)","(0, 0, 120, 198)",0.6306,15,0,{}
+"5080,7",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/5080,7.png",168x297,"(64, 61, 254, 393)","(0, 0, 168, 297)",0.8842,0,3,{}
+"5080,8",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/5080,8.png",183x180,"(71, 107, 270, 387)","(0, 0, 183, 180)",0.6429,27,0,{}
+"5080,9",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/5080,9.png",303x273,"(4, 93, 330, 393)","(0, 0, 303, 273)",0.9100,3,0,{}
 "5081,0",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/5081,0.png",129x417,"(35, 24, 160, 384)","(0, 0, 129, 417)",1.1558,-8,1,"{""offset_x"": 0.0, ""offset_y"": 0.0, ""scale"": 1.12}"
 "5081,2",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/5081,2.png",150x441,"(34, 10, 169, 392)","(0, 0, 150, 441)",1.1667,-4,-5,"{""offset_x"": 0.0, ""offset_y"": 0.0, ""scale"": 1.05}"
-"5300,0",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/5300,0.png",204x381,"(1, 20, 211, 400)","(0, 0, 204, 381)",1.0006,-3,1,"{""offset_x"": 0.0, ""offset_y"": 0.0, ""scale"": 1.03}"
-"5300,1",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/5300,1.png",201x384,"(3, 8, 211, 400)","(0, 0, 201, 384)",0.9953,-3,-6,"{""offset_x"": 0.0, ""offset_y"": 0.0, ""scale"": 1.03}"
-"5300,2",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/5300,2.png",207x387,"(3, 5, 209, 399)","(0, 0, 207, 387)",0.9822,2,0,{}
-"5300,3",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/5300,3.png",204x387,"(1, 1, 211, 396)","(0, 0, 204, 387)",0.9714,0,3,{}
+"5300,0",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/5300,0.png",204x381,"(1, 21, 211, 400)","(0, 0, 204, 381)",1.0006,-3,2,"{""offset_x"": 0.0, ""offset_y"": 0.0, ""scale"": 1.03}"
+"5300,1",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/5300,1.png",201x384,"(3, 9, 211, 400)","(0, 0, 201, 384)",0.9953,-3,-5,"{""offset_x"": 0.0, ""offset_y"": 0.0, ""scale"": 1.03}"
+"5300,2",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/5300,2.png",207x387,"(3, 5, 209, 398)","(0, 0, 207, 387)",0.9847,2,0,{}
+"5300,3",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/5300,3.png",204x387,"(0, 0, 211, 400)","(0, 0, 204, 387)",0.9668,0,0,{}
 "5300,4",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/5300,4.png",204x390,"(2, 2, 210, 397)","(0, 0, 204, 390)",1.0004,-2,-5,"{""offset_x"": 0.0, ""offset_y"": 0.0, ""scale"": 1.02}"
-"5300,5",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/5300,5.png",204x384,"(3, 1, 211, 399)","(0, 0, 204, 384)",0.9648,1,0,{}
-"5300,6",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/5300,6.png",207x369,"(0, 8, 209, 400)","(0, 0, 207, 369)",0.9413,5,0,{}
+"5300,5",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/5300,5.png",204x384,"(0, 0, 211, 400)","(0, 0, 204, 384)",0.9600,0,0,{}
+"5300,6",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/5300,6.png",207x369,"(0, 8, 211, 400)","(0, 0, 207, 369)",0.9413,4,0,{}
 "5400,0",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/5400,0.png",177x402,"(9, 1, 191, 400)","(0, 0, 177, 402)",1.0114,-4,-2,"{""offset_x"": 0.0, ""offset_y"": 0.0, ""scale"": 1.04}"
-"5400,1",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/5400,1.png",195x396,"(2, 5, 205, 398)","(0, 0, 195, 396)",1.0086,-5,0,"{""offset_x"": 0.0, ""offset_y"": 0.0, ""scale"": 1.05}"
+"5400,1",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/5400,1.png",195x396,"(2, 5, 204, 398)","(0, 0, 195, 396)",1.0136,-5,-2,"{""offset_x"": 0.0, ""offset_y"": 0.0, ""scale"": 1.05}"
 "5400,2",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/5400,2.png",138x390,"(27, 5, 168, 396)","(0, 0, 138, 390)",0.9787,0,7,{}
 "5400,3",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/5400,3.png",156x402,"(8, 0, 166, 399)","(0, 0, 156, 402)",1.0170,-3,-4,"{""offset_x"": 0.0, ""offset_y"": 0.0, ""scale"": 1.03}"
 "5400,4",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/5400,4.png",162x393,"(0, 5, 162, 400)","(0, 0, 162, 393)",0.9949,0,0,{}
 "5400,5",ai_or_fallback,"/Users/oliverlibaw/Downloads/MK-assets/resized-transparent-gen-ai-sprites/5400,5.png",210x396,"(0, 5, 207, 400)","(0, 0, 210, 396)",1.0025,1,0,{}
-"10181,0",ai_or_fallback,/Users/oliverlibaw/Downloads/MK-assets/upscaled-original-low-res-sprites/10181-0.png,672x75,"(13, 10, 623, 65)","(13, 10, 623, 65)",1.0000,13,10,{}
+"10181,0",ai_or_fallback,/Users/oliverlibaw/Downloads/MK-assets/upscaled-original-low-res-sprites/10181-0.png,672x75,"(22, 16, 623, 65)","(13, 10, 623, 65)",1.0150,13,15,{}
 "10181,1",ai_or_fallback,/Users/oliverlibaw/Downloads/MK-assets/upscaled-original-low-res-sprites/10181-1.png,606x51,"(0, 0, 606, 51)","(0, 0, 606, 51)",1.0000,0,0,{}
-"10181,2",ai_or_fallback,/Users/oliverlibaw/Downloads/MK-assets/upscaled-original-low-res-sprites/10181-2.png,546x54,"(1, 1, 546, 54)","(0, 0, 546, 54)",1.0018,0,1,{}
+"10181,2",ai_or_fallback,/Users/oliverlibaw/Downloads/MK-assets/upscaled-original-low-res-sprites/10181-2.png,546x54,"(0, 0, 546, 54)","(0, 0, 546, 54)",1.0000,0,0,{}
 "10181,3",ai_or_fallback,/Users/oliverlibaw/Downloads/MK-assets/upscaled-original-low-res-sprites/10181-3.png,546x54,"(0, 0, 546, 54)","(0, 0, 546, 54)",1.0000,0,0,{}
-"10181,4",ai_or_fallback,/Users/oliverlibaw/Downloads/MK-assets/upscaled-original-low-res-sprites/10181-4.png,375x36,"(1, 1, 375, 36)","(0, 0, 375, 36)",1.0027,0,1,{}
+"10181,4",ai_or_fallback,/Users/oliverlibaw/Downloads/MK-assets/upscaled-original-low-res-sprites/10181-4.png,375x36,"(0, 0, 375, 36)","(0, 0, 375, 36)",1.0000,0,0,{}
 "10181,5",ai_or_fallback,/Users/oliverlibaw/Downloads/MK-assets/upscaled-original-low-res-sprites/10181-5.png,375x36,"(0, 0, 375, 36)","(0, 0, 375, 36)",1.0000,0,0,{}
-"10181,6",ai_or_fallback,/Users/oliverlibaw/Downloads/MK-assets/upscaled-original-low-res-sprites/10181-6.png,396x36,"(1, 1, 396, 36)","(0, 0, 396, 36)",1.0025,0,1,{}
+"10181,6",ai_or_fallback,/Users/oliverlibaw/Downloads/MK-assets/upscaled-original-low-res-sprites/10181-6.png,396x36,"(0, 0, 396, 36)","(0, 0, 396, 36)",1.0000,0,0,{}
 "10181,7",ai_or_fallback,/Users/oliverlibaw/Downloads/MK-assets/upscaled-original-low-res-sprites/10181-7.png,396x36,"(0, 0, 396, 36)","(0, 0, 396, 36)",1.0000,0,0,{}
 "10330,5",ai_or_fallback,/Users/oliverlibaw/Downloads/MK-assets/upscaled-original-low-res-sprites/10330-5.png,210x99,"(0, 0, 210, 99)","(0, 0, 210, 99)",1.0000,0,0,{}
 "10330,6",ai_or_fallback,/Users/oliverlibaw/Downloads/MK-assets/upscaled-original-low-res-sprites/10330-6.png,285x147,"(0, 0, 285, 147)","(0, 0, 285, 147)",1.0000,0,0,{}
@@ -283,28 +283,28 @@ pair,source_kind,source_path,target_canvas,source_bbox,target_bbox,scale,offset_
 "12000,5",ai_or_fallback,/Users/oliverlibaw/Downloads/MK-assets/upscaled-original-low-res-sprites/12000-5.png,1437x948,"(0, 0, 1437, 948)","(0, 0, 1437, 948)",1.0000,0,0,{}
 "12000,6",ai_or_fallback,/Users/oliverlibaw/Downloads/MK-assets/upscaled-original-low-res-sprites/12000-6.png,1437x954,"(0, 0, 1437, 954)","(0, 0, 1437, 954)",1.0000,0,0,{}
 "12100,0",ai_or_fallback,/Users/oliverlibaw/Downloads/MK-assets/upscaled-original-low-res-sprites/12100-0.png,177x222,"(0, 0, 177, 222)","(0, 0, 177, 222)",1.0000,0,0,{}
-"12100,1",ai_or_fallback,/Users/oliverlibaw/Downloads/MK-assets/upscaled-original-low-res-sprites/12100-1.png,297x54,"(4, 1, 297, 54)","(0, 0, 297, 54)",1.0137,0,0,{}
+"12100,1",ai_or_fallback,/Users/oliverlibaw/Downloads/MK-assets/upscaled-original-low-res-sprites/12100-1.png,297x54,"(0, 0, 297, 54)","(0, 0, 297, 54)",1.0000,0,0,{}
 "12100,2",ai_or_fallback,/Users/oliverlibaw/Downloads/MK-assets/upscaled-original-low-res-sprites/12100-2.png,297x54,"(0, 0, 297, 54)","(0, 0, 297, 54)",1.0000,0,0,{}
-"12100,3",ai_or_fallback,/Users/oliverlibaw/Downloads/MK-assets/upscaled-original-low-res-sprites/12100-3.png,381x54,"(1, 1, 381, 54)","(0, 0, 381, 54)",1.0026,0,1,{}
+"12100,3",ai_or_fallback,/Users/oliverlibaw/Downloads/MK-assets/upscaled-original-low-res-sprites/12100-3.png,381x54,"(0, 0, 381, 54)","(0, 0, 381, 54)",1.0000,0,0,{}
 "12100,4",ai_or_fallback,/Users/oliverlibaw/Downloads/MK-assets/upscaled-original-low-res-sprites/12100-4.png,381x54,"(0, 0, 381, 54)","(0, 0, 381, 54)",1.0000,0,0,{}
 "12100,5",ai_or_fallback,/Users/oliverlibaw/Downloads/MK-assets/upscaled-original-low-res-sprites/12100-5.png,588x327,"(19, 22, 588, 327)","(19, 22, 588, 327)",1.0000,19,22,{}
-"12100,6",ai_or_fallback,/Users/oliverlibaw/Downloads/MK-assets/upscaled-original-low-res-sprites/12100-6.png,180x54,"(4, 1, 180, 54)","(0, 0, 180, 54)",1.0189,0,0,{}
+"12100,6",ai_or_fallback,/Users/oliverlibaw/Downloads/MK-assets/upscaled-original-low-res-sprites/12100-6.png,180x54,"(0, 0, 180, 54)","(0, 0, 180, 54)",1.0000,0,0,{}
 "12100,7",ai_or_fallback,/Users/oliverlibaw/Downloads/MK-assets/upscaled-original-low-res-sprites/12100-7.png,180x54,"(0, 0, 180, 54)","(0, 0, 180, 54)",1.0000,0,0,{}
-"12100,8",ai_or_fallback,/Users/oliverlibaw/Downloads/MK-assets/upscaled-original-low-res-sprites/12100-8.png,327x51,"(1, 1, 327, 51)","(0, 0, 327, 51)",1.0031,0,1,{}
+"12100,8",ai_or_fallback,/Users/oliverlibaw/Downloads/MK-assets/upscaled-original-low-res-sprites/12100-8.png,327x51,"(0, 0, 327, 51)","(0, 0, 327, 51)",1.0000,0,0,{}
 "12100,9",ai_or_fallback,/Users/oliverlibaw/Downloads/MK-assets/upscaled-original-low-res-sprites/12100-9.png,327x51,"(0, 0, 327, 51)","(0, 0, 327, 51)",1.0000,0,0,{}
-"12100,10",ai_or_fallback,/Users/oliverlibaw/Downloads/MK-assets/upscaled-original-low-res-sprites/12100-10.png,243x54,"(1, 1, 243, 54)","(0, 0, 243, 54)",1.0041,0,1,{}
+"12100,10",ai_or_fallback,/Users/oliverlibaw/Downloads/MK-assets/upscaled-original-low-res-sprites/12100-10.png,243x54,"(0, 0, 243, 54)","(0, 0, 243, 54)",1.0000,0,0,{}
 "12100,11",ai_or_fallback,/Users/oliverlibaw/Downloads/MK-assets/upscaled-original-low-res-sprites/12100-11.png,243x54,"(0, 0, 243, 54)","(0, 0, 243, 54)",1.0000,0,0,{}
 "12100,12",ai_or_fallback,/Users/oliverlibaw/Downloads/MK-assets/upscaled-original-low-res-sprites/12100-12.png,138x63,"(0, 0, 138, 63)","(0, 0, 138, 63)",1.0000,0,0,{}
 "12100,13",ai_or_fallback,/Users/oliverlibaw/Downloads/MK-assets/upscaled-original-low-res-sprites/12100-13.png,138x63,"(0, 0, 138, 63)","(0, 0, 138, 63)",1.0000,0,0,{}
-"12100,14",ai_or_fallback,/Users/oliverlibaw/Downloads/MK-assets/upscaled-original-low-res-sprites/12100-14.png,48x36,"(1, 1, 48, 36)","(0, 0, 48, 36)",1.0213,0,0,{}
-"12100,15",ai_or_fallback,/Users/oliverlibaw/Downloads/MK-assets/upscaled-original-low-res-sprites/12100-15.png,108x36,"(1, 0, 108, 36)","(0, 0, 108, 36)",1.0000,0,0,{}
+"12100,14",ai_or_fallback,/Users/oliverlibaw/Downloads/MK-assets/upscaled-original-low-res-sprites/12100-14.png,48x36,"(0, 0, 48, 36)","(0, 0, 48, 36)",1.0000,0,0,{}
+"12100,15",ai_or_fallback,/Users/oliverlibaw/Downloads/MK-assets/upscaled-original-low-res-sprites/12100-15.png,108x36,"(0, 0, 108, 36)","(0, 0, 108, 36)",1.0000,0,0,{}
 "12100,16",ai_or_fallback,/Users/oliverlibaw/Downloads/MK-assets/upscaled-original-low-res-sprites/12100-16.png,1032x735,"(0, 0, 1032, 735)","(0, 0, 1032, 735)",1.0000,0,0,{}
 "12100,17",ai_or_fallback,/Users/oliverlibaw/Downloads/MK-assets/upscaled-original-low-res-sprites/12100-17.png,96x84,"(0, 0, 96, 84)","(0, 0, 96, 84)",1.0000,0,0,{}
-"12100,18",ai_or_fallback,/Users/oliverlibaw/Downloads/MK-assets/upscaled-original-low-res-sprites/12100-18.png,396x54,"(1, 1, 396, 54)","(0, 0, 396, 54)",1.0025,0,1,{}
+"12100,18",ai_or_fallback,/Users/oliverlibaw/Downloads/MK-assets/upscaled-original-low-res-sprites/12100-18.png,396x54,"(0, 0, 396, 54)","(0, 0, 396, 54)",1.0000,0,0,{}
 "12100,19",ai_or_fallback,/Users/oliverlibaw/Downloads/MK-assets/upscaled-original-low-res-sprites/12100-19.png,396x54,"(0, 0, 396, 54)","(0, 0, 396, 54)",1.0000,0,0,{}
-"12100,20",ai_or_fallback,/Users/oliverlibaw/Downloads/MK-assets/upscaled-original-low-res-sprites/12100-20.png,318x39,"(1, 1, 318, 39)","(0, 0, 318, 39)",1.0032,0,1,{}
+"12100,20",ai_or_fallback,/Users/oliverlibaw/Downloads/MK-assets/upscaled-original-low-res-sprites/12100-20.png,318x39,"(0, 0, 318, 39)","(0, 0, 318, 39)",1.0000,0,0,{}
 "12100,21",ai_or_fallback,/Users/oliverlibaw/Downloads/MK-assets/upscaled-original-low-res-sprites/12100-21.png,63x63,"(0, 0, 63, 63)","(0, 0, 63, 63)",1.0000,0,0,{}
-"12100,22",ai_or_fallback,/Users/oliverlibaw/Downloads/MK-assets/upscaled-original-low-res-sprites/12100-22.png,351x54,"(1, 1, 351, 54)","(0, 0, 351, 54)",1.0029,0,1,{}
+"12100,22",ai_or_fallback,/Users/oliverlibaw/Downloads/MK-assets/upscaled-original-low-res-sprites/12100-22.png,351x54,"(0, 0, 351, 54)","(0, 0, 351, 54)",1.0000,0,0,{}
 "12100,23",ai_or_fallback,/Users/oliverlibaw/Downloads/MK-assets/upscaled-original-low-res-sprites/12100-23.png,351x54,"(0, 0, 351, 54)","(0, 0, 351, 54)",1.0000,0,0,{}
 "12100,24",ai_or_fallback,/Users/oliverlibaw/Downloads/MK-assets/upscaled-original-low-res-sprites/12100-24.png,30x51,"(0, 0, 30, 51)","(0, 0, 30, 51)",1.0000,0,0,{}
 "12100,25",ai_or_fallback,/Users/oliverlibaw/Downloads/MK-assets/upscaled-original-low-res-sprites/12100-25.png,42x51,"(0, 0, 42, 51)","(0, 0, 42, 51)",1.0000,0,0,{}
@@ -316,12 +316,12 @@ pair,source_kind,source_path,target_canvas,source_bbox,target_bbox,scale,offset_
 "12100,31",ai_or_fallback,/Users/oliverlibaw/Downloads/MK-assets/upscaled-original-low-res-sprites/12100-31.png,42x51,"(0, 0, 42, 51)","(0, 0, 42, 51)",1.0000,0,0,{}
 "12100,32",ai_or_fallback,/Users/oliverlibaw/Downloads/MK-assets/upscaled-original-low-res-sprites/12100-32.png,42x51,"(0, 0, 42, 51)","(0, 0, 42, 51)",1.0000,0,0,{}
 "12100,33",ai_or_fallback,/Users/oliverlibaw/Downloads/MK-assets/upscaled-original-low-res-sprites/12100-33.png,42x51,"(0, 0, 42, 51)","(0, 0, 42, 51)",1.0000,0,0,{}
-"12100,34",ai_or_fallback,/Users/oliverlibaw/Downloads/MK-assets/upscaled-original-low-res-sprites/12100-34.png,642x36,"(1, 0, 642, 36)","(0, 0, 642, 36)",1.0000,0,0,{}
-"12100,35",ai_or_fallback,/Users/oliverlibaw/Downloads/MK-assets/upscaled-original-low-res-sprites/12100-35.png,627x45,"(1, 0, 627, 45)","(0, 0, 627, 45)",1.0000,0,0,{}
+"12100,34",ai_or_fallback,/Users/oliverlibaw/Downloads/MK-assets/upscaled-original-low-res-sprites/12100-34.png,642x36,"(0, 0, 642, 36)","(0, 0, 642, 36)",1.0000,0,0,{}
+"12100,35",ai_or_fallback,/Users/oliverlibaw/Downloads/MK-assets/upscaled-original-low-res-sprites/12100-35.png,627x45,"(0, 0, 627, 45)","(0, 0, 627, 45)",1.0000,0,0,{}
 "25000,999",ai_or_fallback,/Users/oliverlibaw/Downloads/MK-assets/upscaled-original-low-res-sprites/25000-999.png,255x390,"(0, 0, 255, 390)","(0, 0, 255, 390)",1.0000,0,0,{}
 "11011,3",ai_or_fallback,/Users/oliverlibaw/Downloads/MK-assets/upscaled-original-low-res-sprites/11011-3.png,954x189,"(34, 46, 899, 170)","(34, 46, 899, 170)",1.0000,34,46,{}
 "11011,2",ai_or_fallback,/Users/oliverlibaw/Downloads/MK-assets/upscaled-original-low-res-sprites/11011-2.png,957x204,"(31, 52, 896, 176)","(31, 52, 896, 176)",1.0000,31,52,{}
-"22200,0",ai_or_fallback,/Users/oliverlibaw/Downloads/MK-assets/upscaled-original-low-res-sprites/22200-0.png,174x72,"(25, 22, 161, 59)","(25, 22, 161, 59)",1.0000,25,22,{}
+"22200,0",ai_or_fallback,/Users/oliverlibaw/Downloads/MK-assets/upscaled-original-low-res-sprites/22200-0.png,174x72,"(28, 25, 161, 59)","(25, 22, 161, 59)",1.0226,25,24,{}
 "22200,1",ai_or_fallback,/Users/oliverlibaw/Downloads/MK-assets/upscaled-original-low-res-sprites/22200-1.png,174x72,"(25, 22, 161, 59)","(25, 22, 161, 59)",1.0000,25,22,{}
 "0,1",ai_or_fallback,"test_character_output/temp_extracted/0,1.png",84x131,"(0, 0, 84, 131)","(0, 0, 84, 131)",1.0000,0,0,{}
 "0,2",ai_or_fallback,"test_character_output/temp_extracted/0,2.png",84x131,"(0, 0, 84, 131)","(0, 0, 84, 131)",1.0000,0,0,{}
